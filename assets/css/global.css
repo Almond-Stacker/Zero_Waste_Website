@@ -1,0 +1,137 @@
+/* 1. Configuration - Change your colors here */
+:root {
+    --primary-bg: #234d4a;    /* Dark teal from the screenshot */
+    --nav-active: #3d6b67;   /* Lighter teal for the active tab */
+    --accent-gold: #c5a059;  /* Gold bottom border */
+    --text-white: #ffffff;
+    --header-height: 100px;
+}
+
+/* 2. General Reset */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3. Header Container */
+.main-site-header {
+    background-color: var(--primary-bg);
+    color: var(--text-white);
+    width: 100%;
+}
+
+/* 4. Top Section (Logo + Utilities) */
+.header-top-container {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, search right */
+    align-items: center;
+    padding: 20px 5%; /* 5% side padding keeps it centered on wide screens */
+}
+
+/* Logo Styling */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-logo-img {
+    height: 70px; /* Adjust based on your actual logo size */
+    margin-right: 15px;
+}
+
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* The thin vertical line */
+    padding-left: 15px;
+}
+
+.text-county {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.text-department {
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Search & Utility Styling */
+.header-utilities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.utility-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-left: 20px;
+}
+
+.utility-links a:hover {
+    text-decoration: underline;
+}
+
+.search-bar form {
+    background: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* 5. Navigation Tabs */
+.header-nav-tabs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.15); /* Darker strip for the nav */
+}
+
+.nav-item {
+    flex: 1; /* Makes all tabs equal width */
+    text-align: center;
+}
+
+.nav-item a {
+    display: block;
+    padding: 18px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+/* Active and Hover States */
+.nav-item.active a {
+    background-color: var(--nav-active);
+    border-bottom: 5px solid var(--accent-gold);
+}
+
+.nav-item a:hover {
+    background-color: var(--nav-active);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Website Layout</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    
+    <script src="nav-loader.js" defer></script>
+</head>
+<body>
+    <header class="main-site-header">
+        <div class="header-top-container">
+            
+            <div class="header-logo-block">
+                <a class="logo-link">
+                    <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
+                    <div class="logo-text-wrapper">
+                        <span class="text-department">County of Hawai‘i Department of Environmental Management</span>
+                        <span class="text-division">Solid Waste Division & Recycling Section</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-utilities">
+                <div class="utility-links">
+                    <a href="#">Contact Us</a>
+                    <a href="#">County Homepage</a>
+                </div>
+                <div class="search-bar">
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search..." aria-label="Search site">
+                        <button type="submit" class="search-btn">
+                            <i>🔍</i> </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-nav-tabs">
+            <ul>
+                <li class="nav-item active"><a href="services.html">SERVICES</a></li>
+                <li class="nav-item"><a href="projects.html">PROJECTS</a></li>
+                <li class="nav-item"><a href="about.html">ABOUT</a></li>
+                <li class="nav-item"><a href="iwantto.html">I WANT TO...</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
