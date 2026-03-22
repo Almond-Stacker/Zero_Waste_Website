@@ -3,72 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>County Website Layout</title>
-    
-    <link rel="stylesheet" href="../assets/css/global.css">
+     <title>County of Hawai'i | Environmental Management</title>
 
-    <script src="nav-loader.js" defer></script>
+  <!--
+    CSS load order:
+      1. global.css      — tokens, reset, base body, shared utils
+      2. header.css      — site header & nav
+      3. hero.css        — hero slideshow
+      4. quick-links.css — icon quick-link row
+      5. calendar.css    — events tab, calendar grid, sidebar
+      6. news.css        — news tab cards
+      7. footer.css      — footer strip & footer nav
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/hero.css" />
+  <link rel="stylesheet" href="../assets/css/quick-links.css" />
+  <link rel="stylesheet" href="../assets/css/calendar.css" />
+  <link rel="stylesheet" href="../assets/css/news.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
 </head>
 <body>
-    <header class="main-site-header">
-        <div class="header-top-container">
-            
-            <div class="header-logo-block">
-                <a href="homepage.html" class="logo-link">
-                    <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
-                    <div class="logo-text-wrapper">
-                        <span class="text-department">County of Hawai‘i Department of Environmental Management</span>
-                        <span class="text-division">Solid Waste Division & Recycling Section</span>
-                    </div>
-                </a>
-            </div>
 
-            <div class="header-utilities">
-                <div class="utility-links">
-                    <a href="#">Contact Us</a>
-                    <a href="https://www.dem.hawaiicounty.gov/home-em" target="_blank">Department Homepage</a>
-                </div>
-                <div class="search-bar">
-                    <form action="/search" method="get">
-                        <input type="text" name="q" placeholder="Search..." aria-label="Search site">
-                        <button type="submit" class="search-btn">🔍</button>
-                    </form>
-                </div>
-            </div>
+  <!-- ================================================================
+       HEADER / NAV
+  ================================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="logo">
+        <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
+        <div class="logo-text">
+          <span class="county-label">COUNTY OF</span>
+          <span class="county-name">HAWAI'I</span>
+          <span class="dept-name">ENVIRONMENTAL<br>MANAGEMENT</span>
         </div>
+      </div>
 
-          <nav class="header-nav-tabs">
-            <ul>
-                <li class="nav-item"><a href="homepage.html">HOME</a></li>
-                <li class="nav-item on dropdown">
-                    <a href="services.html">SERVICES</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="service1.html">Service 1</a></li>
-                        <li><a href="service2.html">Service 2</a></li>
-                        <li><a href="service3.html">Service 3</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="projects.html">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="project1.html">Project 1</a></li>
-                        <li><a href="project2.html">Project 2</a></li>
-                        <li><a href="project3.html">Project 3</a></li>
-                        <li><a href="project3.html">Project 3</a></li>
-                        <li><a href="project3.html">Project 3</a></li>
-                        <li><a href="project3.html">Project 3</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="events.html">EVENTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="event1.html">Event 1</a></li>
-                        <li><a href="event2.html">Event 2</a></li>
-                        <li><a href="event3.html">Event 3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+      <nav class="site-nav">
+        <a href="homepage.html">HOME</a>
+        <div class="dropdown">
+          <a href="services.html" class="on">SERVICES</a>
+          <div class="dropdown-menu">
+            <a href="#">Service 1</a>
+            <a href="#">Service 2</a>
+            <a href="#">Service 3</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">PROJECTS</a>
+          <div class="dropdown-menu">
+            <a href="#">Project 1</a>
+            <a href="#">Project 2</a>
+            <a href="#">Project 3</a>
+          </div>
+        </div>
+        <a href="#">ABOUT</a>
+        <a href="#">I WANT TO…</a>
+
+        <button class="search-btn" aria-label="Search">&#128269;</button>
+      </nav>
+
+    </div>
+  </header>
 </body>
 </html>
