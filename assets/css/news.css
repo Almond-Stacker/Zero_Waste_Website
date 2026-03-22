@@ -1,0 +1,66 @@
+/* =============================================
+   news.css
+   Styles for the News tab: grid and cards.
+   Depends on: global.css (tokens)
+   ============================================= */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.news-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 12px var(--color-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--color-shadow);
+}
+
+.news-card-top {
+  background: var(--color-primary);
+  height: 8px;
+}
+
+.news-card-body {
+  padding: 20px;
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-primary-mid);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.news-card-body h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.news-card-body p {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.news-date {
+  font-size: 11px;
+  color: #9bb0b3;
+  margin-top: 10px;
+  display: block;
+}

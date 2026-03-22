@@ -1,0 +1,119 @@
+/* =============================================
+   header.css
+   Styles for .site-header and .site-nav
+   Depends on: global.css (tokens)
+   ============================================= */
+
+.site-header {
+  background: var(--color-primary);
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* --- Logo ----------------------------------------------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-seal {
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.county-label {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.county-name {
+  color: var(--color-white);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.dept-name {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* --- Nav links ------------------------------------------------------ */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+}
+
+.search-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: var(--color-white);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background var(--transition);
+  margin-left: 8px;
+}
+
+.search-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* --- Responsive ----------------------------------------------------- */
+@media (max-width: 700px) {
+  .site-nav a {
+    display: none;
+  }
+}
