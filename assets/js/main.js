@@ -14,6 +14,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initCalendar();    // calendar.js
   initSlideshow();   // slideshow.js
+  buildQuickLinks(); // quick-links.js
   // tabs.js exposes switchTab() globally — called via onclick in HTML
   // news.js exposes renderNews() globally — called lazily by tabs.js
 });

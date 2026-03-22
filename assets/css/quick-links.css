@@ -49,15 +49,17 @@
   border-color: var(--color-primary-mid);
 }
 
-.ql-icon svg {
+.ql-icon img {
   width: 34px;
   height: 34px;
-  color: var(--color-primary);
-  transition: color var(--transition);
+  /* SVGs inherit currentColor when loaded as <img> only if the file uses
+     currentColor — we tint via CSS filter as a reliable fallback */
+  filter: invert(23%) sepia(48%) saturate(600%) hue-rotate(75deg) brightness(70%);
+  transition: filter var(--transition);
 }
 
-.quick-link:hover .ql-icon svg {
-  color: var(--color-primary-mid);
+.quick-link:hover .ql-icon img {
+  filter: invert(30%) sepia(60%) saturate(500%) hue-rotate(80deg) brightness(80%);
 }
 
 /* --- Label ---------------------------------------------------------- */
