@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Website Layout</title>
+    
+    <link rel="stylesheet" href="../assets/css/global.css">
+
+    <script src="nav-loader.js" defer></script>
+</head>
+<body>
+    <header class="main-site-header">
+        <div class="header-top-container">
+            
+            <div class="header-logo-block">
+                <a href="homepage.html" class="logo-link">
+                    <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
+                    <div class="logo-text-wrapper">
+                        <span class="text-department">County of Hawai‘i Department of Environmental Management</span>
+                        <span class="text-division">Solid Waste Division & Recycling Section</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-utilities">
+                <div class="utility-links">
+                    <a href="#">Contact Us</a>
+                    <a href="https://www.dem.hawaiicounty.gov/home-em" target="_blank">Department Homepage</a>
+                </div>
+                <div class="search-bar">
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search..." aria-label="Search site">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+          <nav class="header-nav-tabs">
+            <ul>
+                <li class="nav-item"><a href="homepage.html">HOME</a></li>
+                <li class="nav-item on dropdown">
+                    <a href="services.html">SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="service1.html">Service 1</a></li>
+                        <li><a href="service2.html">Service 2</a></li>
+                        <li><a href="service3.html">Service 3</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="projects.html">PROJECTS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="project1.html">Project 1</a></li>
+                        <li><a href="project2.html">Project 2</a></li>
+                        <li><a href="project3.html">Project 3</a></li>
+                        <li><a href="project3.html">Project 3</a></li>
+                        <li><a href="project3.html">Project 3</a></li>
+                        <li><a href="project3.html">Project 3</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="events.html">EVENTS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="event1.html">Event 1</a></li>
+                        <li><a href="event2.html">Event 2</a></li>
+                        <li><a href="event3.html">Event 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
