@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="../assets/css/header.css" />
   <link rel="stylesheet" href="../assets/css/hero.css" />
   <link rel="stylesheet" href="../assets/css/quick-links.css" />
-  <link rel="stylesheet" href="../assets/css/calendar.css" />
   <link rel="stylesheet" href="../assets/css/news.css" />
+  <link rel="stylesheet" href="../assets/css/services.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
 </head>
 <body>
@@ -60,11 +60,24 @@
         </div>
         <a href="#">ABOUT</a>
         <a href="#">I WANT TO…</a>
-
-        <button class="search-btn" aria-label="Search">&#128269;</button>
+        <div class="search-bar">
+            <form action="/search" method="get">
+              <input type="text" name="q" placeholder="Search..." aria-label="Search site">
+              <button type="submit" class="search-btn">🔍</button>
+            </form>
+        </div>
       </nav>
-
     </div>
   </header>
+
+  <!-- ================================================================
+       PAGE CONTENT
+  ================================================================ -->
+  <main class="main-content">
+    <h1>Our Services</h1>
+    <p>Welcome to our services page!</p>
+  </main>
+
+
 </body>
 </html>

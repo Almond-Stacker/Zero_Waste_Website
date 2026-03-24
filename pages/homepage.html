@@ -60,8 +60,13 @@
         </div>
         <a href="#">ABOUT</a>
         <a href="#">I WANT TO…</a>
-
-        <button class="search-btn" aria-label="Search">&#128269;</button>
+        <div class="search-bar">
+            <form action="/search" method="get">
+              <input type="text" name="q" placeholder="Search..." aria-label="Search site">
+              <button type="submit" class="search-btn">🔍</button>
+            </form>
+        </div>
+        
       </nav>
 
     </div>
