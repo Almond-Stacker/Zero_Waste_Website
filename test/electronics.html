@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronics Recycling – County of Hawaiʻi Zero Waste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────── */
+    :root {
+      --color-primary:       #2F591A;
+      --color-primary-mid:   #2E7214;
+      --color-primary-light: #80C062;
+      --color-primary-pale:  #dff0d8;
+      --color-dark:          #1e3a0f;
+      --color-accent:        #a8c84b;
+      /* warm koa accent for Hawaiian warmth */
+      --color-koa:           #8B5E3C;
+      --color-koa-light:     #f5ede4;
+      --color-koa-mid:       #c4895a;
+      --color-text:          #1a2e10;
+      --color-text-muted:    #4a5c3a;
+      --color-white:         #ffffff;
+      --color-bg:            #f6faf4;
+      --color-border:        #c5ddb8;
+      --color-shadow:        rgba(47,89,26,0.15);
+      --font-serif:          'Libre Baskerville', Georgia, serif;
+      --font-sans:           'Source Sans 3', 'Segoe UI', sans-serif;
+      --radius:              4px;
+      --transition:          0.2s ease;
+      --max-w:               1100px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.6; }
+    a { color: var(--color-primary-mid); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; }
+
+    /* ── MOCK HEADER ─────────────────────────────────────── */
+    .site-header {
+      background: var(--color-primary);
+      padding: 0 1rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner { width: 100%; max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo-text { display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 12px; }
+    .county-label { color: rgba(255,255,255,0.65); font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+    .county-name { color: #fff; font-family: var(--font-serif); font-size: 18px; font-weight: 700; letter-spacing: .05em; }
+    .dept-name { color: rgba(255,255,255,0.75); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-placeholder { color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; letter-spacing: .07em; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .hero-photo.loaded { transform: scale(1); }
+    /* layered gradient: dark bottom for text, warm tone mid, transparency top */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top,
+          rgba(20, 40, 10, 0.92) 0%,
+          rgba(30, 58, 15, 0.72) 40%,
+          rgba(47, 89, 26, 0.35) 70%,
+          rgba(0,0,0,0.10) 100%
+        );
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px 1.5rem 44px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color var(--transition); }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.9); text-decoration: none; }
+    .breadcrumb .sep { opacity: .4; }
+    .breadcrumb .current { color: rgba(255,255,255,0.8); }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-koa-mid);
+      margin-bottom: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-koa-mid);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .page-hero p {
+      font-size: 15.5px;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: .03em;
+    }
+    .hero-pill .pill-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      flex-shrink: 0;
+    }
+    .hero-pill.warm .pill-dot { background: var(--color-koa-mid); }
+
+    /* ── CONTENT WRAPPER ─────────────────────────────────── */
+    .page-content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 1.5rem 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+    }
+
+    /* ── SECTION HEADERS ─────────────────────────────────── */
+    .section-head {
+      margin-bottom: 22px;
+    }
+    .section-kicker {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--color-koa);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .section-kicker::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+      max-width: 60px;
+    }
+    .section-head h2 {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    .section-head .sub {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      margin: 16px 0 22px;
+    }
+
+    /* ── WARNING BANNER ──────────────────────────────────── */
+    .warning-banner {
+      background: #fffbf0;
+      border: 1.5px solid #e8c84a;
+      border-left: 4px solid #c8980a;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .warn-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .warn-body strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #7a5200;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .warn-body p { font-size: 13.5px; color: #5c3d00; line-height: 1.55; }
+
+    /* ── ACCEPTED ITEMS GRID ─────────────────────────────── */
+    .accepted-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .accepted-card {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      text-align: center;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .accepted-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: 0 3px 12px var(--color-shadow);
+      transform: translateY(-2px);
+    }
+    .accepted-card .item-icon { font-size: 26px; }
+    .accepted-card .item-label { font-size: 12px; font-weight: 600; color: var(--color-text); line-height: 1.3; }
+    .accepted-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      background: var(--color-primary-pale);
+      border-left: 3px solid var(--color-primary-light);
+      padding: 10px 16px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      line-height: 1.55;
+    }
+    .accepted-note strong { color: var(--color-primary); }
+
+    /* ── LOCATION CARDS ──────────────────────────────────── */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 18px;
+    }
+    .loc-card {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .loc-card:hover { box-shadow: 0 6px 20px var(--color-shadow); transform: translateY(-2px); }
+    .loc-card-header {
+      background: var(--color-primary);
+      padding: 13px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .loc-card-header h3 {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.3;
+    }
+    .loc-badge {
+      background: var(--color-accent);
+      color: var(--color-dark);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .loc-card-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 11px; }
+    .loc-address { display: flex; gap: 7px; font-size: 13px; color: var(--color-text); align-items: flex-start; }
+    .loc-hours-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .loc-hours-table caption {
+      text-align: left; font-size: 10px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--color-text-muted); padding-bottom: 5px;
+    }
+    .loc-hours-table td { padding: 3.5px 0; vertical-align: top; }
+    .loc-hours-table td:first-child { font-weight: 600; color: var(--color-text); width: 120px; }
+    .loc-hours-table td:last-child { color: var(--color-text-muted); }
+    .loc-notes {
+      font-size: 12px; color: var(--color-text-muted);
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 8px 12px; line-height: 1.5;
+    }
+    .loc-notes strong { color: var(--color-text); }
+    .loc-phone-row { display: flex; align-items: center; gap: 7px; font-size: 13px; }
+    .loc-phone-row a { font-weight: 600; color: var(--color-primary-mid); }
+    .loc-tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+    .loc-tag {
+      font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px;
+      background: var(--color-primary-pale); color: var(--color-primary); border: 1px solid var(--color-border);
+    }
+    /* warm variant for special tags */
+    .loc-tag.warm { background: var(--color-koa-light); color: var(--color-koa); border-color: #e0c4a8; }
+
+    /* ── DONATE SECTION ──────────────────────────────────── */
+    .donate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+    .donate-card {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex; flex-direction: column; gap: 9px;
+      transition: box-shadow var(--transition);
+    }
+    .donate-card:hover { box-shadow: 0 4px 14px var(--color-shadow); }
+    .donate-card .donate-icon { font-size: 28px; }
+    .donate-card h3 { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--color-primary); line-height: 1.3; }
+    .donate-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.65; }
+    .donate-card a.cta-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12.5px; font-weight: 700; color: var(--color-primary-mid); margin-top: 4px;
+    }
+    .donate-card a.cta-link:hover { text-decoration: underline; }
+
+    /* ── MANUFACTURER GRID ───────────────────────────────── */
+    .mfr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 9px; }
+    .mfr-link {
+      display: flex; align-items: center; gap: 9px;
+      padding: 9px 13px;
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      font-size: 13px; font-weight: 600; color: var(--color-text);
+      transition: border-color var(--transition), background var(--transition), color var(--transition);
+      text-decoration: none;
+    }
+    .mfr-link:hover {
+      border-color: var(--color-primary-light);
+      background: var(--color-primary-pale);
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .mfr-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-primary-light); flex-shrink: 0; }
+    .ext-icon { margin-left: auto; font-size: 11px; color: var(--color-text-muted); }
+
+    /* ── PHONES / CARTRIDGES ─────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .mini-section { background: var(--color-white); border: 1.5px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .mini-section-head {
+      background: var(--color-primary-mid);
+      padding: 11px 16px;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .mini-section-head .ms-icon { font-size: 18px; }
+    .mini-section-head h3 { font-family: var(--font-serif); font-size: 14px; font-weight: 700; color: #fff; }
+    .mini-section-body { padding: 12px 16px; }
+    .mini-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .mini-list li {
+      font-size: 13px; color: var(--color-text);
+      display: flex; flex-direction: column; gap: 1px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mini-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .ml-name { font-weight: 600; }
+    .ml-detail { font-size: 11.5px; color: var(--color-text-muted); }
+
+    /* ── COMPANIES TABLE ─────────────────────────────────── */
+    .companies-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .companies-table thead tr { background: var(--color-primary); color: #fff; }
+    .companies-table thead th {
+      padding: 10px 14px; text-align: left;
+      font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .companies-table tbody tr { border-bottom: 1px solid var(--color-border); background: var(--color-white); transition: background var(--transition); }
+    .companies-table tbody tr:nth-child(even) { background: var(--color-bg); }
+    .companies-table tbody tr:hover { background: var(--color-primary-pale); }
+    .companies-table td { padding: 10px 14px; vertical-align: top; color: var(--color-text); }
+    .companies-table td.co-note { font-size: 12px; color: var(--color-text-muted); }
+
+    /* ── ACCORDION ───────────────────────────────────────── */
+    .accordion { border: 1.5px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .accordion-item { border-bottom: 1px solid var(--color-border); }
+    .accordion-item:last-child { border-bottom: none; }
+    .accordion-trigger {
+      width: 100%; background: var(--color-white); border: none;
+      padding: 15px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; font-family: var(--font-sans); font-size: 14px; font-weight: 700;
+      color: var(--color-primary); text-align: left;
+      transition: background var(--transition); gap: 12px;
+    }
+    .accordion-trigger:hover { background: var(--color-primary-pale); }
+    .chevron {
+      width: 0; height: 0;
+      border-left: 5px solid transparent; border-right: 5px solid transparent;
+      border-top: 6px solid var(--color-primary);
+      transition: transform .25s ease; flex-shrink: 0;
+    }
+    .accordion-trigger[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+    .accordion-body {
+      display: none; padding: 18px 20px;
+      background: var(--color-bg); font-size: 13.5px; color: var(--color-text); line-height: 1.7;
+    }
+    .accordion-body.open { display: block; }
+    .accordion-body p + p { margin-top: 10px; }
+    .law-contact {
+      margin-top: 14px; background: var(--color-white);
+      border: 1px solid var(--color-border); border-radius: var(--radius); padding: 14px 16px; font-size: 13px;
+    }
+    .law-contact strong { display: block; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; }
+    .law-contact p { color: var(--color-text-muted); line-height: 1.6; }
+    .law-contact a { color: var(--color-primary-mid); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .accepted-grid { grid-template-columns: repeat(3, 1fr); }
+      .locations-grid { grid-template-columns: 1fr; }
+      .mfr-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- HEADER PLACEHOLDER – swap in your real header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="logo-text">
+          <span class="county-label">County of Hawaiʻi</span>
+          <span class="county-name">Hawaiʻi</span>
+          <span class="dept-name">Environmental Management</span>
+        </div>
+      </div>
+      <span class="nav-placeholder">[Site Navigation]</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="recycle.html">Recycle &amp; Dispose</a>
+        <span class="sep">›</span>
+        <span class="current">Electronics Recycling</span>
+      </nav>
+      <p class="hero-eyebrow">Recycle &amp; Dispose</p>
+      <h1>Electronics Recycling</h1>
+      <p>Old electronics left in the landfill leak lead, mercury, and cadmium into our groundwater. Up to 80% can be recycled — and on the Big Island, free drop-off is closer than you think.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Free drop-off available</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Hilo &amp; Kona locations</span>
+        <span class="hero-pill warm"><span class="pill-dot"></span>Donate if it still works</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-content">
+
+    <!-- ── WARNING ─────────────────────────────────────── -->
+    <div class="warning-banner" role="alert">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-body">
+        <strong>Not accepted as electronics</strong>
+        <p>Microwave ovens, fans, vacuums, and toys are <strong>not</strong> considered electronic waste or appliances for recycling purposes in the County of Hawaiʻi. They are regular rubbish. E-Waste is also not accepted at County Household Hazardous Waste Collection Events.</p>
+      </div>
+    </div>
+
+    <!-- ── ACCEPTED ITEMS ──────────────────────────────── -->
+    <section aria-labelledby="accepted-heading">
+      <div class="section-head">
+        <p class="section-kicker">What's covered</p>
+        <h2 id="accepted-heading">Accepted for Free Drop-Off</h2>
+        <p class="sub">All items below are accepted at no charge as of July 1, 2025 under the State of Hawaiʻi Electronic Device Recycling &amp; Recovery Law.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="accepted-grid">
+        <div class="accepted-card"><div class="item-icon">💻</div><div class="item-label">Computer (Desktop)</div></div>
+        <div class="accepted-card"><div class="item-icon">🖥️</div><div class="item-label">Monitor</div></div>
+        <div class="accepted-card"><div class="item-icon">🖨️</div><div class="item-label">Printer / Fax</div></div>
+        <div class="accepted-card"><div class="item-icon">📱</div><div class="item-label">Laptop / Tablet (screen &gt;4")</div></div>
+        <div class="accepted-card"><div class="item-icon">⌨️</div><div class="item-label">Keyboard &amp; Mouse</div></div>
+        <div class="accepted-card"><div class="item-icon">📺</div><div class="item-label">TV (screen &gt;9")</div></div>
+        <div class="accepted-card"><div class="item-icon">📼</div><div class="item-label">VCR / DVD / Blu-ray Player</div></div>
+        <div class="accepted-card"><div class="item-icon">🎮</div><div class="item-label">Video Game Console</div></div>
+        <div class="accepted-card"><div class="item-icon">📻</div><div class="item-label">Router / Modem (home use)</div></div>
+        <div class="accepted-card"><div class="item-icon">🎵</div><div class="item-label">Portable Digital Music Player</div></div>
+        <div class="accepted-card"><div class="item-icon">🔌</div><div class="item-label">Cords, Adapters &amp; Power Supplies</div></div>
+        <div class="accepted-card"><div class="item-icon">🔊</div><div class="item-label">Speakers (computer / TV)</div></div>
+      </div>
+      <p class="accepted-note">
+        <strong>Not sure if your item qualifies?</strong> Contact the drop-off location before you go. Items not on this list may still be accepted for a fee — call ahead to confirm.
+      </p>
+    </section>
+
+    <!-- ── DROP-OFF LOCATIONS ──────────────────────────── -->
+    <section aria-labelledby="locations-heading">
+      <div class="section-head">
+        <p class="section-kicker">Where to go</p>
+        <h2 id="locations-heading">Drop-Off Locations</h2>
+        <p class="sub">All locations accept covered electronic devices for free. Contact the location to verify acceptability of specific items.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="locations-grid">
+
+        <!-- Mr K's Hilo -->
+        <div class="loc-card">
+          <div class="loc-card-header">
+            <h3>Mr. K's Recycle &amp; Redemption — Hilo</h3>
+            <span class="loc-badge">Free</span>
+          </div>
+          <div class="loc-card-body">
+            <div class="loc-address">
+              <span class="addr-icon">📌</span>
+              <span>815 Kinoʻole St., Hilo</span>
+            </div>
+            <table class="loc-hours-table">
+              <caption>Hours</caption>
+              <tbody>
+                <tr><td>Daily</td><td>10:00 a.m. – 3:00 p.m.</td></tr>
+                <tr><td>Closed</td><td>Holidays (see website)</td></tr>
+              </tbody>
+            </table>
+            <div class="loc-notes">
+              <strong>Households:</strong> Welcome daily, no appointment needed.<br>
+              <strong>Businesses / Gov't / Non-profits:</strong> Weekdays by appointment only.
+            </div>
+            <div class="loc-tag-row">
+              <span class="loc-tag">e-Stewards Certified</span>
+              <span class="loc-tag">R2 Certified</span>
+              <span class="loc-tag warm">Pick-up Available</span>
+              <span class="loc-tag warm">Accepts Cameras, Phones</span>
+            </div>
+            <div class="loc-phone-row">📞 <a href="tel:8089691222">(808) 969-1222</a></div>
+          </div>
+        </div>
+
+        <!-- Mr K's Kona -->
+        <div class="loc-card">
+          <div class="loc-card-header">
+            <h3>Mr. K's Recycle &amp; Redemption — Kona</h3>
+            <span class="loc-badge">Free</span>
+          </div>
+          <div class="loc-card-body">
+            <div class="loc-address">
+              <span class="addr-icon">📌</span>
+              <span>73-5631 Kauhola St. (mauka of Home Depot), Kona</span>
+            </div>
+            <table class="loc-hours-table">
+              <caption>Hours</caption>
+              <tbody>
+                <tr><td>Sun, Tue–Thu, Sat</td><td>10:00 a.m. – 3:00 p.m.</td></tr>
+                <tr><td>Closed</td><td>Mon, Fri &amp; Holidays</td></tr>
+              </tbody>
+            </table>
+            <div class="loc-notes">
+              <strong>All types welcome.</strong> Businesses, gov't &amp; non-profits must schedule an appointment in advance.
+            </div>
+            <div class="loc-tag-row">
+              <span class="loc-tag">e-Stewards Certified</span>
+              <span class="loc-tag">R2 Certified</span>
+              <span class="loc-tag">Pick-up Available</span>
+            </div>
+            <div class="loc-phone-row">📞 <a href="tel:8089691222">(808) 969-1222</a></div>
+          </div>
+        </div>
+
+        <!-- OfficeMax Hilo 1 -->
+        <div class="loc-card">
+          <div class="loc-card-header">
+            <h3>OfficeMax / Office Depot — Hilo (Makaʻala St.)</h3>
+            <span class="loc-badge">Free</span>
+          </div>
+          <div class="loc-card-body">
+            <div class="loc-address">
+              <span class="addr-icon">📌</span>
+              <span>311 Makaʻala St., Hilo</span>
+            </div>
+            <table class="loc-hours-table">
+              <caption>Hours</caption>
+              <tbody>
+                <tr><td>Mon – Fri</td><td>8:00 a.m. – 9:00 p.m.</td></tr>
+                <tr><td>Saturday</td><td>9:00 a.m. – 7:00 p.m.</td></tr>
+                <tr><td>Sunday</td><td>10:00 a.m. – 6:00 p.m.</td></tr>
+              </tbody>
+            </table>
+            <div class="loc-notes">Does not accept large speakers for recycling.</div>
+            <div class="loc-phone-row">📞 <a href="tel:8089699595">(808) 969-9595</a></div>
+          </div>
+        </div>
+
+        <!-- HOPACO Hilo -->
+        <div class="loc-card">
+          <div class="loc-card-header">
+            <h3>HOPACO / Office Depot — Hilo</h3>
+            <span class="loc-badge">Free</span>
+          </div>
+          <div class="loc-card-body">
+            <div class="loc-address">
+              <span class="addr-icon">📌</span>
+              <span>280 Makaʻala St., Hilo</span>
+            </div>
+            <table class="loc-hours-table">
+              <caption>Hours</caption>
+              <tbody>
+                <tr><td>Mon – Fri</td><td>8:00 a.m. – 5:00 p.m.</td></tr>
+                <tr><td>Saturday</td><td>8:00 a.m. – 2:00 p.m.</td></tr>
+                <tr><td>Sunday</td><td>Closed</td></tr>
+              </tbody>
+            </table>
+            <div class="loc-phone-row">📞 <a href="tel:8089337255">(808) 933-7255</a></div>
+          </div>
+        </div>
+
+        <!-- OfficeMax Kona -->
+        <div class="loc-card">
+          <div class="loc-card-header">
+            <h3>OfficeMax / Office Depot — Kona</h3>
+            <span class="loc-badge">Free</span>
+          </div>
+          <div class="loc-card-body">
+            <div class="loc-address">
+              <span class="addr-icon">📌</span>
+              <span>74-5448 Makala Blvd., Kailua-Kona</span>
+            </div>
+            <table class="loc-hours-table">
+              <caption>Hours</caption>
+              <tbody>
+                <tr><td>Mon – Fri</td><td>8:00 a.m. – 9:00 p.m.</td></tr>
+                <tr><td>Saturday</td><td>9:00 a.m. – 7:00 p.m.</td></tr>
+                <tr><td>Sunday</td><td>10:00 a.m. – 6:00 p.m.</td></tr>
+              </tbody>
+            </table>
+            <div class="loc-notes">Does not accept large speakers for recycling.</div>
+            <div class="loc-phone-row">📞 <a href="tel:8083291907">(808) 329-1907</a></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── DONATE ───────────────────────────────────────── -->
+    <section aria-labelledby="donate-heading">
+      <div class="section-head">
+        <p class="section-kicker">Better than recycling</p>
+        <h2 id="donate-heading">Donate Instead of Recycle</h2>
+        <p class="sub">If your device still works, donation keeps it in use longer — the best outcome for our community and environment.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="donate-grid">
+        <div class="donate-card">
+          <div class="donate-icon">🖥️</div>
+          <h3>IT Reuse Hawaiʻi</h3>
+          <p>A collaboration between Hawaiʻi Community College, Mr. K's, Hawaiʻi First Federal Credit Union, and the State Public Library. HCC-refurbished computers go to local low-income families. Also offers secure data destruction.</p>
+          <a class="cta-link" href="#">Learn more about IT Reuse Hawaiʻi →</a>
+        </div>
+        <div class="donate-card">
+          <div class="donate-icon">🌐</div>
+          <h3>Digitunity</h3>
+          <p>A national not-for-profit that matches donated computers and technology to charities, schools, and public agencies across all 50 states and internationally.</p>
+          <a class="cta-link" href="https://www.digitunity.org" target="_blank" rel="noopener">Visit Digitunity →</a>
+        </div>
+        <div class="donate-card">
+          <div class="donate-icon">🏪</div>
+          <h3>Local Reuse Centers &amp; Thrift Stores</h3>
+          <p>Many local reuse centers and thrift stores accept working electronics. Visit the Reuse page for a full listing of options on the Big Island.</p>
+          <a class="cta-link" href="reuse.html">See the Reuse page →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MANUFACTURER PROGRAMS ───────────────────────── -->
+    <section aria-labelledby="mfr-heading">
+      <div class="section-head">
+        <p class="section-kicker">Brand programs</p>
+        <h2 id="mfr-heading">Manufacturer &amp; Retailer Take-Back</h2>
+        <p class="sub">Many brands offer trade-in credit or free recycling. Letting manufacturers know you care helps push better programs.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="mfr-grid">
+        <a class="mfr-link" href="https://www.acer.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Acer<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.amazon.com/trade-in" target="_blank" rel="noopener"><span class="mfr-dot"></span>Amazon Trade-In<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.apple.com/shop/trade-in" target="_blank" rel="noopener"><span class="mfr-dot"></span>Apple Trade-In &amp; Recycle<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.bestbuy.com/trade-in" target="_blank" rel="noopener"><span class="mfr-dot"></span>Best Buy Trade-In<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.bestbuy.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Best Buy Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.usa.canon.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Canon Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.dell.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Dell Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://epson.com/recycle" target="_blank" rel="noopener"><span class="mfr-dot"></span>Epson Recycle<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.gamestop.com/trade" target="_blank" rel="noopener"><span class="mfr-dot"></span>GameStop Trade-In<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.gazelle.com" target="_blank" rel="noopener"><span class="mfr-dot"></span>Gazelle (phones &amp; Apple)<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.hp.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>HP Eco Solutions<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.lenovo.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Lenovo Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.lg.com/us/recycle" target="_blank" rel="noopener"><span class="mfr-dot"></span>LG Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.motorola.com/recycle" target="_blank" rel="noopener"><span class="mfr-dot"></span>Motorola Takeback<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.officedepot.com/trade-in" target="_blank" rel="noopener"><span class="mfr-dot"></span>Office Depot Trade-In<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.panasonic.com/us/consumer/recycle.html" target="_blank" rel="noopener"><span class="mfr-dot"></span>Panasonic Recycling<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.samsung.com/us/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Samsung Recycle<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.sony.com/recycle" target="_blank" rel="noopener"><span class="mfr-dot"></span>Sony Take-Back<span class="ext-icon">↗</span></a>
+        <a class="mfr-link" href="https://www.xerox.com/recycling" target="_blank" rel="noopener"><span class="mfr-dot"></span>Xerox Toner Recycling<span class="ext-icon">↗</span></a>
+      </div>
+    </section>
+
+    <!-- ── MOBILE PHONES & CARTRIDGES ──────────────────── -->
+    <section aria-labelledby="mobile-heading">
+      <div class="section-head">
+        <p class="section-kicker">Smaller electronics</p>
+        <h2 id="mobile-heading">Mobile Phones &amp; Ink Cartridges</h2>
+        <p class="sub">Dedicated local drop-off options for phones and printer cartridges.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="two-col">
+        <div class="mini-section">
+          <div class="mini-section-head">
+            <span class="ms-icon">📱</span>
+            <h3>Mobile Phones &amp; Accessories</h3>
+          </div>
+          <div class="mini-section-body">
+            <ul class="mini-list">
+              <li><span class="ml-name">AT&amp;T</span><span class="ml-detail">Any phone, any carrier. Proceeds benefit Cellphones for Soldiers.</span></li>
+              <li><span class="ml-name">T-Mobile</span><span class="ml-detail">Any phone, accessory, or data card from any carrier. Trade-in also available.</span></li>
+              <li><span class="ml-name">Verizon HopeLine</span><span class="ml-detail">Any phone &amp; battery, any carrier. Proceeds benefit domestic violence victims.</span></li>
+              <li><span class="ml-name">Mr. K's — Hilo</span><span class="ml-detail">815 Kinoʻole St. · (808) 969-1222</span></li>
+              <li><span class="ml-name">Pack Ship &amp; Copy Depot</span><span class="ml-detail">Waimea · (808) 885-8810 · Cellphones for Soldiers program</span></li>
+              <li><span class="ml-name">Waikoloa Mailbox</span><span class="ml-detail">(808) 883-2626</span></li>
+              <li><span class="ml-name">Ocean View Community Center</span><span class="ml-detail">(808) 939-7033 · Small quantities only</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini-section">
+          <div class="mini-section-head">
+            <span class="ms-icon">🖨️</span>
+            <h3>Inkjet &amp; Toner Cartridges</h3>
+          </div>
+          <div class="mini-section-body">
+            <ul class="mini-list">
+              <li><span class="ml-name">Office Depot / OfficeMax — Hilo</span><span class="ml-detail">311 Makaʻala St. · (808) 969-9595 · Store credit may apply</span></li>
+              <li><span class="ml-name">Office Depot / OfficeMax — Kona</span><span class="ml-detail">74-5448 Makala Blvd. · (808) 329-1907 · Store credit may apply</span></li>
+              <li><span class="ml-name">Target — Hilo</span><span class="ml-detail">391 E. Makaʻala St. · (808) 920-8605</span></li>
+              <li><span class="ml-name">Target — Kona</span><span class="ml-detail">74-5455 Makala Blvd. · (808) 334-4020</span></li>
+              <li><span class="ml-name">Walmart — Hilo</span><span class="ml-detail">325 E. Makaʻala St. · Inkjet cartridges in Electronics section</span></li>
+              <li><span class="ml-name">Waikoloa Mailbox</span><span class="ml-detail">Waikoloa Highlands Center · (808) 883-2626</span></li>
+              <li><span class="ml-name">Planet Green Recycle</span><span class="ml-detail">Free USPS mail-in · Inkjet only · <a href="https://www.planetgreenrecycle.com/pages/free-ink-recycling" target="_blank" rel="noopener">planetgreenrecycle.com</a></span></li>
+              <li><span class="ml-name">Ocean View Community Center</span><span class="ml-detail">(808) 939-7033 · Small quantities, use original packaging</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OTHER COMPANIES ─────────────────────────────── -->
+    <section aria-labelledby="other-companies-heading">
+      <div class="section-head">
+        <p class="section-kicker">Private recyclers</p>
+        <h2 id="other-companies-heading">Other Companies Serving the Big Island</h2>
+        <p class="sub">Additional private recycling companies that accept electronics from Hawaiʻi Island.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div style="overflow-x:auto;">
+        <table class="companies-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Address</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.computercrisissolutions.com" target="_blank" rel="noopener">Computer Crisis Solutions</a></td>
+              <td><a href="tel:8088959325">(808) 895-9325</a></td>
+              <td>Call for pick-up</td>
+              <td class="co-note">Working computers &amp; laptops only</td>
+            </tr>
+            <tr>
+              <td><a href="http://www.gotoetc.com" target="_blank" rel="noopener">EnviroServices &amp; Training Center</a></td>
+              <td><a href="tel:8088397222">(808) 839-7222</a></td>
+              <td>505 Ward Ave., Ste. 202, Honolulu</td>
+              <td class="co-note"></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.mrksrecyclehawaii.com" target="_blank" rel="noopener">Mr. K's Recycle &amp; Redemption</a></td>
+              <td><a href="tel:8089691222">(808) 969-1222</a></td>
+              <td>815 Kinoʻole St., Hilo</td>
+              <td class="co-note"></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.pcshi.com" target="_blank" rel="noopener">Pacific Commercial Services</a></td>
+              <td><a href="tel:8085454599">(808) 545-4599</a></td>
+              <td>5 Sand Island Access Rd., Bldg. 931, Honolulu</td>
+              <td class="co-note"></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.penco.org" target="_blank" rel="noopener">Pacific Environmental Corp. (PENCO)</a></td>
+              <td><a href="tel:8085455195">(808) 545-5195</a></td>
+              <td>65 N. Nimitz Hwy, Pier 14, Honolulu</td>
+              <td class="co-note"></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.tncomputerrecycling.com" target="_blank" rel="noopener">T&amp;N Computer Recycling Services</a></td>
+              <td><a href="tel:8083710281">(808) 371-0281</a></td>
+              <td>P.O. Box 4320, Kāneʻohe</td>
+              <td class="co-note"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── STATE LAW ACCORDION ─────────────────────────── -->
+    <section aria-labelledby="law-heading">
+      <div class="section-head">
+        <p class="section-kicker">State program</p>
+        <h2 id="law-heading">State Law &amp; Program Information</h2>
+        <p class="sub">Background on the Hawaiʻi Electronic Device Recycling &amp; Recovery Law.</p>
+      </div>
+      <div class="section-rule"></div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-covered">
+            What devices are covered under the state law?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="acc-covered">
+            <p>The Hawaiʻi Electronic Device Recycling and Recovery Law covers: computers, laptops/tablets with screens larger than 4", printers and fax machines, monitors, VCRs, portable digital music players with memory and battery power, DVD/Blu-ray players and recorders, routers and modems for household use, TVs with viewable screens larger than 9", and electronic device peripherals.</p>
+            <p>Peripherals include keyboards, mice, external input/output devices, cords, power supplies and adapters for electronic devices, speakers used with computers or TVs, and video game consoles.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-law">
+            What does the law require manufacturers to do?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="acc-law">
+            <p>The State Legislature passed Act 151 in 2022, which requires manufacturers to fully fund their recycling plans including collection, transportation, and recycling of all covered electronic devices in Hawaiʻi. Plans must include manufacturer recycling goals and provide collection services at least once per month at no cost to consumers in certain population centers, starting January 2023.</p>
+            <p>In 2025, Act 162 expanded the types of devices accepted for free. The full text of Chapter 339D, Hawaiʻi Revised Statutes is available on the State Legislature website. Retailers are prohibited from selling products from non-registered manufacturers and must inform customers where devices can be returned for recycling.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-contact">
+            Who do I contact for more information on the state program?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="acc-contact">
+            <div class="law-contact">
+              <strong>Hawaiʻi Department of Health — Solid &amp; Hazardous Waste Branch</strong>
+              <p>
+                2827 Waimano Home Road #100, Pearl City, HI 96782<br>
+                📞 <a href="tel:8089744000">(808) 974-4000</a> ext. 64226 (toll-free from the Big Island)<br>
+                ✉️ <a href="mailto:Lane.Otsu@doh.hawaii.gov">Lane.Otsu@doh.hawaii.gov</a> (Lane Otsu)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Hero photo subtle zoom-in on load
+    const heroPhoto = document.getElementById('heroPhoto');
+    if (heroPhoto) {
+      const img = new Image();
+      img.onload = () => heroPhoto.classList.add('loaded');
+      img.src = 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&auto=format&fit=crop&q=80';
+    }
+
+    // Accordion logic
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const bodyId = btn.getAttribute('aria-controls');
+        const body = document.getElementById(bodyId);
+
+        // Close all
+        document.querySelectorAll('.accordion-trigger').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+        });
+        document.querySelectorAll('.accordion-body').forEach(b => {
+          b.classList.remove('open');
+        });
+
+        // Open this one if it was closed
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          body.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
