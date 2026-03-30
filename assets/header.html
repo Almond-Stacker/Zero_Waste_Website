@@ -1,40 +1,87 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="logo">
-      <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
-      <div class="logo-text">
-        <span class="county-label">COUNTY OF</span>
-        <span class="county-name">HAWAI'I</span>
-        <span class="dept-name">ENVIRONMENTAL<br>MANAGEMENT</span>
-      </div>
+      <a href="homepage.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+        <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
+        <div class="logo-text">
+          <span class="county-label">COUNTY OF</span>
+          <span class="county-name">HAWAI'I</span>
+          <span class="dept-name">ENVIRONMENTAL<br>MANAGEMENT</span>
+        </div>
+      </a>
     </div>
 
     <nav class="site-nav">
+
       <a href="homepage.html" class="nav-link">HOME</a>
+
+      <!-- RECYCLE & DISPOSE — header links to the existing directory page -->
       <div class="dropdown">
-        <a href="services.html">SERVICES</a>
+        <a href="recycle.html">RECYCLE &amp; DISPOSE</a>
         <div class="dropdown-menu">
-          <a href="recyclingInfo.html">Where To Recycle?</a>
-          <a href="#">Service 2</a>
-          <a href="#">Service 3</a>
+          <a href="hi5.html">HI-5 Redemption</a>
+          <a href="dropoff.html">Drop-Off Recycling</a>
+          <a href="greenwaste.html">Greenwaste &amp; Food Discards</a>
+          <a href="metal-appliances.html">Metal &amp; Appliances</a>
+          <a href="specialty.html">Specialty Items</a>
         </div>
       </div>
+
       <div class="dropdown">
-        <a href="#">PROJECTS</a>
+        <a href="#">HAZARDOUS WASTE</a>
         <div class="dropdown-menu">
-          <a href="#">Project 1</a>
-          <a href="#">Project 2</a>
-          <a href="#">Project 3</a>
+          <a href="hhw.html">Household Hazardous Waste</a>
+          <a href="automotive-chemicals.html">Automotive &amp; Chemicals</a>
+          <a href="business-farm.html">Business &amp; Farm Waste</a>
         </div>
       </div>
-      <a href="#">ABOUT</a>
-      <a href="#">I WANT TO…</a>
+
+      <div class="dropdown">
+        <a href="#">REDUCE &amp; REUSE</a>
+        <div class="dropdown-menu">
+          <a href="reduce.html">Reduce</a>
+          <a href="reuse.html">Reuse Centers</a>
+          <a href="plastic-bag.html">Plastic Bag Ordinance</a>
+          <a href="polystyrene.html">Polystyrene Ordinance</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">FACILITIES &amp; SERVICES</a>
+        <div class="dropdown-menu">
+          <a href="transfer-stations.html">Transfer Stations</a>
+          <a href="malama-map.html">Mālama Map</a>
+          <a href="emergency.html">Emergency &amp; Disaster Prep</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">REPORT &amp; GET INVOLVED</a>
+        <div class="dropdown-menu">
+          <a href="illegal-dumping.html">Report Illegal Dumping</a>
+          <a href="cleanups.html">Community Clean-Ups</a>
+          <a href="education.html">School Education</a>
+          <a href="events.html">Events Calendar</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">ABOUT</a>
+        <div class="dropdown-menu">
+          <a href="about.html">About Zero Waste</a>
+          <a href="regulations.html">Regulations &amp; Publications</a>
+          <a href="press.html">Press Releases</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
       <div class="search-bar">
-          <form action="/search" method="get">
-            <input type="text" name="q" placeholder="Search..." aria-label="Search site">
-            <button type="submit" class="search-btn">🔍</button>
-          </form>
+        <form action="/search" method="get">
+          <input type="text" name="q" placeholder="Search..." aria-label="Search site">
+          <button type="submit" class="search-btn">🔍</button>
+        </form>
       </div>
+
     </nav>
   </div>
 </header>
