@@ -8,9 +8,10 @@
 .quick-links {
   background: var(--color-bg);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
-  padding: 28px 24px 32px;
+  gap: 1.5rem;
+  padding: 28px 1rem 32px;
   border-bottom: 1px solid var(--color-border);
 }
 
