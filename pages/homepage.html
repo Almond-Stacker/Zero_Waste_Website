@@ -17,10 +17,12 @@
   -->
   <link rel="stylesheet" href="../assets/css/global.css" />
   <link rel="stylesheet" href="../assets/css/header.css" />
-  <link rel="stylesheet" href="../assets/css/hero.css" />
-  <link rel="stylesheet" href="../assets/css/quick-links.css" />
-  <link rel="stylesheet" href="../assets/css/calendar.css" />
-  <link rel="stylesheet" href="../assets/css/news.css" />
+
+  <link rel="stylesheet" href="../assets/css/homepage/hero.css" />
+  <link rel="stylesheet" href="../assets/css/homepage/quick-links.css" />
+  <link rel="stylesheet" href="../assets/css/homepage/calendar.css" />
+  <link rel="stylesheet" href="../assets/css/homepage/news.css" />
+
   <link rel="stylesheet" href="../assets/css/footer.css" />
 </head>
 <body>
@@ -29,47 +31,7 @@
        HEADER / NAV
   ================================================================ -->
   <header class="site-header">
-    <div class="header-inner">
-
-      <div class="logo">
-        <img src="../assets/images/dlnr_logo.png" alt="County Logo" class="header-logo-img">
-        <div class="logo-text">
-          <span class="county-label">COUNTY OF</span>
-          <span class="county-name">HAWAI'I</span>
-          <span class="dept-name">ENVIRONMENTAL<br>MANAGEMENT</span>
-        </div>
-      </div>
-
-      <nav class="site-nav">
-        <a href="homepage.html" class="on">HOME</a>
-        <div class="dropdown">
-          <a href="services.html">SERVICES</a>
-          <div class="dropdown-menu">
-            <a href="#">Service 1</a>
-            <a href="#">Service 2</a>
-            <a href="#">Service 3</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">PROJECTS</a>
-          <div class="dropdown-menu">
-            <a href="#">Project 1</a>
-            <a href="#">Project 2</a>
-            <a href="#">Project 3</a>
-          </div>
-        </div>
-        <a href="#">ABOUT</a>
-        <a href="#">I WANT TO…</a>
-        <div class="search-bar">
-            <form action="/search" method="get">
-              <input type="text" name="q" placeholder="Search..." aria-label="Search site">
-              <button type="submit" class="search-btn">🔍</button>
-            </form>
-        </div>
-        
-      </nav>
-
-    </div>
+    <div id="header-placeholder"></div>
   </header>
 
   <!-- ================================================================
@@ -152,13 +114,16 @@
        SCRIPTS
        Load order matters — data first, then modules, then main.
   ================================================================ -->
-  <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/calendar.js"></script>
-  <script src="../assets/js/news.js"></script>
-  <script src="../assets/js/slideshow.js"></script>
-  <script src="../assets/js/quick-links.js"></script>
-  <script src="../assets/js/tabs.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/homepage/data.js"></script>
+  <script src="../assets/js/homepage/calendar.js"></script>
+  <script src="../assets/js/homepage/news.js"></script>
+  <script src="../assets/js/homepage/slideshow.js"></script>
+  <script src="../assets/js/homepage/quick-links.js"></script>
+  <script src="../assets/js/homepage/tabs.js"></script>
+    <script src="../assets/js/homepage/main.js"></script>
+
+  <script src="../assets/js/load-header.js"></script>
+
 
 </body>
 </html>

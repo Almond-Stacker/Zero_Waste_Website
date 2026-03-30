@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Where to Recycle | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css   — tokens, reset, base body
+      2. header.css   — site header & nav
+      3. footer.css   — footer strip & nav
+      4. recycle.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/recycle.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="recycle-hero">
+    <div class="recycle-hero-inner">
+      <h1>Where to Recycle</h1>
+      <p>
+        Hawai'i County offers convenient recycling and disposal options for a wide
+        range of materials. Select a material below to find the nearest drop-off
+        location, event, or program near you.
+      </p>
+      <div class="recycle-hero-btns">
+        <a href="#" class="hero-btn">
+          <span class="hero-btn-icon">📍</span>
+          Find Your Local Drop-Off
+        </a>
+        <a href="#" class="hero-btn">
+          <span class="hero-btn-icon">♻️</span>
+          What Can I Recycle?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MATERIAL GRID
+       Shell only — categories and cards injected by recycle.js
+  ================================================================ -->
+  <main class="recycle-content" id="recycle-content">
+    <!-- populated by assets/js/recycle.js (RECYCLE_DATA) -->
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div class="footer-strip">
+    <div class="palm-silhouette"></div>
+  </div>
+
+  <footer class="site-footer">
+    <a href="#">HOME</a>
+    <a href="#">SERVICES</a>
+    <a href="#">ABOUT</a>
+    <a href="#">SITEMAP</a>
+  </footer>
+
+  <!-- ================================================================
+       SCRIPTS
+       recycle.js is the only module needed on this page.
+  ================================================================ -->
+  <script src="../assets/js/recycle.js"></script>
+  <script src="../assets/js/load-header.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      buildRecycleGrid();
+    });
+  </script>
+
+</body>
+</html>
