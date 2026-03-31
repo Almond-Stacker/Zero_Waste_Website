@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Household Hazardous Waste | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css  — tokens, reset, base body
+      2. header.css  — site header & nav
+      3. footer.css  — footer strip & nav
+      4. page.css    — shared inner-page hero, sections, cards
+      5. hhw.css     — page-specific overrides
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+  <link rel="stylesheet" href="../assets/css/hhw.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="page-hero">
+    <div class="hero-photo" id="hhwHeroPhoto"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="homepage.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Household Hazardous Waste</span>
+      </nav>
+      <p class="hero-eyebrow">Hazardous Waste</p>
+      <h1>Household Hazardous Waste</h1>
+      <p>Paints, pesticides, batteries, and cleaning chemicals should never go in the trash or down the drain. Bring them to a free County HHW collection event — protecting our 'āina starts at home.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Free drop-off events</span>
+        <span class="hero-pill"><span class="pill-dot"></span>No appointment needed</span>
+        <span class="hero-pill warm"><span class="pill-dot"></span>Residents only</span>
+        <span class="hero-pill alert"><span class="pill-dot"></span>Stay in your vehicle</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="page-content">
+
+    <!-- ALERT -->
+    <div class="warning-banner" role="alert">
+      <div class="warn-icon">☣️</div>
+      <div class="warn-body">
+        <strong>For Residents Only</strong>
+        <p>County HHW events are available to Hawai'i County residents at no charge. Businesses and farms with hazardous waste must use a licensed commercial hazardous waste hauler. Do not mix household and commercial waste.</p>
+      </div>
+    </div>
+
+    <!-- COLLECTION SCHEDULE -->
+    <section aria-labelledby="schedule-heading">
+      <div class="section-head">
+        <p class="section-kicker">Upcoming events</p>
+        <h2 id="schedule-heading">2026 Collection Schedule</h2>
+        <p class="sub">Events rotate between Hilo and Kona. Arrive before the listed end time — the line closes promptly. No appointment needed.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="schedule-grid">
+
+        <div class="schedule-card">
+          <div class="schedule-card-header">
+            <span class="s-icon">📅</span>
+            <h3>Hilo — Komohana Transfer Station</h3>
+          </div>
+          <div class="schedule-card-body">
+            <div class="schedule-row">
+              <span class="s-label">Address</span>
+              <span class="s-value">1000 Komohana St., Hilo, HI 96720</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Hours</span>
+              <span class="s-value">8:00 a.m. – 12:00 p.m.</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Dates</span>
+              <span class="s-value">April 12, June 14, August 9, October 11, December 13</span>
+            </div>
+            <div class="next-event-badge">Next event: <strong>April 12, 2026</strong></div>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="schedule-card-header">
+            <span class="s-icon">📅</span>
+            <h3>Kona — West Hawai'i Civic Center</h3>
+          </div>
+          <div class="schedule-card-body">
+            <div class="schedule-row">
+              <span class="s-label">Address</span>
+              <span class="s-value">74-5044 Ane Keohokalole Hwy., Kailua-Kona, HI 96740</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Hours</span>
+              <span class="s-value">8:00 a.m. – 12:00 p.m.</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Dates</span>
+              <span class="s-value">May 10, July 12, September 13, November 8</span>
+            </div>
+            <div class="next-event-badge">Next event: <strong>May 10, 2026</strong></div>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="schedule-card-header">
+            <span class="s-icon">📅</span>
+            <h3>Ka'ū — Naʻālehu Transfer Station</h3>
+          </div>
+          <div class="schedule-card-body">
+            <div class="schedule-row">
+              <span class="s-label">Address</span>
+              <span class="s-value">Naʻālehu Transfer Station, Ka'ū District</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Hours</span>
+              <span class="s-value">8:00 a.m. – 12:00 p.m.</span>
+            </div>
+            <div class="schedule-row">
+              <span class="s-label">Dates</span>
+              <span class="s-value">March 28, September 26</span>
+            </div>
+            <div class="next-event-badge">Next event: <strong>September 26, 2026</strong></div>
+          </div>
+        </div>
+
+      </div><!-- /.schedule-grid -->
+    </section>
+
+    <!-- ACCEPTED MATERIALS -->
+    <section aria-labelledby="materials-heading">
+      <div class="section-head">
+        <p class="section-kicker">What's accepted</p>
+        <h2 id="materials-heading">Accepted &amp; Not Accepted Materials</h2>
+        <p class="sub">Items must be in their original, labeled containers when possible. Unlabeled or unknown materials cannot be accepted for safety reasons.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="materials-columns">
+
+        <!-- ACCEPTED -->
+        <div class="materials-col">
+          <h3>✅ Accepted (Free)</h3>
+          <ul class="materials-list">
+            <li><span class="m-icon">🎨</span>Paint &amp; Stain (latex &amp; oil-based)</li>
+            <li><span class="m-icon">🌿</span>Pesticides &amp; Herbicides</li>
+            <li><span class="m-icon">🔋</span>Batteries (all types)</li>
+            <li><span class="m-icon">🧴</span>Household Cleaners &amp; Degreasers</li>
+            <li><span class="m-icon">🪣</span>Pool Chemicals</li>
+            <li><span class="m-icon">🧪</span>Solvents &amp; Thinners</li>
+            <li><span class="m-icon">⛽</span>Gasoline &amp; Fuel Additives</li>
+            <li><span class="m-icon">🔦</span>Fluorescent &amp; CFL Bulbs</li>
+            <li><span class="m-icon">🧯</span>Fire Extinguishers</li>
+            <li><span class="m-icon">💊</span>Pharmaceuticals &amp; Medications</li>
+            <li><span class="m-icon">🖨️</span>Printer &amp; Toner Cartridges</li>
+            <li><span class="m-icon">🪫</span>Propane Tanks (small, ≤20 lb)</li>
+          </ul>
+        </div>
+
+        <!-- NOT ACCEPTED -->
+        <div class="materials-col not-accepted">
+          <h3>❌ Not Accepted</h3>
+          <ul class="materials-list">
+            <li><span class="m-icon">💥</span>Explosives &amp; Fireworks</li>
+            <li><span class="m-icon">☢️</span>Radioactive Materials</li>
+            <li><span class="m-icon">🔫</span>Ammunition &amp; Weapons</li>
+            <li><span class="m-icon">🚗</span>Business / Commercial Waste</li>
+            <li><span class="m-icon">🛢️</span>Large Propane Tanks (&gt;20 lb)</li>
+            <li><span class="m-icon">📺</span>Electronics (use E-Waste program)</li>
+            <li><span class="m-icon">🛞</span>Tires (use Transfer Station)</li>
+            <li><span class="m-icon">⚗️</span>Unknown or Unlabeled Chemicals</li>
+          </ul>
+        </div>
+
+      </div><!-- /.materials-columns -->
+
+      <p class="accepted-note">
+        <strong>Not sure if your item is accepted?</strong> Call the DEM office at <a href="tel:8089614354">(808) 961-4354</a> before your visit. Staff are happy to help identify your material and advise on disposal options.
+      </p>
+    </section>
+
+    <!-- SAFETY RULES -->
+    <section aria-labelledby="safety-heading">
+      <div class="section-head">
+        <p class="section-kicker">At the event</p>
+        <h2 id="safety-heading">Safety Rules &amp; Drop-Off Instructions</h2>
+        <p class="sub">These rules protect you, staff, and other residents. Please follow all instructions from site attendants.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="safety-rules-grid">
+        <div class="safety-card">
+          <div class="safety-icon">🚗</div>
+          <div class="safety-body">
+            <strong>Stay in Your Vehicle</strong>
+            <p>Remain inside your car at all times. Trained staff will safely unload your items — do not exit the vehicle.</p>
+          </div>
+        </div>
+        <div class="safety-card">
+          <div class="safety-icon">🏷️</div>
+          <div class="safety-body">
+            <strong>Original Containers Only</strong>
+            <p>Bring materials in their original, labeled containers whenever possible. Materials in food containers or unmarked bottles cannot be accepted.</p>
+          </div>
+        </div>
+        <div class="safety-card">
+          <div class="safety-icon">📦</div>
+          <div class="safety-body">
+            <strong>Pack Upright &amp; Sealed</strong>
+            <p>Place containers upright in a box or tray to prevent spills during transport. Secure lids tightly before loading your vehicle.</p>
+          </div>
+        </div>
+        <div class="safety-card">
+          <div class="safety-icon">🚫</div>
+          <div class="safety-body">
+            <strong>No Mixing</strong>
+            <p>Never mix different chemicals together. Keep each container separate. Mixed or unknown chemicals pose serious safety hazards.</p>
+          </div>
+        </div>
+        <div class="safety-card">
+          <div class="safety-icon">🧤</div>
+          <div class="safety-body">
+            <strong>Ventilate Your Vehicle</strong>
+            <p>Open windows when transporting chemicals. If you notice strong fumes, pull over safely in a ventilated area before continuing.</p>
+          </div>
+        </div>
+        <div class="safety-card">
+          <div class="safety-icon">⏰</div>
+          <div class="safety-body">
+            <strong>Arrive Before Close</strong>
+            <p>The line closes at the listed end time. Arriving early reduces wait time. Events run until materials are filled to capacity.</p>
+          </div>
+        </div>
+      </div><!-- /.safety-rules-grid -->
+    </section>
+
+    <!-- QUICK TIPS -->
+    <section aria-labelledby="tips-heading">
+      <div class="section-head">
+        <p class="section-kicker">Everyday choices</p>
+        <h2 id="tips-heading">Reduce Hazardous Waste at Home</h2>
+        <p class="sub">The best hazardous waste is the kind you never generate. Small changes in purchasing habits make a big difference.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Buy only what you need.</strong> Purchase the smallest quantity of a product that will do the job. Leftover chemicals are the biggest source of household hazardous waste.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>Choose non-toxic alternatives.</strong> Many cleaning, pest control, and garden tasks can be accomplished with vinegar, baking soda, or plant-based products that are safer for your family and our ocean.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>Share or donate leftover product.</strong> Usable paint, pool chemicals, and garden supplies can often be donated to neighbors, community groups, or Habitat for Humanity's ReStore.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">4</div>
+          <div class="rule-text"><strong>Use it up before buying more.</strong> Check your storage area before purchasing. Many households already have what they need — buried under newer purchases.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">5</div>
+          <div class="rule-text"><strong>Read product labels.</strong> Labels include proper use, storage, and disposal instructions. Following them protects you and ensures safe disposal at end-of-life.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <div class="info-banner">
+      <div class="info-icon">📞</div>
+      <div class="info-body">
+        <strong>Questions? Contact DEM</strong>
+        <p>Call the Department of Environmental Management at <a href="tel:8089614354"><strong>(808) 961-4354</strong></a> (Hilo) or <a href="tel:8083234842"><strong>(808) 323-4842</strong></a> (Kona) for scheduling updates, material questions, or to report an illegal chemical dump.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    // Lazy-load hero photo with subtle parallax
+    document.addEventListener('DOMContentLoaded', () => {
+      const photo = document.getElementById('hhwHeroPhoto');
+      if (photo) photo.classList.add('loaded');
+    });
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

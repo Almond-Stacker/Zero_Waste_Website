@@ -1,0 +1,210 @@
+/* =============================================
+   reuse.css
+   Reuse Centers directory page.
+   Depends on: global.css, header.css, footer.css, page.css
+   ============================================= */
+
+/* ── HERO PHOTO ──────────────────────────────────────── */
+#reuseHeroPhoto {
+  background-image: url('../images/reuse-hero.jpg'),
+    linear-gradient(135deg, #1a3a1a 0%, #2a5a30 100%);
+}
+
+/* ── REUSE CENTER CARDS ──────────────────────────────── */
+.center-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.center-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 4px var(--color-shadow);
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.center-card:hover {
+  box-shadow: 0 6px 20px var(--color-shadow);
+  transform: translateY(-2px);
+}
+
+/* Photo banner */
+.center-photo {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: var(--color-primary-pale);
+}
+.center-photo-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  background: linear-gradient(135deg, rgba(47,89,26,0.7) 0%, rgba(30,58,15,0.5) 100%);
+}
+.center-region-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.center-card-body {
+  padding: 16px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+.center-org {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.center-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+.addr-icon { flex-shrink: 0; }
+
+.center-hours {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+/* What they accept */
+.accepts-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 7px;
+}
+.accepts-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.accepts-tag {
+  background: var(--color-primary-pale);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+.center-phone {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+.center-phone a {
+  color: var(--color-primary-mid);
+  font-weight: 600;
+  text-decoration: none;
+}
+.center-phone a:hover { text-decoration: underline; }
+
+/* ── WHAT TO BRING INFO BOX ──────────────────────────── */
+.what-to-bring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.bring-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  text-align: center;
+  transition: border-color var(--transition);
+}
+.bring-card:hover { border-color: var(--color-primary-light); }
+.bring-icon { font-size: 28px; margin-bottom: 8px; }
+.bring-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+/* ── TIPS BOX ────────────────────────────────────────── */
+.tips-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.tips-col h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.tips-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tips-col ul li {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+.tips-col ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-mid);
+  font-size: 12px;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 700px) {
+  .center-grid   { grid-template-columns: 1fr; }
+  .tips-two-col  { grid-template-columns: 1fr; }
+  .what-to-bring-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 420px) {
+  .what-to-bring-grid { grid-template-columns: repeat(2, 1fr); }
+}
