@@ -1,7 +1,7 @@
 # CLAUDE.md — County of Hawai'i DEM Website
 
 This file documents the project structure, conventions, and rules for the County of Hawai'i Department of Environmental Management website. Read this before making any changes.
-Feel free to change this MD file as needed.
+Feel free to change this MD file as needed.  
 
 ---
 
@@ -88,8 +88,8 @@ Fonts are stored locally in `assets/fonts/`.
 - Keep logic modular
 
 ### Asset Rules
-- Store in ../assets
-- Choose appropriate image considering Hawaii
+- store in ../assets
+- choose approriate image considering hawaii
 - Compress images
 - Always include `alt` text
 

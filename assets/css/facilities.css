@@ -1,0 +1,586 @@
+/* =============================================
+   facilities.css
+   "Solid Waste Facilities" page.
+   Layout mirrors the Hawai'i Zero Waste reference:
+     breadcrumb → page title → hero (photo + panel) →
+     two-column body (left text/accordion | right card grid)
+   Depends on: global.css, header.css, footer.css
+   ============================================= */
+
+/* --- Breadcrumb ----------------------------------------------------- */
+.fac-breadcrumb {
+  padding: 10px 28px 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fac-breadcrumb a {
+  color: #1a56a0;
+  text-decoration: none;
+}
+
+.fac-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.fac-breadcrumb span {
+  margin: 0 4px;
+}
+
+/* --- Page title ----------------------------------------------------- */
+.fac-page-title {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text);
+  padding: 6px 28px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Hero ----------------------------------------------------------- */
+.fac-hero {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1400&q=80');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* The semi-transparent green panel in the lower-left */
+.fac-hero-panel {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 60, 18, 0.86);
+  padding: 22px 26px 26px;
+  max-width: 370px;
+  margin: 0;
+}
+
+/* Logo row: seal + text block */
+.fac-hero-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.fac-hero-seal {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.fac-hero-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.fac-county-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+}
+
+.fac-county-name {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 1px 0;
+}
+
+/* Vertical divider then dept name */
+.fac-hero-logo-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fac-hero-logo-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+.fac-dept-name {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #7fd4e8;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.fac-hero-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+}
+
+/* --- Content wrapper ----------------------------------------------- */
+.fac-content-wrap {
+  padding: 0 28px 64px;
+}
+
+/* Two-column layout: left ~42% | right ~58% */
+.fac-content-layout {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding-top: 32px;
+  align-items: flex-start;
+}
+
+/* =============================================
+   LEFT PANEL
+   ============================================= */
+.fac-left-panel {
+  flex: 0 0 42%;
+  min-width: 0;
+}
+
+/* Top horizontal rule */
+.fac-left-panel::before {
+  content: '';
+  display: block;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.fac-intro-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.fac-ext-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a56a0;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.fac-ext-link:hover {
+  color: var(--color-primary-mid);
+}
+
+/* Bottom horizontal rule above contact */
+.fac-contact {
+  border-top: 1px solid var(--color-border);
+  margin-top: 4px;
+}
+
+/* --- Contact accordion -------------------------------------------- */
+.fac-contact-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: #263f3a;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+  margin-top: 0;
+}
+
+.fac-contact-toggle:hover {
+  background: #1e3030;
+}
+
+.fac-toggle-icon {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.fac-contact-body {
+  padding: 16px 14px 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: none;
+}
+
+.fac-contact-body ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.fac-contact-body ul li {
+  font-size: 13.5px;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* =============================================
+   RIGHT CARD GRID
+   ============================================= */
+.fac-card-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.fac-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+/* ---- Individual card --------------------------------------------- */
+.fac-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 172px;
+  padding: 0;
+  text-decoration: none;
+  overflow: hidden;
+  background-color: #263c36;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+
+/* Dark overlay on top of the photo */
+.fac-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 42, 30, 0.72);
+  transition: background var(--transition);
+  z-index: 0;
+}
+
+.fac-card:hover::before {
+  background: rgba(22, 42, 30, 0.55);
+}
+
+/* Card with lighter/map-style treatment */
+.fac-card--light {
+  background-color: #8fa39a;
+}
+
+.fac-card--light::before {
+  background: rgba(130, 155, 140, 0.4);
+}
+
+.fac-card--light:hover::before {
+  background: rgba(130, 155, 140, 0.25);
+}
+
+/* Card that spans full width (last item if odd count) */
+.fac-card--wide {
+  grid-column: span 1;
+}
+
+/* Text content inside card */
+.fac-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 18px 18px 20px;
+  width: 100%;
+}
+
+.fac-card h2 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+/* Short horizontal rule under title */
+.fac-card-rule {
+  width: 36px;
+  height: 2px;
+  background: rgba(255,255,255,0.65);
+  margin-bottom: 10px;
+}
+
+.fac-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.5;
+}
+
+/* Background photos for specific cards (set in CSS, not inline) */
+.fac-card--stations {
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80');
+}
+
+.fac-card--greenwaste {
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80');
+}
+
+.fac-card--reuse {
+  background-image: url('https://images.unsplash.com/photo-1530462943125-677cc511c87e?w=600&q=80');
+}
+
+.fac-card--landfill {
+  background-image: url('https://images.unsplash.com/photo-1565621335513-5b8a5d7eb8a9?w=600&q=80');
+}
+
+.fac-card--learn {
+  background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80');
+}
+
+/* =============================================
+   FACILITY LISTING SECTIONS
+   Below the hero/card area, anchored sections
+   for each facility type
+   ============================================= */
+.fac-listings-wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 28px 72px;
+}
+
+.fac-section {
+  padding: 40px 0 36px;
+  border-top: 2px solid var(--color-border);
+}
+
+.fac-section--alt {
+  background: transparent; /* keep clean; use section borders */
+}
+
+.fac-section-header {
+  margin-bottom: 24px;
+}
+
+.fac-section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.fac-section-header p {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --- Data table --------------------------------------------------- */
+.fac-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  margin-bottom: 16px;
+}
+
+.fac-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.fac-table thead {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.fac-table th {
+  text-align: left;
+  padding: 11px 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.fac-table tbody tr:nth-child(even) {
+  background: var(--color-bg);
+}
+
+.fac-table tbody tr:hover {
+  background: var(--color-primary-pale);
+  transition: background var(--transition);
+}
+
+.fac-table td {
+  padding: 10px 14px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.45;
+  vertical-align: top;
+}
+
+.fac-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fac-note {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.fac-note a {
+  color: #1a56a0;
+}
+
+.fac-note a:hover {
+  text-decoration: underline;
+}
+
+/* --- Detail cards ------------------------------------------------- */
+.fac-facility-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.fac-detail-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  border-top: 3px solid var(--color-primary);
+}
+
+.fac-detail-card h3 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.fac-detail-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fac-detail-card ul li {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 2px 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.fac-detail-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* --- Learning resources grid ------------------------------------- */
+.fac-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.fac-learn-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.fac-learn-item:hover {
+  background: var(--color-primary-pale);
+  border-color: var(--color-primary-light);
+}
+
+.fac-learn-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fac-learn-item strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.fac-learn-item p {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 860px) {
+  .fac-content-layout {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .fac-left-panel {
+    flex: none;
+    width: 100%;
+  }
+
+  .fac-intro-text,
+  .fac-ext-link {
+    text-align: left;
+  }
+}
+
+@media (max-width: 540px) {
+  .fac-hero {
+    min-height: 260px;
+  }
+
+  .fac-hero-panel {
+    max-width: 100%;
+  }
+
+  .fac-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fac-card {
+    min-height: 140px;
+  }
+
+  .fac-page-title {
+    font-size: 22px;
+  }
+}

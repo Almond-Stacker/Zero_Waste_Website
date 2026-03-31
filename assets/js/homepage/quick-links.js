@@ -22,7 +22,7 @@ const QUICK_LINKS_DATA = [
     sublabel: 'Learn what\'s recyclable and how to sort it right',
     // Pristine Kona coast — what responsible recycling protects
     image:    'https://images.unsplash.com/photo-1542259009477-d625272157b7?w=900&auto=format&q=80',
-    href:     '#'
+    href:     'recycle.html'
   },
   {
     label:    'HI-5 Bottle Return',
@@ -36,7 +36,7 @@ const QUICK_LINKS_DATA = [
     sublabel: 'Help keep Hawai\'i clean — report unauthorized waste sites',
     // Hawaii rainforest — the natural environment we\'re protecting
     image:    'https://images.unsplash.com/photo-1565118531796-763e5082d113?w=900&auto=format&q=80',
-    href:     '#'
+    href:     'illegal-dumping.html'
   }
 ];
 
