@@ -22,12 +22,12 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Computers & Electronics",
-        icon:  "../assets/images/icon-electronics.svg",
+        icon:  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80&auto=format&fit=crop",
         desc:  "Includes hardware like monitors, towers, and laptops."
       },
       {
         label: "Inkjet / Toner Cartridges",
-        icon:  "../assets/images/icon-cartridges.svg",
+        icon:  "https://images.unsplash.com/photo-1612815292401-0b0c6de3a9f0?w=400&q=80&auto=format&fit=crop",
         desc:  "Specifically for printer supplies and ink cartridges."
       }
     ]
@@ -39,27 +39,27 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Motor Oil",
-        icon:  "../assets/images/icon-motor-oil.svg",
+        icon:  "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=400&q=80&auto=format&fit=crop",
         desc:  "Used oil from vehicles or machinery."
       },
       {
         label: "Paint",
-        icon:  "../assets/images/icon-paint.svg",
+        icon:  "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&q=80&auto=format&fit=crop",
         desc:  "Standard household paints and stains."
       },
       {
         label: "Household Hazardous Waste",
-        icon:  "../assets/images/icon-hazardous.svg",
+        icon:  "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&q=80&auto=format&fit=crop",
         desc:  "Chemicals, cleaners, or other toxic materials from a home."
       },
       {
         label: "Automobiles",
-        icon:  "../assets/images/icon-automobiles.svg",
+        icon:  "https://images.unsplash.com/photo-1511300636408-a63a89df3482?w=400&q=80&auto=format&fit=crop",
         desc:  "Old vehicles for scrap or parts."
       },
       {
         label: "Tires",
-        icon:  "../assets/images/icon-tires.svg",
+        icon:  "https://images.unsplash.com/photo-1548445929-4f60a497c9cf?w=400&q=80&auto=format&fit=crop",
         desc:  "Automotive tires of all sizes."
       }
     ]
@@ -71,12 +71,12 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Appliances & White Goods",
-        icon:  "../assets/images/icon-appliances.svg",
+        icon:  "https://images.unsplash.com/photo-1626806787461-102c1a7f1b62?w=400&q=80&auto=format&fit=crop",
         desc:  "Large household items like refrigerators, washers, or dryers."
       },
       {
         label: "Scrap Metal",
-        icon:  "../assets/images/icon-scrap-metal.svg",
+        icon:  "https://images.unsplash.com/photo-1565621335513-5b8a5d7eb8a9?w=400&q=80&auto=format&fit=crop",
         desc:  "General metal pieces and components."
       }
     ]
@@ -88,17 +88,17 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Greenwaste & Food Discards",
-        icon:  "../assets/images/icon-greenwaste.svg",
+        icon:  "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80&auto=format&fit=crop",
         desc:  "Composting materials and food scraps."
       },
       {
         label: "Drop-Off Recycling Program",
-        icon:  "../assets/images/icon-dropoff.svg",
+        icon:  "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&q=80&auto=format&fit=crop",
         desc:  "Standard recyclables like paper, plastic, and glass."
       },
       {
         label: "HI-5 Beverage Containers",
-        icon:  "../assets/images/icon-hi5.svg",
+        icon:  "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80&auto=format&fit=crop",
         desc:  "Hawaii's HI-5 deposit redemption program for cans and bottles."
       }
     ]
@@ -110,7 +110,7 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Business, Farm & Agency Hazardous Waste",
-        icon:  "../assets/images/icon-commercial-waste.svg",
+        icon:  "https://images.unsplash.com/photo-1588776814546-1ffbb3f76ab8?w=400&q=80&auto=format&fit=crop",
         desc:  "Specialized disposal for non-residential entities."
       }
     ]
@@ -122,7 +122,7 @@ const RECYCLE_DATA = [
     items: [
       {
         label: "Other Commodities",
-        icon:  "../assets/images/icon-other.svg",
+        icon:  "https://images.unsplash.com/photo-1530462943125-677cc511c87e?w=400&q=80&auto=format&fit=crop",
         desc:  "Contact DEM for guidance on materials not listed above."
       }
     ]

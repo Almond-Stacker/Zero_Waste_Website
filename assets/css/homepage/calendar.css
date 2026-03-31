@@ -1,7 +1,7 @@
 /* =============================================
    calendar.css
-   Styles for the Events tab: calendar card,
-   calendar grid, day cells, and event sidebar.
+   Styles for the Events tab: section intro,
+   tab bar, calendar card, grid, and event sidebar.
    Depends on: global.css (tokens)
    ============================================= */
 
@@ -10,87 +10,172 @@
   flex: 1;
   max-width: 900px;
   width: 100%;
-  margin: 48px auto 0;
+  margin: 0 auto;
   padding: 0 24px 64px;
+  /* Subtle tropical leaf watermark pattern */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cpath d='M90,15 C125,15 158,48 155,90 C152,132 118,162 90,160 C62,158 25,132 22,90 C19,48 55,15 90,15Z' fill='none' stroke='%23c5ddb8' stroke-width='1.2' opacity='0.18'/%3E%3Cline x1='90' y1='15' x2='90' y2='160' stroke='%23c5ddb8' stroke-width='0.8' opacity='0.12'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
 }
 
-/* --- Tab bar -------------------------------------------------------- */
+/* ================================================================
+   SECTION INTRO BANNER
+   ================================================================ */
+.content-intro {
+  text-align: center;
+  padding: 44px 0 36px;
+  position: relative;
+}
+
+/* Decorative wave line above the heading */
+.content-intro-wave {
+  width: 120px;
+  height: 20px;
+  margin: 0 auto 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20'%3E%3Cpath d='M0,10 C15,0 30,20 45,10 C60,0 75,20 90,10 C105,0 115,16 120,10' fill='none' stroke='%23a8c84b' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content-intro h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.content-intro p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+/* Decorative rule below the intro text */
+.content-intro::after {
+  content: '';
+  display: block;
+  width: 240px;
+  height: 2px;
+  margin: 20px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-accent),
+    var(--color-primary-light),
+    var(--color-accent),
+    transparent
+  );
+  border-radius: 2px;
+}
+
+/* ================================================================
+   TAB BAR — pill capsule design
+   ================================================================ */
 .tab-bar {
   display: flex;
   justify-content: center;
   margin-bottom: 36px;
 }
 
+/* Pill container */
+.tab-bar-inner {
+  display: inline-flex;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0 2px 14px var(--color-shadow);
+  gap: 4px;
+}
+
 .tab {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  padding: 14px 56px;
+  padding: 11px 52px;
   border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
   position: relative;
 }
 
-.tab:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-.tab:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
-
 .tab.active {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   color: var(--color-white);
+  box-shadow: 0 3px 12px rgba(47, 89, 26, 0.4);
 }
 
+/* Remove the old triangle pointer — pills don't need it */
 .tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid var(--color-primary);
+  display: none;
 }
 
 .tab:not(.active) {
-  background: #e8e8e8;
+  background: transparent;
   color: var(--color-text-muted);
 }
 
 .tab:not(.active):hover {
-  background: #d8d8d8;
+  background: var(--color-primary-pale);
+  color: var(--color-primary);
 }
 
-/* --- Panels --------------------------------------------------------- */
+/* ================================================================
+   PANELS
+   ================================================================ */
 .panel {
   animation: fadeIn 0.3s ease;
 }
 
-/* --- Events layout -------------------------------------------------- */
+/* ================================================================
+   EVENTS LAYOUT
+   ================================================================ */
 .events-layout {
   display: flex;
   gap: 40px;
   align-items: flex-start;
 }
 
-/* --- Calendar card -------------------------------------------------- */
+/* ================================================================
+   CALENDAR CARD
+   ================================================================ */
 .calendar-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
   min-width: 340px;
-  box-shadow: 0 4px 20px var(--color-shadow);
+  box-shadow: 0 4px 24px var(--color-shadow);
 }
 
+/* Tropical gradient header */
 .calendar-header {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, #1e4a0e 0%, var(--color-primary) 45%, #2e7c1a 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle leaf silhouette watermark inside the header */
+.calendar-header::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 80px;
+  height: 80px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M40,5 C65,5 75,30 72,45 C68,62 50,72 35,68 C18,63 8,45 12,28 C16,12 28,5 40,5Z' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='1.5'/%3E%3Cline x1='40' y1='5' x2='35' y2='68' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .cal-title {
@@ -102,18 +187,25 @@
 }
 
 .cal-nav {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 26px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 20px;
   cursor: pointer;
   line-height: 1;
-  padding: 0 4px;
-  transition: color var(--transition);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
   font-weight: 300;
 }
 
 .cal-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
   color: var(--color-white);
 }
 
@@ -133,8 +225,6 @@
   padding: 8px 0 12px;
 }
 
-/* JS injects .cal-day elements into #cal-days.
-   display:contents lets them slot into the parent grid. */
 #cal-days {
   display: contents;
 }
@@ -161,9 +251,9 @@
   cursor: default;
 }
 
-/* Today circle */
+/* Today — accent dot ring */
 .cal-day.today {
-  background: var(--today-bg);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   color: var(--color-white);
   font-weight: 700;
   border-radius: 50%;
@@ -174,6 +264,7 @@
   justify-content: center;
   margin: 0 auto;
   padding: 0;
+  box-shadow: 0 2px 8px rgba(47, 89, 26, 0.4);
 }
 
 /* Event dot */
@@ -186,11 +277,11 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--event-dot);
+  background: var(--color-accent);
 }
 
 .cal-day.today.has-event::after {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .cal-day.selected:not(.today) {
@@ -199,7 +290,9 @@
   border-radius: var(--radius);
 }
 
-/* --- Event sidebar -------------------------------------------------- */
+/* ================================================================
+   EVENT SIDEBAR
+   ================================================================ */
 .event-sidebar {
   flex: 1;
   display: flex;
@@ -220,10 +313,11 @@
   animation: fadeIn 0.3s ease;
 }
 
+/* Tropical gradient badge */
 .event-badge {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   color: var(--color-white);
-  border-radius: 50%;
+  border-radius: 8px;
   width: 60px;
   height: 60px;
   min-width: 60px;
@@ -233,6 +327,23 @@
   justify-content: center;
   line-height: 1;
   flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(47, 89, 26, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Leaf accent in badge corner */
+.event-badge::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 22px;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M11,2 C18,2 20,9 18,14 C16,19 10,21 5,18 C0,15 1,7 5,4 C7,2 9,2 11,2Z' fill='rgba(168,200,75,0.35)'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .event-badge .month {
@@ -262,6 +373,14 @@
   font-weight: 400;
 }
 
+.event-info .event-location {
+  font-size: 11px;
+  color: var(--color-primary-mid);
+  font-weight: 600;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+
 .no-events {
   color: var(--color-text-muted);
   font-size: 14px;
@@ -271,24 +390,28 @@
 
 .more-events-btn {
   align-self: flex-end;
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   color: var(--color-white);
   border: none;
-  border-radius: var(--radius);
-  padding: 12px 28px;
-  font-size: 13px;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
   cursor: pointer;
-  transition: background var(--transition), transform 0.15s ease;
+  transition: opacity var(--transition), transform 0.15s ease, box-shadow var(--transition);
+  box-shadow: 0 3px 12px rgba(47, 89, 26, 0.35);
 }
 
 .more-events-btn:hover {
-  background: var(--color-dark);
-  transform: translateY(-1px);
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(47, 89, 26, 0.4);
 }
 
-/* --- Responsive ----------------------------------------------------- */
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 @media (max-width: 700px) {
   .events-layout {
     flex-direction: column;
@@ -300,6 +423,7 @@
   }
 
   .tab {
-    padding: 12px 32px;
+    padding: 10px 28px;
+    font-size: 12px;
   }
 }

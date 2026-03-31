@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Preparations | County of Hawaiʻi Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css        — tokens, reset, base body
+      2. header.css        — site header & nav
+      3. footer.css        — footer strip & nav
+      4. emergency-prep.css — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/emergency-prep.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="page-hero">
+    <div class="hero-photo no-image" id="heroPhoto" data-src="../assets/images/emergency-hero.jpg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="services.html">Services</a>
+        <span class="sep">›</span>
+        <span class="current">Emergency Preparations</span>
+      </nav>
+      <p class="hero-eyebrow">Preparedness &amp; Safety</p>
+      <h1>Emergency Preparations</h1>
+      <p class="hero-sub">Hawaiʻi Island faces unique natural hazards — from hurricanes and tsunamis to lava flows and flooding. Learn how to prepare, protect your household, and manage waste safely before, during, and after an emergency.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Hurricanes &amp; Storms</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Lava &amp; Volcanic Hazards</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Tsunamis &amp; Flooding</span>
+        <span class="hero-pill alert"><span class="pill-dot"></span>Know Before You Go</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="page-content">
+
+    <!-- ALERT BANNER -->
+    <div class="alert-banner" role="alert">
+      <div class="alert-icon">🚨</div>
+      <div class="alert-body">
+        <strong>During an Active Emergency</strong>
+        <p>Follow all instructions from Hawaiʻi County Civil Defense and emergency responders. Do not attempt to dispose of hazardous or debris waste until authorities have declared it safe to do so. For current alerts, visit <a href="https://www.hawaiicounty.gov/departments/civil-defense" target="_blank" rel="noopener">hawaiicounty.gov/civil-defense</a> or call <strong>(808) 935-0031</strong>.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 1: HAZARD-BY-HAZARD GUIDE (TABS)
+    ============================================================ -->
+    <section aria-labelledby="hazard-heading">
+      <div class="section-head">
+        <p class="section-kicker">Know your risks</p>
+        <h2 id="hazard-heading">Hawaiʻi Island Hazard Guide</h2>
+        <p class="sub">Select a hazard type below to see specific waste management and safety guidance for that event.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <!-- TAB BUTTONS -->
+      <div class="hazard-tabs" role="tablist" aria-label="Hazard types">
+        <button class="hazard-tab active" role="tab" aria-selected="true" aria-controls="panel-hurricane" data-panel="panel-hurricane">
+          <span class="tab-icon">🌀</span> Hurricane &amp; Tropical Storm
+        </button>
+        <button class="hazard-tab" role="tab" aria-selected="false" aria-controls="panel-lava" data-panel="panel-lava">
+          <span class="tab-icon">🌋</span> Lava &amp; Volcanic Activity
+        </button>
+        <button class="hazard-tab" role="tab" aria-selected="false" aria-controls="panel-tsunami" data-panel="panel-tsunami">
+          <span class="tab-icon">🌊</span> Tsunami &amp; Coastal Flooding
+        </button>
+        <button class="hazard-tab" role="tab" aria-selected="false" aria-controls="panel-flood" data-panel="panel-flood">
+          <span class="tab-icon">🌧️</span> Heavy Rain &amp; Flash Floods
+        </button>
+        <button class="hazard-tab" role="tab" aria-selected="false" aria-controls="panel-vog" data-panel="panel-vog">
+          <span class="tab-icon">💨</span> Vog &amp; Laze
+        </button>
+      </div>
+
+      <!-- HURRICANE PANEL -->
+      <div class="hazard-panel active" id="panel-hurricane" role="tabpanel" aria-labelledby="tab-hurricane">
+        <div class="hazard-panel-inner">
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">📦</span>
+              <h3>Before the Storm — Secure &amp; Prep</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Bring in all loose items</strong> — outdoor furniture, trash cans, recycling bins, and yard decorations become dangerous projectiles in high winds.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Secure hazardous materials</strong> — store chemicals, pesticides, and motor oil indoors or in a sealed, elevated location away from flood paths.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Prepare your rubbish bins</strong> — place lids securely and if your pickup day falls during a storm, set bins out only once the storm has passed and it's safe to do so.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Clear gutters and drains</strong> — remove green waste, leaves, and debris that could block drainage and worsen flooding.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Store go-bag supplies</strong> — include a 3-day supply of water (1 gallon per person per day), non-perishable food, medications, and important documents.</div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🧹</span>
+              <h3>After the Storm — Cleanup &amp; Disposal</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Wait for the all-clear</strong> — do not begin cleanup until officials confirm it is safe. Downed power lines and unstable structures are life-threatening.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Separate debris types</strong> — keep green waste, construction debris, appliances, and regular rubbish in separate piles for efficient collection.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Do not burn debris</strong> — open burning of storm debris is prohibited in Hawaiʻi County without a permit and creates toxic smoke.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Flood-damaged appliances</strong> — large appliances soaked by floodwater may contain mold and hazardous materials. Place separately for bulk pickup collection.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Food safety</strong> — discard any food that has been exposed to floodwater or has been unrefrigerated for more than 4 hours during a power outage.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Monitor DEM announcements</strong> — the County may activate special debris collection programs. Sign up for alerts at hawaiicounty.gov.</div></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LAVA PANEL -->
+      <div class="hazard-panel" id="panel-lava" role="tabpanel" aria-labelledby="tab-lava">
+        <div class="hazard-panel-inner">
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🏠</span>
+              <h3>Evacuation — What to Take</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Medications and medical equipment</strong> — take at least a 2-week supply if possible.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Important documents</strong> — IDs, insurance papers, bank records, and property deeds in a waterproof bag or digital backup.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Leave hazardous materials behind</strong> — do not attempt to move propane tanks, chemical containers, or vehicle fluids during an emergency evacuation.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Pets and livestock</strong> — plan ahead with a designated location and enough food and water for 72 hours minimum.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Go early</strong> — lava can move faster than expected and roads may become impassable. Evacuate as soon as a warning is issued.</div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">☣️</span>
+              <h3>Lava-Damaged Property &amp; Waste</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Asbestos and hazardous materials</strong> — older homes destroyed by lava may release asbestos fibers and other contaminants. Do not disturb without professional assessment.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Laze hazard</strong> — lava entering the ocean creates toxic "laze" (lava haze) containing hydrochloric acid and fine glass particles. Stay well away.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Propane tanks</strong> — do not attempt to recover propane tanks or fuel containers near active lava. Alert emergency responders.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Abandoned vehicles</strong> — vehicles abandoned due to lava flows may contain fuel, batteries, and fluids. Contact the County for guidance on abandoned vehicle removal.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Post-eruption cleanup</strong> — contact the Hawaiʻi Department of Health and County DEM before beginning any major cleanup on lava-affected property.</div></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TSUNAMI PANEL -->
+      <div class="hazard-panel" id="panel-tsunami" role="tabpanel" aria-labelledby="tab-tsunami">
+        <div class="hazard-panel-inner">
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🏃</span>
+              <h3>Immediate Response — Evacuate</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Do not return to collect belongings</strong> — your safety is the only priority. Multiple waves can arrive over hours.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Move inland and uphill immediately</strong> — the Hawaiʻi Tsunami Evacuation Zone maps are posted at hawaiicounty.gov. Know your zone before an event.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Coastal contamination</strong> — tsunami waters carry debris, sewage, and chemical contaminants from inland areas. Avoid contact with floodwater.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Wait for the all-clear from Civil Defense</strong> — do not return to the inundation zone until authorities confirm it is safe.</div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🗑️</span>
+              <h3>Post-Tsunami Debris &amp; Cleanup</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Marine debris</strong> — tsunami debris may include hazardous marine life, sharp metal, and contaminated materials. Always wear gloves and protective footwear.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Contaminated soil and sediment</strong> — floodwater can deposit toxic sediment. Do not allow children to play in affected areas until officially cleared.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Flood-damaged appliances &amp; electronics</strong> — saltwater-soaked appliances and electronics must be properly disposed of — they cannot be recycled through standard programs. Contact DEM for guidance.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Separate your debris</strong> — use separate piles for wood/organic material, metals, appliances, and regular rubbish to speed up county collection.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Report hazardous waste</strong> — call the State of Hawaiʻi Department of Health at (808) 586-4249 for large-scale hazardous material releases.</div></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FLOOD PANEL -->
+      <div class="hazard-panel" id="panel-flood" role="tabpanel" aria-labelledby="tab-flood">
+        <div class="hazard-panel-inner">
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">⚡</span>
+              <h3>During Heavy Rain &amp; Flooding</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Never enter floodwater on foot or by car</strong> — just 6 inches of moving water can knock a person down; 12 inches can carry away a vehicle.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Move chemicals and hazardous waste uphill</strong> — if you can do so safely, move pesticides, motor oil, and cleaning chemicals off the ground floor before flooding occurs.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Do not dump anything in drainage channels</strong> — during flooding, storm drains flow directly to our ocean and streams. Never dump waste, chemicals, or debris into drains.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Protect your septic system</strong> — avoid using toilets and sinks if you suspect your septic system is flooded, which can cause sewage backup and contamination.</div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🧼</span>
+              <h3>Cleanup After Flooding</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>Document before you remove</strong> — photograph all damage before beginning cleanup for insurance and disaster assistance purposes.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Flood-soaked drywall and insulation</strong> — porous materials that absorbed floodwater must be removed and disposed of — they cannot be dried and reused due to mold and contamination risk.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Mold begins within 24–48 hours</strong> — remove wet materials quickly and use fans and dehumidifiers to dry out spaces. Wear N95 or better respiratory protection.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Flood-damaged HHW</strong> — household chemicals, paints, and pesticides contaminated by floodwater become hazardous waste. Keep containers sealed and take to the next HHW Collection Event.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Green waste from flooding</strong> — downed trees and branches can be taken to any County Transfer Station for green waste disposal.</div></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- VOG PANEL -->
+      <div class="hazard-panel" id="panel-vog" role="tabpanel" aria-labelledby="tab-vog">
+        <div class="hazard-panel-inner">
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">😷</span>
+              <h3>Protecting Yourself from Vog</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>What is vog?</strong> — Volcanic smog (vog) consists of sulfur dioxide (SO₂) and fine particle pollution released by Kīlauea and other Hawaiʻi volcanoes. It can irritate eyes, throat, and lungs.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Stay indoors on high-vog days</strong> — check the Vog Measurement and Prediction Project (VMAP) dashboard at vmap.soest.hawaii.edu for daily forecasts.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Do not burn waste or open-burn on high-vog days</strong> — burning waste worsens air quality and is dangerous for those with respiratory conditions.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Use an N95 respirator</strong> — standard dust masks do not filter SO₂ gas. Use an N95 or better to filter fine particles outdoors.</div></li>
+                <li><span class="tip-dot"></span><div><strong>People at risk</strong> — those with asthma, heart disease, young children, and elderly individuals are especially vulnerable during elevated vog events.</div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hazard-card">
+            <div class="hazard-card-header">
+              <span class="hc-icon">🌿</span>
+              <h3>Laze — Ocean Entry Hazard</h3>
+            </div>
+            <div class="hazard-card-body">
+              <ul class="tip-list">
+                <li><span class="tip-dot"></span><div><strong>What is laze?</strong> — When lava enters the ocean, it creates laze — a toxic plume of hydrochloric acid gas (HCl) and tiny glass shards (Pele's hair). It is extremely hazardous.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Stay upwind and at a safe distance</strong> — remain at least 300 meters away from any active lava ocean entry. Wind can shift rapidly, bringing laze toward you without warning.</div></li>
+                <li><span class="tip-dot"></span><div><strong>Do not swim near entry points</strong> — lava benches are unstable and can collapse suddenly. The surrounding ocean is acidic and contains suspended glass particles.</div></li>
+                <li><span class="tip-dot"></span><div><strong>No respiratory protection is sufficient for laze</strong> — the only safe action is to maintain significant distance and stay upwind at all times.</div></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: EMERGENCY SUPPLY CHECKLIST
+    ============================================================ -->
+    <section aria-labelledby="supplies-heading">
+      <div class="section-head">
+        <p class="section-kicker">Be ready</p>
+        <h2 id="supplies-heading">Emergency Supply Checklist</h2>
+        <p class="sub">Prepare at least a 72-hour emergency kit for every member of your household — including pets. Hawaiʻi Island's isolation means supplies can take longer to arrive after a disaster.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="supplies-grid">
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">💧</span>
+            <h3>Water &amp; Food</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>1 gallon of water per person per day (3-day minimum)</li>
+              <li>Non-perishable food for 3 days minimum</li>
+              <li>Manual can opener</li>
+              <li>Infant formula and baby food if applicable</li>
+              <li>Pet food and water for animals</li>
+              <li>Water purification tablets or filter</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">💊</span>
+            <h3>Medical &amp; Safety</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>Prescription medications (2-week supply if possible)</li>
+              <li>First-aid kit with manual</li>
+              <li>N95 or better respirators for vog and ash</li>
+              <li>Extra eyeglasses or contact lens supplies</li>
+              <li>Hearing aids with extra batteries</li>
+              <li>Hand sanitizer and disinfecting wipes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">🔦</span>
+            <h3>Power &amp; Communications</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>Battery-powered or hand-crank NOAA weather radio</li>
+              <li>Flashlights with extra batteries</li>
+              <li>Portable phone charger / power bank</li>
+              <li>Extra batteries in multiple sizes</li>
+              <li>Candles and waterproof matches</li>
+              <li>Whistle or signaling device</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">📄</span>
+            <h3>Documents &amp; Finances</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>Copies of IDs, passports, and birth certificates</li>
+              <li>Insurance cards and policy documents</li>
+              <li>Bank account and financial records</li>
+              <li>Small amount of cash (ATMs may be unavailable)</li>
+              <li>Emergency contact list (written, not just digital)</li>
+              <li>Medications list and medical records</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">🧰</span>
+            <h3>Tools &amp; Sanitation</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>Multi-tool or basic tool set</li>
+              <li>Heavy-duty gloves (for cleanup)</li>
+              <li>Sturdy closed-toe shoes in kit</li>
+              <li>Sanitation supplies (toilet paper, garbage bags)</li>
+              <li>Bucket with tight lid (emergency sanitation)</li>
+              <li>Tarps and rope or bungee cords</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="supply-card">
+          <div class="supply-card-header">
+            <span class="supply-icon">🌺</span>
+            <h3>Hawaiʻi-Specific Extras</h3>
+          </div>
+          <div class="supply-card-body">
+            <ul class="supply-list">
+              <li>Vog mask / N95 for volcanic smog events</li>
+              <li>Sunscreen and insect repellent</li>
+              <li>Wet/dry weather gear (Hawaiʻi weather is unpredictable)</li>
+              <li>Evacuation zone maps (printed from County website)</li>
+              <li>Tsunami siren awareness — know your nearest sirens</li>
+              <li>Local Civil Defense radio frequency saved to radio</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: PROPER DISASTER WASTE DISPOSAL
+    ============================================================ -->
+    <section aria-labelledby="disposal-heading">
+      <div class="section-head">
+        <p class="section-kicker">After the event</p>
+        <h2 id="disposal-heading">Disaster Waste — How to Dispose Properly</h2>
+        <p class="sub">Different types of disaster waste require different handling. Mixing waste types together slows County collection and can create additional hazards.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="disposal-grid">
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">🌿</div>
+            <h3>Green Waste &amp; Vegetative Debris</h3>
+          </div>
+          <p>Tree branches, leaves, palm fronds, and grass are the most common hurricane debris on Hawaiʻi Island. Keep separate from other debris types.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Cut branches to manageable lengths (4–5 ft where possible)</li>
+            <li><span class="step-num">2</span>Bundle or place in a separate pile at the curb</li>
+            <li><span class="step-num">3</span>Drop off at any County Transfer Station (green waste is accepted free of charge)</li>
+            <li><span class="step-num">4</span>Do not mix with regular rubbish, construction debris, or appliances</li>
+          </ol>
+        </div>
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">🏗️</div>
+            <h3>Construction &amp; Demolition Debris</h3>
+          </div>
+          <p>Damaged lumber, drywall, fencing, roofing materials, and concrete from storm or flood damage. Large volumes require special handling.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Remove nails and sharp objects from loose lumber before piling</li>
+            <li><span class="step-num">2</span>Place in a separate pile from green waste and rubbish</li>
+            <li><span class="step-num">3</span>Haul to a County Transfer Station accepting C&amp;D debris</li>
+            <li><span class="step-num">4</span>For large volumes, contact a licensed C&amp;D hauler — the County may announce special collection programs after declared disasters</li>
+          </ol>
+        </div>
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">🧪</div>
+            <h3>Household Hazardous Waste (HHW)</h3>
+          </div>
+          <p>Paints, pesticides, chemicals, motor oil, batteries, and propane tanks contaminated or damaged by a disaster become hazardous waste requiring special disposal.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Keep all containers sealed — never pour chemicals down a drain or into the ground</li>
+            <li><span class="step-num">2</span>Store upright in a cool, well-ventilated area away from floodwater</li>
+            <li><span class="step-num">3</span>Bring to a scheduled Household Hazardous Waste Collection Event (see DEM website for dates)</li>
+            <li><span class="step-num">4</span>For large or unknown chemical spills, call State DOH Hazardous Waste: (808) 586-4249</li>
+          </ol>
+        </div>
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">🧲</div>
+            <h3>Appliances &amp; White Goods</h3>
+          </div>
+          <p>Refrigerators, washing machines, air conditioners, and water heaters damaged by floods or storms contain refrigerants and other hazardous materials requiring certified handling.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Place appliances at the curb separately from other debris</li>
+            <li><span class="step-num">2</span>Do not crush, break open, or burn appliances — refrigerant gases are harmful</li>
+            <li><span class="step-num">3</span>Contact County DEM or your rubbish hauler to schedule a bulk pickup</li>
+            <li><span class="step-num">4</span>Flood-damaged appliances in working condition may be donated — contact local reuse centers to confirm they can accept storm-affected goods</li>
+          </ol>
+        </div>
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">💻</div>
+            <h3>Electronics &amp; E-Waste</h3>
+          </div>
+          <p>Flood or storm-damaged televisions, computers, and electronics cannot go in your regular rubbish and may not qualify for standard free recycling programs if heavily damaged.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Set aside separately — do not place in rubbish bins</li>
+            <li><span class="step-num">2</span>Contact drop-off locations (Mr. K's Recycle in Hilo or Kona) to confirm they accept disaster-damaged devices</li>
+            <li><span class="step-num">3</span>Bring to a County HHW or special collection event if electronics are heavily contaminated</li>
+            <li><span class="step-num">4</span>See the <a href="electronics.html">Electronics Recycling page</a> for all drop-off locations and guidelines</li>
+          </ol>
+        </div>
+
+        <div class="disposal-card">
+          <div class="disposal-card-top">
+            <div class="disposal-badge">🗑️</div>
+            <h3>Regular Rubbish &amp; Food Waste</h3>
+          </div>
+          <p>After a power outage, spoiled food becomes a significant waste issue. Manage it carefully to avoid pest problems and odors.</p>
+          <ol class="disposal-steps">
+            <li><span class="step-num">1</span>Discard spoiled food in sealed plastic bags before placing in your rubbish bin</li>
+            <li><span class="step-num">2</span>Keep rubbish bins tightly lidded to deter pests — mongooses, rats, and feral pigs are common in Hawaiʻi</li>
+            <li><span class="step-num">3</span>Use your regular curbside collection once service resumes — DEM will notify residents of any schedule changes</li>
+            <li><span class="step-num">4</span>Avoid placing regular rubbish out for collection during active storm conditions</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: DOS AND DON'TS
+    ============================================================ -->
+    <section aria-labelledby="dosdonts-heading">
+      <div class="section-head">
+        <p class="section-kicker">Critical reminders</p>
+        <h2 id="dosdonts-heading">What You Should and Should Not Do</h2>
+        <p class="sub">These simple rules protect your safety, your community's environment, and speed up recovery for everyone.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="dos-donts">
+
+        <div class="dd-panel do-panel">
+          <div class="dd-header">
+            <span class="dd-header-icon">✅</span>
+            <h3>Do These Things</h3>
+          </div>
+          <div class="dd-body">
+            <ul class="dd-list">
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Separate debris types</strong> — green waste, appliances, C&amp;D debris, and rubbish in distinct piles for faster County collection.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Wear protective gear</strong> — heavy-duty gloves, closed-toe shoes, and N95 masks during debris cleanup.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Document damage before cleanup</strong> — photographs and videos are essential for insurance claims and FEMA disaster assistance.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Keep HHW sealed</strong> — store damaged chemical containers sealed and upright until you can bring them to a collection event.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Follow official guidance</strong> — monitor Civil Defense alerts and DEM announcements for collection schedule updates.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✓</span>
+                <div><strong>Help elderly and disabled neighbors</strong> — check on those who may need assistance preparing or cleaning up after an emergency.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dd-panel dont-panel">
+          <div class="dd-header">
+            <span class="dd-header-icon">🚫</span>
+            <h3>Do Not Do These Things</h3>
+          </div>
+          <div class="dd-body">
+            <ul class="dd-list">
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not burn debris</strong> — open burning of storm or disaster debris without a permit is prohibited and creates toxic smoke harmful to your community.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not dump into drains, streams, or the ocean</strong> — storm drains connect directly to our waterways. Illegal dumping is a crime and harms coral reefs.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not pour chemicals down the drain</strong> — this contaminates groundwater and wastewater systems. Always take HHW to a collection event.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not use a generator indoors</strong> — carbon monoxide from generators is odorless and deadly. Always operate outdoors with good ventilation.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not enter floodwater</strong> — floodwater may be electrically charged from downed power lines and is contaminated with sewage and chemicals.</div>
+              </li>
+              <li>
+                <span class="dd-marker">✗</span>
+                <div><strong>Do not assume tap water is safe</strong> — after flooding, boil all water until your water utility confirms the system is clear.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: FREQUENTLY ASKED QUESTIONS
+    ============================================================ -->
+    <section aria-labelledby="faq-heading">
+      <div class="section-head">
+        <p class="section-kicker">Common questions</p>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <p class="sub">Answers to the most common questions about waste management during and after emergencies on Hawaiʻi Island.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+            Will my regular trash and recycling be collected after a hurricane or major storm?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-1">
+            <p>Collection schedules may be suspended, delayed, or modified after major emergencies. The County of Hawaiʻi DEM will communicate any changes through official channels including the County website, social media, and local radio. During an active storm watch or warning, do not place bins at the curb — wait for the event to pass and for official confirmation that collection has resumed.</p>
+            <p>After a declared disaster, the County may also activate special curbside debris collection programs. Watch for announcements from DEM and your rubbish hauler.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+            My refrigerator was ruined by flood damage. Where do I take it?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-2">
+            <p>Flood-damaged appliances such as refrigerators, freezers, air conditioners, and water heaters should be placed separately at the curb. Contact your rubbish hauler or the County DEM to schedule a bulk item pickup. These appliances may contain refrigerants that must be recovered by a certified technician — do not attempt to cut, crush, or dismantle them yourself.</p>
+            <p>If the County has activated a disaster debris collection program following a declared emergency, watch for announcements about bulk pickup schedules in your area.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+            Is it safe to use the water after flooding?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-3">
+            <p>After any flooding event, you should assume your tap water may be contaminated until your water utility issues a boil water notice clearance. Floodwater can enter municipal water systems and private wells, introducing bacteria, viruses, and chemical contaminants.</p>
+            <ul>
+              <li>Boil all water used for drinking, cooking, and brushing teeth until the all-clear is issued</li>
+              <li>If you rely on a private well, have it tested by a certified lab before resuming use</li>
+              <li>Check with the County of Hawaiʻi Department of Water Supply for current advisories</li>
+              <li>Use bottled water from your emergency kit as your primary source in the meantime</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">
+            Can I burn the debris from a storm on my property?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-4">
+            <p>Open burning of storm debris, including green waste and construction material, is generally prohibited in Hawaiʻi County without an appropriate permit. Burning treated lumber, plastics, or painted materials releases toxic dioxins and heavy metals that are harmful to your health and the community.</p>
+            <p>Even with a permit, burning is prohibited on days when air quality is already degraded by vog. Take green waste to a County Transfer Station, and contact the Hawaiʻi County Planning Department regarding any burning permits that may be available during declared disaster recovery periods.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">
+            What do I do with medications or medical waste after a disaster?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-5">
+            <p>Medications that have been contaminated by floodwater or have exceeded their expiration date should be disposed of safely. Do not flush medications down the toilet or drain — pharmaceuticals can pass through water treatment systems and harm marine ecosystems.</p>
+            <ul>
+              <li>Check with your local pharmacy — many participate in medication take-back programs</li>
+              <li>The DEA National Prescription Drug Take Back program has authorized collection sites on Hawaiʻi Island</li>
+              <li>If no take-back option is available, mix medications with coffee grounds or dirt in a sealed bag before placing in the rubbish</li>
+              <li>Medical sharps (needles, lancets) must never go in the rubbish — use a puncture-resistant container and take to a participating pharmacy or health clinic for proper disposal</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-6">
+            How do I report illegal dumping of disaster debris?
+            <span class="chevron"></span>
+          </button>
+          <div class="accordion-body" id="faq-6">
+            <p>Illegal dumping of disaster debris — including on roadsides, in streams, or on vacant land — is a serious environmental violation in Hawaiʻi. It can result in fines and criminal prosecution under Hawaiʻi Revised Statutes § 342H.</p>
+            <p>To report illegal dumping, you can use the County's online reporting form, call the DEM directly, or use the <a href="illegal-dumping.html">Report Illegal Dumping page</a> on this website. Please provide as much detail as possible — location, description, and photos if safely obtainable.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: EXTERNAL RESOURCES
+    ============================================================ -->
+    <section aria-labelledby="resources-heading">
+      <div class="section-head">
+        <p class="section-kicker">Stay informed</p>
+        <h2 id="resources-heading">Key Resources &amp; Links</h2>
+        <p class="sub">Bookmark these resources before an emergency. Having them ready offline or in a printed format can save time when you need them most.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="resource-grid">
+
+        <a class="resource-card" href="https://www.hawaiicounty.gov/departments/civil-defense" target="_blank" rel="noopener">
+          <span class="res-icon">🚨</span>
+          <div class="resource-info">
+            <span class="resource-name">Hawaiʻi County Civil Defense</span>
+            <span class="resource-desc">Active alerts, evacuation orders &amp; emergency news</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.nhc.noaa.gov/cyclones/epac/" target="_blank" rel="noopener">
+          <span class="res-icon">🌀</span>
+          <div class="resource-info">
+            <span class="resource-name">NOAA National Hurricane Center</span>
+            <span class="resource-desc">Central Pacific storm tracking and forecasts</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.usgs.gov/centers/hvo" target="_blank" rel="noopener">
+          <span class="res-icon">🌋</span>
+          <div class="resource-info">
+            <span class="resource-name">USGS Hawaiian Volcano Observatory</span>
+            <span class="resource-desc">Kīlauea eruption status and volcanic alerts</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://ptwc.weather.gov" target="_blank" rel="noopener">
+          <span class="res-icon">🌊</span>
+          <div class="resource-info">
+            <span class="resource-name">Pacific Tsunami Warning Center</span>
+            <span class="resource-desc">PTWC bulletins and tsunami watch/warning status</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://vmap.soest.hawaii.edu" target="_blank" rel="noopener">
+          <span class="res-icon">💨</span>
+          <div class="resource-info">
+            <span class="resource-name">Vog Measurement &amp; Prediction (VMAP)</span>
+            <span class="resource-desc">Daily SO₂ and vog forecasts across Hawaiʻi Island</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.ready.gov/hawaii" target="_blank" rel="noopener">
+          <span class="res-icon">📋</span>
+          <div class="resource-info">
+            <span class="resource-name">Ready.gov — Hawaiʻi</span>
+            <span class="resource-desc">Federal preparedness resources and go-kit planning</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://health.hawaii.gov/shwb/" target="_blank" rel="noopener">
+          <span class="res-icon">☣️</span>
+          <div class="resource-info">
+            <span class="resource-name">Hawaiʻi DOH — Solid &amp; Hazardous Waste</span>
+            <span class="resource-desc">HHW programs and hazardous waste regulations</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.fema.gov/disaster/current" target="_blank" rel="noopener">
+          <span class="res-icon">🏛️</span>
+          <div class="resource-info">
+            <span class="resource-name">FEMA Disaster Assistance</span>
+            <span class="resource-desc">Apply for federal assistance after a declared disaster</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.hawaiipolice.com" target="_blank" rel="noopener">
+          <span class="res-icon">🚔</span>
+          <div class="resource-info">
+            <span class="resource-name">Hawaiʻi Police Department</span>
+            <span class="resource-desc">Non-emergency line: (808) 935-3311</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="services.html">
+          <span class="res-icon">📍</span>
+          <div class="resource-info">
+            <span class="resource-name">County Transfer Stations</span>
+            <span class="resource-desc">Locations and hours for debris drop-off island-wide</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT BAND
+    ============================================================ -->
+    <div class="contact-band">
+      <div class="contact-band-copy">
+        <h3>Questions? Contact the Department of Environmental Management</h3>
+        <p>For questions about disaster waste collection, HHW disposal, transfer station hours, or reporting illegal dumping — our team is here to help.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-btn primary" href="tel:8089614300">📞 (808) 961-4300</a>
+        <a class="contact-btn secondary" href="illegal-dumping.html">🚫 Report Illegal Dumping</a>
+        <a class="contact-btn secondary" href="services.html">📍 Find a Transfer Station</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script src="../assets/js/emergency-prep.js"></script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

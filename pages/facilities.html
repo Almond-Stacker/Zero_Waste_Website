@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solid Waste Facilities | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css      — tokens, reset, base body
+      2. header.css      — site header & nav
+      3. footer.css      — footer strip & nav
+      4. facilities.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/facilities.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       BREADCRUMB
+  ================================================================ -->
+  <nav class="fac-breadcrumb" aria-label="Breadcrumb">
+    <a href="services.html">Services</a>
+    <span aria-hidden="true">»</span>
+    <span>Solid Waste Facilities</span>
+  </nav>
+
+  <!-- ================================================================
+       PAGE TITLE
+  ================================================================ -->
+  <h1 class="fac-page-title">Solid Waste Facilities</h1>
+
+  <!-- ================================================================
+       HERO — full-width photo with branded panel overlay
+  ================================================================ -->
+  <section class="fac-hero" aria-label="Facilities hero">
+    <div class="fac-hero-panel">
+      <div class="fac-hero-logo">
+        <img
+          src="../assets/images/dlnr_logo.png"
+          alt="County of Hawai'i Seal"
+          class="fac-hero-seal"
+        />
+        <div class="fac-hero-logo-right">
+          <div class="fac-hero-logo-divider" aria-hidden="true"></div>
+          <div class="fac-hero-logo-text">
+            <span class="fac-county-label">COUNTY OF</span>
+            <span class="fac-county-name">HAWAI'I</span>
+            <span class="fac-dept-name">ENVIRONMENTAL<br>MANAGEMENT</span>
+          </div>
+        </div>
+      </div>
+      <p class="fac-hero-desc">
+        The Solid Waste Division manages 21 Recycling &amp; Transfer Stations,
+        2 Greenwaste Facilities, and additional reuse and disposal services
+        throughout Hawai'i Island to support our zero waste mission.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+       Left: intro text + contact accordion
+       Right: facility category card grid
+  ================================================================ -->
+  <div class="fac-content-wrap">
+    <div class="fac-content-layout">
+
+      <!-- Left panel ------------------------------------------------ -->
+      <aside class="fac-left-panel">
+        <p class="fac-intro-text">
+          The Solid Waste Division is responsible for all recycling and reuse
+          programs at the County of Hawai'i Recycling and Transfer Stations,
+          and the East and West Hawai'i Organics "Greenwaste" Facilities.
+          This includes drop-off recycling, HI-5 redemption, Reuse Centers,
+          and mulch production services.
+        </p>
+
+        <a
+          href="https://www.hawaiizerowaste.org/facilities-2/"
+          class="fac-ext-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Hawai'i Zero Waste Website</a>
+
+        <!-- Contact Us accordion -->
+        <div class="fac-contact">
+          <button
+            class="fac-contact-toggle"
+            id="fac-contact-toggle"
+            aria-expanded="true"
+            aria-controls="fac-contact-body"
+          >
+            <span>CONTACT US</span>
+            <span class="fac-toggle-icon" aria-hidden="true">−</span>
+          </button>
+          <div class="fac-contact-body" id="fac-contact-body" role="region" aria-labelledby="fac-contact-toggle">
+            <ul>
+              <li>345 Kekūanāo'a St., Suite 41, Hilo, HI 96720</li>
+              <li>Mon–Fri 7:45AM–4:30PM</li>
+              <li>(808) 961-8270</li>
+              <li>SWD@hawaiicounty.gov</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right card grid ------------------------------------------ -->
+      <div class="fac-card-area">
+        <div class="fac-card-grid">
+
+          <!-- Recycling & Transfer Stations -->
+          <a href="#transfer-stations" class="fac-card fac-card--stations">
+            <div class="fac-card-inner">
+              <h2>RECYCLING &amp;<br>TRANSFER STATIONS</h2>
+              <div class="fac-card-rule"></div>
+              <p>Find all 21 island-wide facilities for rubbish, recycling, and drop-off services</p>
+            </div>
+          </a>
+
+          <!-- Greenwaste Facilities -->
+          <a href="#greenwaste" class="fac-card fac-card--greenwaste fac-card--light">
+            <div class="fac-card-inner">
+              <h2>GREENWASTE<br>FACILITIES</h2>
+              <div class="fac-card-rule"></div>
+              <p>East &amp; West Hawai'i Organics Facilities for yard waste and food discards</p>
+            </div>
+          </a>
+
+          <!-- Reuse Centers -->
+          <a href="#reuse" class="fac-card fac-card--reuse">
+            <div class="fac-card-inner">
+              <h2>REUSE<br>CENTERS</h2>
+              <div class="fac-card-rule"></div>
+              <p>8 Reuse Center locations offering free gently used items to the community</p>
+            </div>
+          </a>
+
+          <!-- Landfill & Reload -->
+          <a href="#landfill" class="fac-card fac-card--landfill">
+            <div class="fac-card-inner">
+              <h2>LANDFILL &amp;<br>RELOAD</h2>
+              <div class="fac-card-rule"></div>
+              <p>West Hawai'i Sanitary Landfill and East Hawai'i Reload Facility</p>
+            </div>
+          </a>
+
+          <!-- Learning Resources -->
+          <a href="#learn" class="fac-card fac-card--learn fac-card--wide">
+            <div class="fac-card-inner">
+              <h2>LEARNING<br>RESOURCES</h2>
+              <div class="fac-card-rule"></div>
+              <p>Educational resources, facility guides, and presentations for residents and businesses</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <!-- end right card grid -->
+
+    </div>
+    <!-- end fac-content-layout -->
+  </div>
+  <!-- end fac-content-wrap -->
+
+  <!-- ================================================================
+       FACILITY LISTINGS
+       Anchor sections for each card link
+  ================================================================ -->
+  <div class="fac-listings-wrap">
+
+    <!-- Recycling & Transfer Stations -->
+    <section id="transfer-stations" class="fac-section">
+      <div class="fac-section-header">
+        <h2>Recycling &amp; Transfer Stations</h2>
+        <p>All County Recycling &amp; Transfer Stations are free of charge and closed on New Year's Day, Thanksgiving, and Christmas Day.</p>
+      </div>
+      <div class="fac-table-wrap">
+        <table class="fac-table">
+          <thead>
+            <tr>
+              <th>Facility</th>
+              <th>District</th>
+              <th>Address</th>
+              <th>Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hilo Recycling &amp; Transfer Station</td>
+              <td>South Hilo</td>
+              <td>1471 Ho'olaulima Rd., Hilo, HI 96720</td>
+              <td>Daily 6:00 AM–6:00 PM (rubbish); other services: 7:45 AM–4:00 PM</td>
+            </tr>
+            <tr>
+              <td>Kealakehe Recycling &amp; Transfer Station</td>
+              <td>North Kona</td>
+              <td>74-625 Hale Māka'i Place, Kailua-Kona</td>
+              <td>Daily 8:00 AM–4:00 PM</td>
+            </tr>
+            <tr>
+              <td>Kea'au Recycling &amp; Transfer Station</td>
+              <td>Puna</td>
+              <td>16-921 Kea'au-Pāhoa Rd., Kea'au</td>
+              <td>Wed, Fri, Sat, Sun 8:00 AM–3:30 PM</td>
+            </tr>
+            <tr>
+              <td>Pāhoa Transfer Station</td>
+              <td>Puna</td>
+              <td>Pāhoa, HI</td>
+              <td>Sat, Sun, Wed 8:00 AM–4:00 PM</td>
+            </tr>
+            <tr>
+              <td>Waimea (Kamuela) Recycling &amp; Transfer Station</td>
+              <td>South Kohala</td>
+              <td>Waimea, HI</td>
+              <td>Sat, Sun, Wed 8:00 AM–4:00 PM</td>
+            </tr>
+            <tr>
+              <td>Honoka'a Recycling &amp; Transfer Station</td>
+              <td>Hāmākua</td>
+              <td>Honoka'a, HI</td>
+              <td>Sat &amp; Sun 8:00 AM–3:30 PM</td>
+            </tr>
+            <tr>
+              <td>Puakō Recycling &amp; Transfer Station</td>
+              <td>South Kohala</td>
+              <td>Puakō, HI</td>
+              <td>Sundays ONLY 8:00 AM–3:30 PM</td>
+            </tr>
+            <tr>
+              <td>Ke'ei Transfer Station</td>
+              <td>South Kona</td>
+              <td>Ke'ei, HI</td>
+              <td>Sun, Tue, Fri 8:00 AM–4:00 PM</td>
+            </tr>
+            <tr>
+              <td>Hāwī Recycling &amp; Transfer Station</td>
+              <td>North Kohala</td>
+              <td>Hāwī, HI</td>
+              <td>Call (808) 961-8270 for current hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fac-note">For the full list of all 21 facilities and current hours, visit the <a href="https://www.hawaiizerowaste.org/facilities-2/" target="_blank" rel="noopener noreferrer">Hawai'i Zero Waste Facilities page</a>.</p>
+    </section>
+
+    <!-- Greenwaste Facilities -->
+    <section id="greenwaste" class="fac-section fac-section--alt">
+      <div class="fac-section-header">
+        <h2>Greenwaste &amp; Organics Facilities</h2>
+        <p>Drop off yard waste and food discards at either of our two island-wide organics facilities.</p>
+      </div>
+      <div class="fac-facility-cards">
+        <div class="fac-detail-card">
+          <h3>East Hawai'i Organics Facility</h3>
+          <ul>
+            <li><strong>Location:</strong> Hilo, HI</li>
+            <li><strong>Hours:</strong> Daily 7:00 AM–4:15 PM (7 days a week)</li>
+            <li><strong>Services:</strong> Greenwaste drop-off, mulch production</li>
+          </ul>
+        </div>
+        <div class="fac-detail-card">
+          <h3>West Hawai'i Organics Facility</h3>
+          <ul>
+            <li><strong>Location:</strong> Waikoloa, HI</li>
+            <li><strong>Hours:</strong> Mon–Sat 7:00 AM–4:15 PM</li>
+            <li><strong>Services:</strong> Greenwaste drop-off, mulch production</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reuse Centers -->
+    <section id="reuse" class="fac-section">
+      <div class="fac-section-header">
+        <h2>Reuse Centers</h2>
+        <p>Reuse Centers offer free gently used household items to the public. 8 locations are co-located with Recycling &amp; Transfer Stations island-wide.</p>
+      </div>
+      <div class="fac-facility-cards">
+        <div class="fac-detail-card">
+          <h3>Hilo Reuse Center</h3>
+          <ul>
+            <li><strong>Location:</strong> Ho'olaulima Rd. (before Transfer Station, makai side), Hilo</li>
+            <li><strong>Hours:</strong> Daily 8:00 AM–4:00 PM</li>
+            <li><strong>Closed:</strong> New Year's Day, Thanksgiving, Christmas Day</li>
+          </ul>
+        </div>
+        <div class="fac-detail-card">
+          <h3>Kealakehe Reuse Center</h3>
+          <ul>
+            <li><strong>Location:</strong> 74-625 Hale Māka'i Place, Kailua-Kona</li>
+            <li><strong>Hours:</strong> Daily 8:00 AM–4:00 PM</li>
+            <li><strong>Closed:</strong> New Year's Day, Ironman World Championship, Thanksgiving, Christmas Day</li>
+          </ul>
+        </div>
+        <div class="fac-detail-card">
+          <h3>Additional Reuse Centers</h3>
+          <ul>
+            <li>6 additional Reuse Centers are available at Transfer Stations island-wide</li>
+            <li>Contact (808) 961-8270 for locations and hours</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Landfill & Reload -->
+    <section id="landfill" class="fac-section fac-section--alt">
+      <div class="fac-section-header">
+        <h2>Landfill &amp; Reload Facility</h2>
+        <p>The Solid Waste Division operates one active sanitary landfill and one reload facility for Hawai'i Island.</p>
+      </div>
+      <div class="fac-facility-cards">
+        <div class="fac-detail-card">
+          <h3>West Hawai'i Sanitary Landfill</h3>
+          <ul>
+            <li><strong>Location:</strong> West Hawai'i</li>
+            <li><strong>Services:</strong> Disposal of non-recyclable solid waste</li>
+            <li><strong>Contact:</strong> (808) 961-8270</li>
+          </ul>
+        </div>
+        <div class="fac-detail-card">
+          <h3>East Hawai'i Reload Facility</h3>
+          <ul>
+            <li><strong>Location:</strong> East Hawai'i (Hilo area)</li>
+            <li><strong>Services:</strong> Transfer of collected waste for transport to landfill</li>
+            <li><strong>Contact:</strong> (808) 961-8270</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Resources -->
+    <section id="learn" class="fac-section">
+      <div class="fac-section-header">
+        <h2>Learning Resources</h2>
+        <p>Educational materials, guides, and presentations to help Hawai'i Island residents make the most of our facilities and programs.</p>
+      </div>
+      <div class="fac-learn-grid">
+        <a href="https://www.hawaiizerowaste.org/facilities-2/" class="fac-learn-item" target="_blank" rel="noopener noreferrer">
+          <div class="fac-learn-icon" aria-hidden="true">🗺️</div>
+          <div>
+            <strong>Facility Map &amp; Directions</strong>
+            <p>GPS locations and driving directions to all solid waste facilities</p>
+          </div>
+        </a>
+        <a href="https://www.hawaiizerowaste.org/recycle/drop-off/" class="fac-learn-item" target="_blank" rel="noopener noreferrer">
+          <div class="fac-learn-icon" aria-hidden="true">♻️</div>
+          <div>
+            <strong>Drop-Off Recycling Guide</strong>
+            <p>What you can and cannot bring to drop-off recycling stations</p>
+          </div>
+        </a>
+        <a href="https://www.hawaiizerowaste.org/recycle/greenwaste-recycling/" class="fac-learn-item" target="_blank" rel="noopener noreferrer">
+          <div class="fac-learn-icon" aria-hidden="true">🌿</div>
+          <div>
+            <strong>Greenwaste Recycling Guide</strong>
+            <p>Accepted materials and tips for greenwaste and food discards</p>
+          </div>
+        </a>
+        <a href="https://www.hawaiizerowaste.org/recycle/hi5/" class="fac-learn-item" target="_blank" rel="noopener noreferrer">
+          <div class="fac-learn-icon" aria-hidden="true">🥤</div>
+          <div>
+            <strong>HI-5 Redemption Guide</strong>
+            <p>Where to redeem beverage containers and earn HI-5 deposits back</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+  <!-- end fac-listings-wrap -->
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script src="../assets/js/facilities.js"></script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

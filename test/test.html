@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Recycle - DEM Hawai'i</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../test/test.css">
+</head>
+<body>
+    <div id="header-slug"></div> <main class="container">
+        <h1>Where to Recycle</h1>
+
+        <section class="search-and-filters">
+            <div class="search-bar">
+                <input type="text" id="materialSearch" placeholder="What are you recycling? (e.g., 'plastic bottles')">
+                <button aria-label="Search"><img src="../assets/images/icons/search.svg" alt="Search Icon"></button>
+            </div>
+            <div class="filter-tags">
+                <button class="tag" data-filter="HI-5">HI-5</button>
+                <button class="tag" data-filter="Cardboard">Cardboard</button>
+                <button class="tag" data-filter="Glass">Glass</button>
+                <button class="tag" data-filter="Metal">Metal</button>
+                <button class="tag" data-filter="Electronics">Electronics</button>
+                <button class="tag" data-filter="Household Hazardous Waste">HHW</button>
+                <button class="tag" data-filter="Green Waste">Green Waste</button>
+            </div>
+            <button id="findNearMe" class="button button--primary">
+                <img src="../assets/images/icons/location.svg" alt="Location Icon"> Find Facilities Near Me
+            </button>
+        </section>
+
+        <section class="facility-list">
+            <div class="facility-card">
+                <div class="card-header">
+                    <h2>Hilo Recycling & Transfer Station</h2>
+                    <span class="status status--open">Open Now</span>
+                </div>
+                <p class="distance">2.4 miles away</p>
+                <p class="address">123 Main St, Hilo, HI 96720</p>
+                <div class="materials">
+                    <span class="material-icon" aria-label="Accepts HI-5"><img src="../assets/images/icons/hi5.svg" alt="HI-5"></span>
+                    <span class="material-icon" aria-label="Accepts Cardboard"><img src="../assets/images/icons/cardboard.svg" alt="Cardboard"></span>
+                    <span class="material-icon" aria-label="Accepts Glass"><img src="../assets/images/icons/glass.svg" alt="Glass"></span>
+                </div>
+                <a href="https://maps.google.com/?q=Hilo+Recycling" target="_blank" class="button button--accent">Directions</a>
+            </div>
+
+            <div class="facility-card">
+                <div class="card-header">
+                    <h2>Kona Green Waste Drop-Off</h2>
+                    <span class="status status--closed">Closed</span>
+                </div>
+                <p class="distance">4.1 miles away</p>
+                <p class="address">456 Ocean View Rd, Kailua-Kona, HI 96740</p>
+                <div class="materials">
+                    <span class="material-icon" aria-label="Accepts Green Waste"><img src="../assets/images/icons/green-waste.svg" alt="Green Waste"></span>
+                </div>
+                <a href="https://maps.google.com/?q=Kona+Green+Waste" target="_blank" class="button button--accent">Directions</a>
+            </div>
+            </section>
+    </main>
+
+    <div id="footer-slug"></div> <script src="../assets/js/layout-loader.js"></script>
+    <script src="../assets/js/recycle.js"></script>
+</body>
+</html>

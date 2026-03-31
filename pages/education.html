@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education &amp; Outreach | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css     — tokens, reset, base body
+      2. header.css     — site header & nav
+      3. footer.css     — footer strip & nav
+      4. education.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/education.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="edu-hero">
+    <div class="edu-hero-inner">
+      <span class="edu-hero-eyebrow">Report &amp; Get Involved</span>
+      <h1>Education &amp; Outreach</h1>
+      <p>
+        Helping Hawai&#x02BB;i Island keiki and communities understand, reduce, and
+        rethink waste — through classroom programs, workshops, site tours,
+        and free learning resources.
+      </p>
+      <div class="edu-hero-btns">
+        <a href="#programs"   class="edu-hero-btn solid">School Programs</a>
+        <a href="#online"     class="edu-hero-btn">Online Resources</a>
+        <a href="#reduction"  class="edu-hero-btn">Waste Reduction</a>
+        <a href="#funding"    class="edu-hero-btn">Funding</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="edu-content">
+
+    <!-- ── SCHOOL PROGRAMS ─────────────────────────────────────── -->
+    <section class="edu-section" id="programs">
+      <div class="section-header">
+        <div>
+          <h2>Classroom Activities</h2>
+          <p>
+            Free and low-cost programs for K–12 classrooms across Hawai&#x02BB;i Island —
+            from recycled-art lessons to landfill tours. Click a program card to
+            contact the organiser directly.
+          </p>
+        </div>
+        <a href="#contact" class="section-link">Request a Program →</a>
+      </div>
+
+      <!-- Cards injected by education.js → buildProgramGrid() -->
+      <div class="program-grid" id="programs-grid"></div>
+    </section>
+
+    <!-- ── ONLINE RESOURCES ─────────────────────────────────────── -->
+    <section class="edu-section" id="online">
+      <div class="section-header">
+        <div>
+          <h2>Online Resources</h2>
+          <p>
+            Interactive websites and tools for students and educators — all
+            freely available online.
+          </p>
+        </div>
+      </div>
+
+      <!-- Rows injected by education.js → buildLinkList('online-list', …) -->
+      <div class="edu-link-list" id="online-list"></div>
+    </section>
+
+    <!-- ── WASTE REDUCTION RESOURCES ───────────────────────────── -->
+    <section class="edu-section" id="reduction">
+      <div class="section-header">
+        <div>
+          <h2>Waste Reduction Resources</h2>
+          <p>
+            Guides, curricula, and calculators for educators and administrators
+            looking to reduce waste in schools and districts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Rows injected by education.js → buildLinkList('reduction-list', …) -->
+      <div class="edu-link-list" id="reduction-list"></div>
+    </section>
+
+    <!-- ── EARTH DAY HIGHLIGHT ─────────────────────────────────── -->
+    <div class="earthday-banner" id="earthday">
+      <div class="earthday-text">
+        <div class="eyebrow">Annual Event · April 22</div>
+        <h2>Earth Day on Hawai&#x02BB;i Island</h2>
+        <p>
+          Join the Department of Environmental Management each April 22nd for
+          island-wide clean-ups, composting demos, and zero-waste activities
+          open to all ages. Schools that register early receive free kits and
+          recognition at the event.
+        </p>
+      </div>
+      <a href="#contact" class="earthday-cta">
+        <span aria-hidden="true">🌍</span>
+        Get Involved
+      </a>
+    </div>
+
+    <!-- ── FUNDING RESOURCES ───────────────────────────────────── -->
+    <section class="edu-section" id="funding">
+      <div class="section-header">
+        <div>
+          <h2>Funding Resources</h2>
+          <p>
+            Grants and foundations supporting environmental education, school
+            gardens, and community clean-up initiatives across Hawai&#x02BB;i and
+            the nation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pills injected by education.js → buildFundingGrid() -->
+      <div class="funding-grid" id="funding-grid"></div>
+    </section>
+
+    <!-- ── CONTACT / SCHEDULE STRIP ───────────────────────────── -->
+    <div class="edu-contact-strip" id="contact">
+      <div class="contact-strip-text">
+        <h3>Schedule a Program or Workshop</h3>
+        <p>
+          Our outreach team serves public and private schools across Hawai&#x02BB;i
+          Island. Contact us to schedule a classroom visit, site tour, or
+          community composting workshop — most programs are free of charge.
+        </p>
+      </div>
+      <a href="contact.html" class="contact-strip-btn">
+        <span aria-hidden="true">✉️</span>
+        Contact DEM
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+       education.js must load before layout-loader so DOMContentLoaded
+       fires after both are parsed.
+  ================================================================ -->
+  <script src="../assets/js/education.js"></script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>
