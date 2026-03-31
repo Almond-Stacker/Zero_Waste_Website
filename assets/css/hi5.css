@@ -55,7 +55,189 @@
   color: rgba(255, 255, 255, 0.9);
   margin: 0 0 24px;
   line-height: 1.5;
-  max-width: 600px;
+  max-width: 60rem;
+}
+
+/* --- Recycling instructions section -------------------------------- */
+.hi5-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+.hi5-instructions {
+  padding-top: 48px;
+}
+
+.hi5-instructions h2 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.hi5-instructions-intro {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 50rem;
+  margin-bottom: 36px;
+}
+
+/* Numbered step cards */
+.hi5-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.hi5-step {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+}
+
+.hi5-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.hi5-step h3 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.hi5-step p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Tips box */
+.hi5-tips {
+  background: var(--color-primary-pale);
+  border-left: 4px solid var(--color-primary-mid);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+
+.hi5-tips h3 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.hi5-tips ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.hi5-tips li {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+.hi5-tips li:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Drop-off locations section ------------------------------------ */
+.hi5-locations {
+  padding-top: 56px;
+  border-top: 1px solid var(--color-border);
+  margin-top: 48px;
+}
+
+.hi5-locations h2 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.hi5-locations-intro {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 50rem;
+  margin-bottom: 36px;
+}
+
+/* Region grouping */
+.hi5-region {
+  margin-bottom: 40px;
+}
+
+.hi5-region:last-child {
+  margin-bottom: 0;
+}
+
+.hi5-region-heading {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-primary-mid);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+.hi5-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.hi5-location-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.hi5-location-card h4 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.hi5-location-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hi5-location-card li {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+.hi5-location-card li:last-child {
+  margin-bottom: 0;
 }
 
 /* Responsive adjustments */
@@ -70,5 +252,17 @@
 
   .hi5-hero p {
     font-size: 16px;
+  }
+
+  .hi5-content {
+    padding: 0 16px 48px;
+  }
+
+  .hi5-instructions h2 {
+    font-size: 22px;
+  }
+
+  .hi5-steps {
+    grid-template-columns: 1fr;
   }
 }

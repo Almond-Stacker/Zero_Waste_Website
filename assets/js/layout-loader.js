@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('on');
+                // Also mark the parent dropdown trigger as active
+                const dropdown = link.closest('.dropdown');
+                if (dropdown) {
+                    const trigger = dropdown.querySelector(':scope > a');
+                    if (trigger) trigger.classList.add('on');
+                }
             }
         });
     }
