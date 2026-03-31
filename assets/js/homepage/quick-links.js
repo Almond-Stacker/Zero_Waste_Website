@@ -11,11 +11,11 @@
    ============================================= */
 const QUICK_LINKS_DATA = [
   {
-    label:    'Find Transfer Stations',
+    label:    'Find Facilities',
     sublabel: 'Locate your nearest drop-off facility across Hawai\'i Island',
     // Waipio Valley, Big Island — lush Hawaiian landscape
     image:    'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&auto=format&q=80',
-    href:     '#'
+    href:     'facilities.html'
   },
   {
     label:    'Recycling Guide',
@@ -29,7 +29,7 @@ const QUICK_LINKS_DATA = [
     sublabel: 'Find certified redemption centers for your deposit refunds',
     // Colorful Hawaiian shoreline — bottles, cans, and clean beaches
     image:    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&auto=format&q=80',
-    href:     '#'
+    href:     'hi5.html'
   },
   {
     label:    'Report Illegal Dumping',
