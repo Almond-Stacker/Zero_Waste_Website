@@ -3,492 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electronics Recycling – County of Hawaiʻi Zero Waste</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ── TOKENS ──────────────────────────────────────────── */
-    :root {
-      --color-primary:       #2F591A;
-      --color-primary-mid:   #2E7214;
-      --color-primary-light: #80C062;
-      --color-primary-pale:  #dff0d8;
-      --color-dark:          #1e3a0f;
-      --color-accent:        #a8c84b;
-      /* warm koa accent for Hawaiian warmth */
-      --color-koa:           #8B5E3C;
-      --color-koa-light:     #f5ede4;
-      --color-koa-mid:       #c4895a;
-      --color-text:          #1a2e10;
-      --color-text-muted:    #4a5c3a;
-      --color-white:         #ffffff;
-      --color-bg:            #f6faf4;
-      --color-border:        #c5ddb8;
-      --color-shadow:        rgba(47,89,26,0.15);
-      --font-serif:          'Libre Baskerville', Georgia, serif;
-      --font-sans:           'Source Sans 3', 'Segoe UI', sans-serif;
-      --radius:              4px;
-      --transition:          0.2s ease;
-      --max-w:               1100px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.6; }
-    a { color: var(--color-primary-mid); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { display: block; max-width: 100%; }
+  <title>Electronics Recycling | County of Hawaiʻi Environmental Management</title>
 
-    /* ── MOCK HEADER ─────────────────────────────────────── */
-    .site-header {
-      background: var(--color-primary);
-      padding: 0 1rem;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-      position: sticky; top: 0; z-index: 100;
-    }
-    .header-inner { width: 100%; max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo-text { display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 12px; }
-    .county-label { color: rgba(255,255,255,0.65); font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
-    .county-name { color: #fff; font-family: var(--font-serif); font-size: 18px; font-weight: 700; letter-spacing: .05em; }
-    .dept-name { color: rgba(255,255,255,0.75); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-    .nav-placeholder { color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; letter-spacing: .07em; }
-
-    /* ── HERO ────────────────────────────────────────────── */
-    .page-hero {
-      position: relative;
-      min-height: 320px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-    }
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&auto=format&fit=crop&q=80');
-      background-size: cover;
-      background-position: center 40%;
-      transform: scale(1.03);
-      transition: transform 8s ease;
-    }
-    .hero-photo.loaded { transform: scale(1); }
-    /* layered gradient: dark bottom for text, warm tone mid, transparency top */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to top,
-          rgba(20, 40, 10, 0.92) 0%,
-          rgba(30, 58, 15, 0.72) 40%,
-          rgba(47, 89, 26, 0.35) 70%,
-          rgba(0,0,0,0.10) 100%
-        );
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 40px 1.5rem 44px;
-    }
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color var(--transition); }
-    .breadcrumb a:hover { color: rgba(255,255,255,0.9); text-decoration: none; }
-    .breadcrumb .sep { opacity: .4; }
-    .breadcrumb .current { color: rgba(255,255,255,0.8); }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--color-koa-mid);
-      margin-bottom: 10px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 2px;
-      background: var(--color-koa-mid);
-    }
-
-    .page-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(30px, 4.5vw, 48px);
-      font-weight: 700;
-      color: var(--color-white);
-      line-height: 1.15;
-      margin-bottom: 14px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    .page-hero p {
-      font-size: 15.5px;
-      color: rgba(255,255,255,0.8);
-      max-width: 560px;
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .hero-pill {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(6px);
-      border-radius: 24px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: .03em;
-    }
-    .hero-pill .pill-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--color-accent);
-      flex-shrink: 0;
-    }
-    .hero-pill.warm .pill-dot { background: var(--color-koa-mid); }
-
-    /* ── CONTENT WRAPPER ─────────────────────────────────── */
-    .page-content {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 48px 1.5rem 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 52px;
-    }
-
-    /* ── SECTION HEADERS ─────────────────────────────────── */
-    .section-head {
-      margin-bottom: 22px;
-    }
-    .section-kicker {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--color-koa);
-      margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .section-kicker::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--color-border);
-      max-width: 60px;
-    }
-    .section-head h2 {
-      font-family: var(--font-serif);
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1.2;
-      margin-bottom: 5px;
-    }
-    .section-head .sub {
-      font-size: 13.5px;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-    .section-rule {
-      width: 100%;
-      height: 1px;
-      background: var(--color-border);
-      margin: 16px 0 22px;
-    }
-
-    /* ── WARNING BANNER ──────────────────────────────────── */
-    .warning-banner {
-      background: #fffbf0;
-      border: 1.5px solid #e8c84a;
-      border-left: 4px solid #c8980a;
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-    .warn-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
-    .warn-body strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      color: #7a5200;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-    .warn-body p { font-size: 13.5px; color: #5c3d00; line-height: 1.55; }
-
-    /* ── ACCEPTED ITEMS GRID ─────────────────────────────── */
-    .accepted-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
-    }
-    .accepted-card {
-      background: var(--color-white);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius);
-      padding: 14px 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-      text-align: center;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-    }
-    .accepted-card:hover {
-      border-color: var(--color-primary-light);
-      box-shadow: 0 3px 12px var(--color-shadow);
-      transform: translateY(-2px);
-    }
-    .accepted-card .item-icon { font-size: 26px; }
-    .accepted-card .item-label { font-size: 12px; font-weight: 600; color: var(--color-text); line-height: 1.3; }
-    .accepted-note {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--color-text-muted);
-      background: var(--color-primary-pale);
-      border-left: 3px solid var(--color-primary-light);
-      padding: 10px 16px;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      line-height: 1.55;
-    }
-    .accepted-note strong { color: var(--color-primary); }
-
-    /* ── LOCATION CARDS ──────────────────────────────────── */
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 18px;
-    }
-    .loc-card {
-      background: var(--color-white);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow var(--transition), transform var(--transition);
-    }
-    .loc-card:hover { box-shadow: 0 6px 20px var(--color-shadow); transform: translateY(-2px); }
-    .loc-card-header {
-      background: var(--color-primary);
-      padding: 13px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .loc-card-header h3 {
-      font-family: var(--font-serif);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--color-white);
-      line-height: 1.3;
-    }
-    .loc-badge {
-      background: var(--color-accent);
-      color: var(--color-dark);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .loc-card-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 11px; }
-    .loc-address { display: flex; gap: 7px; font-size: 13px; color: var(--color-text); align-items: flex-start; }
-    .loc-hours-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-    .loc-hours-table caption {
-      text-align: left; font-size: 10px; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; color: var(--color-text-muted); padding-bottom: 5px;
-    }
-    .loc-hours-table td { padding: 3.5px 0; vertical-align: top; }
-    .loc-hours-table td:first-child { font-weight: 600; color: var(--color-text); width: 120px; }
-    .loc-hours-table td:last-child { color: var(--color-text-muted); }
-    .loc-notes {
-      font-size: 12px; color: var(--color-text-muted);
-      background: var(--color-bg); border: 1px solid var(--color-border);
-      border-radius: var(--radius); padding: 8px 12px; line-height: 1.5;
-    }
-    .loc-notes strong { color: var(--color-text); }
-    .loc-phone-row { display: flex; align-items: center; gap: 7px; font-size: 13px; }
-    .loc-phone-row a { font-weight: 600; color: var(--color-primary-mid); }
-    .loc-tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
-    .loc-tag {
-      font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px;
-      background: var(--color-primary-pale); color: var(--color-primary); border: 1px solid var(--color-border);
-    }
-    /* warm variant for special tags */
-    .loc-tag.warm { background: var(--color-koa-light); color: var(--color-koa); border-color: #e0c4a8; }
-
-    /* ── DONATE SECTION ──────────────────────────────────── */
-    .donate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
-    .donate-card {
-      background: var(--color-white);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: flex; flex-direction: column; gap: 9px;
-      transition: box-shadow var(--transition);
-    }
-    .donate-card:hover { box-shadow: 0 4px 14px var(--color-shadow); }
-    .donate-card .donate-icon { font-size: 28px; }
-    .donate-card h3 { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--color-primary); line-height: 1.3; }
-    .donate-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.65; }
-    .donate-card a.cta-link {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 12.5px; font-weight: 700; color: var(--color-primary-mid); margin-top: 4px;
-    }
-    .donate-card a.cta-link:hover { text-decoration: underline; }
-
-    /* ── MANUFACTURER GRID ───────────────────────────────── */
-    .mfr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 9px; }
-    .mfr-link {
-      display: flex; align-items: center; gap: 9px;
-      padding: 9px 13px;
-      background: var(--color-white);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius);
-      font-size: 13px; font-weight: 600; color: var(--color-text);
-      transition: border-color var(--transition), background var(--transition), color var(--transition);
-      text-decoration: none;
-    }
-    .mfr-link:hover {
-      border-color: var(--color-primary-light);
-      background: var(--color-primary-pale);
-      color: var(--color-primary);
-      text-decoration: none;
-    }
-    .mfr-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-primary-light); flex-shrink: 0; }
-    .ext-icon { margin-left: auto; font-size: 11px; color: var(--color-text-muted); }
-
-    /* ── PHONES / CARTRIDGES ─────────────────────────────── */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
-    .mini-section { background: var(--color-white); border: 1.5px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
-    .mini-section-head {
-      background: var(--color-primary-mid);
-      padding: 11px 16px;
-      display: flex; align-items: center; gap: 9px;
-    }
-    .mini-section-head .ms-icon { font-size: 18px; }
-    .mini-section-head h3 { font-family: var(--font-serif); font-size: 14px; font-weight: 700; color: #fff; }
-    .mini-section-body { padding: 12px 16px; }
-    .mini-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-    .mini-list li {
-      font-size: 13px; color: var(--color-text);
-      display: flex; flex-direction: column; gap: 1px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .mini-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .ml-name { font-weight: 600; }
-    .ml-detail { font-size: 11.5px; color: var(--color-text-muted); }
-
-    /* ── COMPANIES TABLE ─────────────────────────────────── */
-    .companies-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .companies-table thead tr { background: var(--color-primary); color: #fff; }
-    .companies-table thead th {
-      padding: 10px 14px; text-align: left;
-      font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-    }
-    .companies-table tbody tr { border-bottom: 1px solid var(--color-border); background: var(--color-white); transition: background var(--transition); }
-    .companies-table tbody tr:nth-child(even) { background: var(--color-bg); }
-    .companies-table tbody tr:hover { background: var(--color-primary-pale); }
-    .companies-table td { padding: 10px 14px; vertical-align: top; color: var(--color-text); }
-    .companies-table td.co-note { font-size: 12px; color: var(--color-text-muted); }
-
-    /* ── ACCORDION ───────────────────────────────────────── */
-    .accordion { border: 1.5px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
-    .accordion-item { border-bottom: 1px solid var(--color-border); }
-    .accordion-item:last-child { border-bottom: none; }
-    .accordion-trigger {
-      width: 100%; background: var(--color-white); border: none;
-      padding: 15px 20px;
-      display: flex; justify-content: space-between; align-items: center;
-      cursor: pointer; font-family: var(--font-sans); font-size: 14px; font-weight: 700;
-      color: var(--color-primary); text-align: left;
-      transition: background var(--transition); gap: 12px;
-    }
-    .accordion-trigger:hover { background: var(--color-primary-pale); }
-    .chevron {
-      width: 0; height: 0;
-      border-left: 5px solid transparent; border-right: 5px solid transparent;
-      border-top: 6px solid var(--color-primary);
-      transition: transform .25s ease; flex-shrink: 0;
-    }
-    .accordion-trigger[aria-expanded="true"] .chevron { transform: rotate(180deg); }
-    .accordion-body {
-      display: none; padding: 18px 20px;
-      background: var(--color-bg); font-size: 13.5px; color: var(--color-text); line-height: 1.7;
-    }
-    .accordion-body.open { display: block; }
-    .accordion-body p + p { margin-top: 10px; }
-    .law-contact {
-      margin-top: 14px; background: var(--color-white);
-      border: 1px solid var(--color-border); border-radius: var(--radius); padding: 14px 16px; font-size: 13px;
-    }
-    .law-contact strong { display: block; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; }
-    .law-contact p { color: var(--color-text-muted); line-height: 1.6; }
-    .law-contact a { color: var(--color-primary-mid); }
-
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 640px) {
-      .accepted-grid { grid-template-columns: repeat(3, 1fr); }
-      .locations-grid { grid-template-columns: 1fr; }
-      .mfr-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
-
+  <!--
+    CSS load order:
+      1. global.css      — tokens, reset, base body
+      2. header.css      — site header & nav
+      3. footer.css      — footer strip & nav
+      4. electronics.css — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/electronics.css" />
 </head>
 <body>
 
-  <!-- HEADER PLACEHOLDER – swap in your real header -->
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
   <header class="site-header">
-    <div class="header-inner">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div class="logo-text">
-          <span class="county-label">County of Hawaiʻi</span>
-          <span class="county-name">Hawaiʻi</span>
-          <span class="dept-name">Environmental Management</span>
-        </div>
-      </div>
-      <span class="nav-placeholder">[Site Navigation]</span>
-    </div>
+    <div id="header-placeholder"></div>
   </header>
 
-  <!-- HERO -->
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
   <section class="page-hero">
-    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="hero-photo" id="heroPhoto" data-src="../assets/images/electronics-hero.jpg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -507,9 +49,12 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
   <main class="page-content">
 
-    <!-- ── WARNING ─────────────────────────────────────── -->
+    <!-- WARNING -->
     <div class="warning-banner" role="alert">
       <div class="warn-icon">⚠️</div>
       <div class="warn-body">
@@ -518,7 +63,7 @@
       </div>
     </div>
 
-    <!-- ── ACCEPTED ITEMS ──────────────────────────────── -->
+    <!-- ACCEPTED ITEMS -->
     <section aria-labelledby="accepted-heading">
       <div class="section-head">
         <p class="section-kicker">What's covered</p>
@@ -545,7 +90,7 @@
       </p>
     </section>
 
-    <!-- ── DROP-OFF LOCATIONS ──────────────────────────── -->
+    <!-- DROP-OFF LOCATIONS -->
     <section aria-labelledby="locations-heading">
       <div class="section-head">
         <p class="section-kicker">Where to go</p>
@@ -617,7 +162,7 @@
           </div>
         </div>
 
-        <!-- OfficeMax Hilo 1 -->
+        <!-- OfficeMax Hilo -->
         <div class="loc-card">
           <div class="loc-card-header">
             <h3>OfficeMax / Office Depot — Hilo (Makaʻala St.)</h3>
@@ -691,7 +236,7 @@
       </div>
     </section>
 
-    <!-- ── DONATE ───────────────────────────────────────── -->
+    <!-- DONATE -->
     <section aria-labelledby="donate-heading">
       <div class="section-head">
         <p class="section-kicker">Better than recycling</p>
@@ -721,7 +266,7 @@
       </div>
     </section>
 
-    <!-- ── MANUFACTURER PROGRAMS ───────────────────────── -->
+    <!-- MANUFACTURER PROGRAMS -->
     <section aria-labelledby="mfr-heading">
       <div class="section-head">
         <p class="section-kicker">Brand programs</p>
@@ -752,7 +297,7 @@
       </div>
     </section>
 
-    <!-- ── MOBILE PHONES & CARTRIDGES ──────────────────── -->
+    <!-- MOBILE PHONES & CARTRIDGES -->
     <section aria-labelledby="mobile-heading">
       <div class="section-head">
         <p class="section-kicker">Smaller electronics</p>
@@ -799,7 +344,7 @@
       </div>
     </section>
 
-    <!-- ── OTHER COMPANIES ─────────────────────────────── -->
+    <!-- OTHER COMPANIES -->
     <section aria-labelledby="other-companies-heading">
       <div class="section-head">
         <p class="section-kicker">Private recyclers</p>
@@ -859,7 +404,7 @@
       </div>
     </section>
 
-    <!-- ── STATE LAW ACCORDION ─────────────────────────── -->
+    <!-- STATE LAW ACCORDION -->
     <section aria-labelledby="law-heading">
       <div class="section-head">
         <p class="section-kicker">State program</p>
@@ -913,38 +458,16 @@
 
   </main>
 
-  <script>
-    // Hero photo subtle zoom-in on load
-    const heroPhoto = document.getElementById('heroPhoto');
-    if (heroPhoto) {
-      const img = new Image();
-      img.onload = () => heroPhoto.classList.add('loaded');
-      img.src = 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1400&auto=format&fit=crop&q=80';
-    }
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
 
-    // Accordion logic
-    document.querySelectorAll('.accordion-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        const bodyId = btn.getAttribute('aria-controls');
-        const body = document.getElementById(bodyId);
-
-        // Close all
-        document.querySelectorAll('.accordion-trigger').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-        });
-        document.querySelectorAll('.accordion-body').forEach(b => {
-          b.classList.remove('open');
-        });
-
-        // Open this one if it was closed
-        if (!expanded) {
-          btn.setAttribute('aria-expanded', 'true');
-          body.classList.add('open');
-        }
-      });
-    });
-  </script>
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script src="../assets/js/electronics.js"></script>
+  <script src="../assets/js/layout-loader.js"></script>
 
 </body>
 </html>
