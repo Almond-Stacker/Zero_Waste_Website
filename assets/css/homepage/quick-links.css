@@ -1,73 +1,166 @@
 /* =============================================
    quick-links.css
-   Styles for the .quick-links icon row between
+   Styles for the .quick-links section between
    the hero and the main content area.
+   Includes large photo cards for featured links
+   and small icon links for secondary items.
    Depends on: global.css (tokens)
    ============================================= */
 
 .quick-links {
   background: var(--color-bg);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 28px 1rem 32px;
+  padding: 44px 2rem 40px;
   border-bottom: 1px solid var(--color-border);
 }
 
-.quick-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--color-primary);
-  transition: transform 0.2s ease, color var(--transition);
-  width: 100px;
+/* --- Section heading ------------------------------------------------- */
+.ql-heading {
   text-align: center;
+  margin-bottom: 28px;
 }
 
-.quick-link:hover {
-  transform: translateY(-3px);
-  color: var(--color-primary-mid);
+.ql-heading h2 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
-/* --- Icon circle ---------------------------------------------------- */
-.ql-icon {
-  width: 66px;
-  height: 66px;
+.ql-heading p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
+
+/* ================================================================
+   FEATURED CARDS — large photo buttons for primary actions
+   ================================================================ */
+.ql-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto 2rem;
+}
+
+.ql-card {
+  position: relative;
+  height: 210px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 18px var(--color-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.ql-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(47, 89, 26, 0.28);
+}
+
+/* Background photo layer */
+.ql-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.ql-card:hover .ql-card-bg {
+  transform: scale(1.07);
+}
+
+/* Gradient overlay for readability */
+.ql-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 42, 8, 0.88) 0%,
+    rgba(15, 42, 8, 0.35) 55%,
+    rgba(15, 42, 8, 0.08) 100%
+  );
+  transition: background var(--transition);
+}
+
+.ql-card:hover .ql-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(15, 42, 8, 0.80) 0%,
+    rgba(15, 42, 8, 0.28) 55%,
+    rgba(15, 42, 8, 0.05) 100%
+  );
+}
+
+/* Text content */
+.ql-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.4rem 1.5rem;
+  color: var(--color-white);
+  width: 100%;
+}
+
+.ql-card-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.ql-card-sub {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.82;
+  letter-spacing: 0.02em;
+}
+
+/* Arrow badge — top right corner */
+.ql-card-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: 2.5px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  transition: background var(--transition), border-color var(--transition);
+  color: var(--color-white);
+  font-size: 1rem;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-.quick-link:hover .ql-icon {
-  background: var(--color-primary-pale);
-  border-color: var(--color-primary-mid);
+.ql-card:hover .ql-card-arrow {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
 }
 
-.ql-icon img {
-  width: 34px;
-  height: 34px;
-  /* SVGs inherit currentColor when loaded as <img> only if the file uses
-     currentColor — we tint via CSS filter as a reliable fallback */
-  filter: invert(23%) sepia(48%) saturate(600%) hue-rotate(75deg) brightness(70%);
-  transition: filter var(--transition);
-}
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 640px) {
+  .ql-featured {
+    grid-template-columns: 1fr;
+  }
 
-.quick-link:hover .ql-icon img {
-  filter: invert(30%) sepia(60%) saturate(500%) hue-rotate(80deg) brightness(80%);
-}
-
-/* --- Label ---------------------------------------------------------- */
-.quick-link span {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  line-height: 1.4;
+  .ql-card {
+    height: 185px;
+  }
 }
