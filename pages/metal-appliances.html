@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metal &amp; Appliances | County of Hawaiʻi Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css   — tokens, reset, base body
+      2. header.css   — site header & nav
+      3. footer.css   — footer strip & nav
+      4. metals.css   — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/metals.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="metals-hero" aria-label="Page hero">
+    <div class="metals-hero-inner">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;">
+        <a href="recycle.html" style="color:rgba(255,255,255,0.5);">Recycle &amp; Dispose</a>
+        <span style="opacity:.4;">›</span>
+        <span style="color:rgba(255,255,255,0.8);">Metal &amp; Appliances</span>
+      </nav>
+      <span class="hero-eyebrow">Recycle &amp; Dispose</span>
+      <h1>Scrap Metal &amp; Large Appliances</h1>
+      <p>Hawaiʻi County accepts scrap metal and large household appliances (White Goods) at all transfer stations. Appliances containing Freon refrigerants require a certified removal certificate before they can be accepted.</p>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <span class="hero-stat-num">Free</span>
+          <span class="hero-stat-label">Scrap metal drop-off</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">$20</span>
+          <span class="hero-stat-label">Fee for Freon appliances</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">8</span>
+          <span class="hero-stat-label">Transfer stations island-wide</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#scrap-metal" class="hero-btn-primary">Scrap Metal ↓</a>
+        <a href="#white-goods" class="hero-btn-outline">White Goods / Appliances ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       STICKY SECTION NAV
+  ================================================================ -->
+  <nav class="section-nav" aria-label="Page sections">
+    <div class="section-nav-inner">
+      <a href="#scrap-metal" class="snav-link"><span class="snav-icon">🔩</span>Scrap Metal</a>
+      <a href="#white-goods" class="snav-link"><span class="snav-icon">🫙</span>White Goods</a>
+      <a href="#autos" class="snav-link"><span class="snav-icon">🚗</span>Auto Bodies</a>
+      <a href="#fees" class="snav-link"><span class="snav-icon">💵</span>Fees &amp; Locations</a>
+      <a href="#faq" class="snav-link"><span class="snav-icon">❓</span>FAQ</a>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="metals-body">
+
+    <!-- KEY FREON ALERT -->
+    <div class="island-note red island-note--page-top" role="alert">
+      <span class="island-note-icon">🌡️</span>
+      <div class="island-note-body">
+        <strong>Freon Appliances Require a Certificate</strong>
+        <p>Refrigerators, freezers, air conditioners, and dehumidifiers containing Freon (CFC/HFC refrigerants) <strong>will not be accepted</strong> unless you can provide a signed certificate from an EPA Section 608 Certified technician confirming that the refrigerant has been properly recovered. A $20 disposal fee applies. Appliances without Freon are accepted free of charge.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 1: SCRAP METAL
+    ============================================================ -->
+    <section class="metals-section" id="scrap-metal" aria-labelledby="scrap-metal-heading">
+
+      <div class="metals-section-header">
+        <div class="section-icon-circle" aria-hidden="true">🔩</div>
+        <div>
+          <h2 id="scrap-metal-heading">Scrap Metal</h2>
+          <p>Ferrous and non-ferrous metals accepted free of charge at all County transfer stations. Metals are sorted, baled, and sold to processors — keeping valuable resources out of the landfill.</p>
+        </div>
+      </div>
+
+      <div class="metals-panel">
+
+        <!-- Intro row -->
+        <div class="intro-row">
+          <div class="intro-text">
+            <p>Scrap metal is one of the most valuable streams in the recycling program. Whether it is old rebar, aluminum window frames, copper pipe, or a broken lawnmower, the County accepts a wide variety of metal at the scrap metal area of every transfer station.</p>
+            <p>Metal items must be <strong>free of hazardous materials</strong> — gas tanks and propane cylinders must be empty and purged. Drums or barrels that contained hazardous chemicals are not accepted.</p>
+            <p>Large quantities from contractors or commercial operations may require coordination with the transfer station staff.</p>
+          </div>
+          <div class="intro-photo">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Scrap metal pile at recycling facility" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Know Your Metal Types -->
+        <div class="panel-section">
+          <div class="panel-section-title"><span>⚙️</span> Know Your Metal Types</div>
+          <div class="metal-types-grid">
+            <div>
+              <span class="metal-type-title">Ferrous Metals (iron-based)</span>
+              <ul class="metal-list">
+                <li><span class="metal-check">✓</span>Structural steel beams &amp; rebar</li>
+                <li><span class="metal-check">✓</span>Iron pipes &amp; plumbing fixtures</li>
+                <li><span class="metal-check">✓</span>Steel barrels (empty, non-hazardous)</li>
+                <li><span class="metal-check">✓</span>Metal roofing &amp; corrugated iron</li>
+                <li><span class="metal-check">✓</span>Old farm equipment parts</li>
+                <li><span class="metal-check">✓</span>Lawn mowers &amp; garden tools (no fuel)</li>
+                <li><span class="metal-check">✓</span>Metal furniture frames</li>
+              </ul>
+              <p class="metal-tip">💡 Ferrous metals stick to a magnet. They are heavier and typically less valuable per pound than non-ferrous.</p>
+            </div>
+            <div>
+              <span class="metal-type-title">Non-Ferrous Metals (higher value)</span>
+              <ul class="metal-list">
+                <li><span class="metal-check">✓</span>Aluminum — cans, siding, frames, foil</li>
+                <li><span class="metal-check">✓</span>Copper — pipe, wire, tubing</li>
+                <li><span class="metal-check">✓</span>Brass — fixtures, valves, decorative items</li>
+                <li><span class="metal-check">✓</span>Stainless steel — sinks, pots, exhaust</li>
+                <li><span class="metal-check">✓</span>Lead — old pipe (no paint chips)</li>
+                <li><span class="metal-check">✓</span>Zinc — galvanized metal, hardware</li>
+              </ul>
+              <p class="metal-tip">💡 Non-ferrous metals do not stick to a magnet. They have higher recycling value and may be eligible for HI-5 refund if purchased in Hawaiʻi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accept / Not Accept -->
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — Scrap Metal</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Steel &amp; iron (all forms, free of fluids)</li>
+              <li>Aluminum (frames, cans, extrusions, siding)</li>
+              <li>Copper pipe, wire, and tubing</li>
+              <li>Brass fixtures and valves</li>
+              <li>Stainless steel (sinks, pots, appliances)</li>
+              <li>Empty, de-gassed propane cylinders</li>
+              <li>Metal roofing and fencing</li>
+              <li>Metal bed frames and shelving</li>
+              <li>Rebar, structural steel, I-beams</li>
+              <li>Metal wheels (without tires)</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted — Scrap Metal</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Pressurized tanks (not empty/purged)</li>
+              <li>Containers with hazardous residue</li>
+              <li>Mixed metal/non-metal assemblies (e.g., car seats)</li>
+              <li>Radioactive or contaminated metals</li>
+              <li>Ammunition casings or explosives</li>
+              <li>Mercury-containing devices (use HHW)</li>
+              <li>Lead-acid batteries (separate program — free)</li>
+              <li>Catalytic converters (contact transfer station)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: WHITE GOODS / APPLIANCES
+    ============================================================ -->
+    <section class="metals-section" id="white-goods" aria-labelledby="white-goods-heading">
+
+      <div class="metals-section-header">
+        <div class="section-icon-circle" aria-hidden="true">🫙</div>
+        <div>
+          <h2 id="white-goods-heading">White Goods — Large Appliances</h2>
+          <p>"White Goods" is the industry term for large household appliances such as refrigerators, washers, dryers, and stoves. Freon-containing units require a certified removal certificate.</p>
+        </div>
+      </div>
+
+      <div class="metals-panel">
+
+        <div class="intro-row">
+          <div class="intro-text">
+            <p>Large household appliances (often called "White Goods") contain significant amounts of recyclable steel, aluminum, and copper. The County accepts them at all transfer stations, though appliances containing Freon refrigerants require special handling.</p>
+            <p><strong>Two categories of appliances:</strong> those that contain refrigerants (Freon) — which require an EPA Section 608 technician to remove the refrigerant first — and those that do not contain refrigerants, such as washers, dryers, and stoves.</p>
+            <p>When in doubt about whether your appliance contains Freon, check the back of the unit for a data plate listing the refrigerant type. Common refrigerants include R-22, R-134a, R-410a, and R-32.</p>
+          </div>
+          <div class="intro-photo">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Large household appliances ready for recycling" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Freon Alert Panel -->
+        <div class="panel-note-wrap">
+          <div class="island-note red island-note--mid" role="alert">
+            <span class="island-note-icon">⚠️</span>
+            <div class="island-note-body">
+              <strong>Freon Removal Certificate Required</strong>
+              <p>Refrigerators, freezers, air conditioners, dehumidifiers, and water coolers that still contain refrigerant <strong>cannot be accepted</strong> without a written certificate from a technician certified under EPA Section 608. The certificate must identify the appliance, the technician's certification number, and the date refrigerant was recovered. Bring this document with you to the transfer station. A $20 disposal fee applies even with the certificate.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accept / Not Accept: White Goods -->
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — White Goods</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Refrigerators <em>(with Freon cert + $20 fee)</em></li>
+              <li>Freezers — chest &amp; upright <em>(with Freon cert + $20 fee)</em></li>
+              <li>Central &amp; window air conditioners <em>(with Freon cert + $20 fee)</em></li>
+              <li>Dehumidifiers <em>(with Freon cert + $20 fee)</em></li>
+              <li>Washing machines — free of charge</li>
+              <li>Clothes dryers (gas &amp; electric) — free</li>
+              <li>Dishwashers — free of charge</li>
+              <li>Electric &amp; gas stoves / ranges — free</li>
+              <li>Water heaters (drained) — free</li>
+              <li>Microwave ovens — free</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted — White Goods</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Freon appliances <strong>without</strong> removal certificate</li>
+              <li>Appliances with hazardous liquids still inside</li>
+              <li>Gas cylinders still attached to appliance</li>
+              <li>Appliances with asbestos insulation</li>
+              <li>Commercial/industrial refrigeration units (contact DEM)</li>
+              <li>PCB-containing equipment (pre-1980 capacitors)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fee and Process Info Grid -->
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">💵</span>Disposal Fees</div>
+            <table class="fee-table" aria-label="Appliance disposal fees">
+              <tbody>
+                <tr>
+                  <td>Refrigerator (with cert)</td>
+                  <td>$20.00</td>
+                </tr>
+                <tr>
+                  <td>Freezer (with cert)</td>
+                  <td>$20.00</td>
+                </tr>
+                <tr>
+                  <td>Air conditioner (with cert)</td>
+                  <td>$20.00</td>
+                </tr>
+                <tr>
+                  <td>Washer / Dryer</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td>Stove / Range / Oven</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td>Water Heater (drained)</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td>Dishwasher</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td>Microwave</td>
+                  <td>Free</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="info-footnote">Fees paid at transfer station gate. Cash or check accepted. Fees subject to change.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">📋</span>How to Prepare</div>
+            <ul>
+              <li>Drain water heaters completely before transport</li>
+              <li>Remove all food from refrigerators and freezers</li>
+              <li>Detach the unit from gas lines (gas appliances)</li>
+              <li>Have Freon certificate in hand before arriving</li>
+              <li>Remove doors from refrigerators if transporting open-top (child safety)</li>
+              <li>Secure appliances safely in your vehicle</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">🔍</span>Finding an EPA 608 Technician</div>
+            <p>Technicians certified under EPA Section 608 can be found through licensed HVAC companies, appliance repair shops, and refrigerant recovery specialists on the Big Island. Ask the technician for a signed certificate on company letterhead listing their EPA certification number and the date refrigerant was recovered.</p>
+            <p>Contact DEM at (808) 961-8270 for a referral to local certified technicians.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: AUTO BODIES
+    ============================================================ -->
+    <section class="metals-section" id="autos" aria-labelledby="autos-heading">
+
+      <div class="metals-section-header">
+        <div class="section-icon-circle" aria-hidden="true">🚗</div>
+        <div>
+          <h2 id="autos-heading">Junk Vehicles &amp; Auto Bodies</h2>
+          <p>Abandoned or inoperable vehicles can be surrendered to the County. All fluids must be drained prior to drop-off. Vehicles with current registration may also qualify for the state junk vehicle program.</p>
+        </div>
+      </div>
+
+      <div class="metals-panel">
+
+        <div class="panel-section">
+          <p style="font-size:14px;line-height:1.75;color:var(--color-text);margin-bottom:14px;">The County of Hawaiʻi accepts junk motor vehicle bodies at designated transfer stations. Auto bodies are compacted and shipped off-island for steel recycling. <strong>All fluids — oil, coolant, brake fluid, transmission fluid, and gasoline — must be completely drained before the vehicle can be accepted.</strong></p>
+          <p style="font-size:14px;line-height:1.75;color:var(--color-text);margin-bottom:0;">You must present the vehicle title or surrender paperwork at the transfer station gate. For abandoned vehicles found on your property, contact the County Abandoned Vehicle Program at (808) 961-8268.</p>
+        </div>
+
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — Auto Bodies</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Cars, trucks, and SUVs (all fluids drained)</li>
+              <li>Motorcycles and mopeds</li>
+              <li>ATV and off-road vehicle frames</li>
+              <li>Boat trailers and utility trailers (metal frame only)</li>
+              <li>Vehicle engine blocks (no fluids)</li>
+              <li>Auto body panels and hoods</li>
+              <li>Wheels and rims (without tires)</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted — Auto Bodies</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Vehicles with fluids still inside</li>
+              <li>Catalytic converters detached from vehicle body (contact DEM)</li>
+              <li>Tires (separate Tire Recycling Program applies)</li>
+              <li>Airbag modules not deployed (hazardous propellant)</li>
+              <li>Lead-acid batteries (separate free drop-off program)</li>
+              <li>Vehicles with intact airbag modules</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="steps-strip">
+          <h3>How to Drop Off a Junk Vehicle</h3>
+          <div class="steps-row">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <span class="step-label">Drain All Fluids</span>
+              <span class="step-desc">Engine oil, coolant, transmission fluid, brake fluid, and gasoline must be removed by a qualified shop or at home.</span>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <span class="step-label">Remove Battery</span>
+              <span class="step-desc">Take out the lead-acid battery and drop it off separately — it is accepted FREE at any transfer station.</span>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <span class="step-label">Bring Title / ID</span>
+              <span class="step-desc">Present the vehicle title or signed surrender paperwork at the transfer station gate when you arrive.</span>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <span class="step-label">Drop It Off</span>
+              <span class="step-desc">Transfer station staff will direct you to the junk vehicle area. No appointment needed at most stations.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <div class="cta-row-text">
+            <strong>Found an abandoned vehicle on your property?</strong>
+            <span>Contact the County Abandoned Vehicle Program for free removal assistance.</span>
+          </div>
+          <div class="cta-row-btns">
+            <a href="tel:8089618268" class="cta-btn primary">📞 (808) 961-8268</a>
+            <a href="illegal-dumping.html" class="cta-btn outline">Report Dumping</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: FEES & LOCATIONS
+    ============================================================ -->
+    <section class="metals-section" id="fees" aria-labelledby="fees-heading">
+
+      <div class="metals-section-header">
+        <div class="section-icon-circle" aria-hidden="true">📍</div>
+        <div>
+          <h2 id="fees-heading">Fees &amp; Transfer Station Locations</h2>
+          <p>All transfer stations accept scrap metal and appliances. Hours vary — confirm before you visit.</p>
+        </div>
+      </div>
+
+      <div class="metals-panel">
+        <div class="panel-section">
+          <div class="panel-section-title"><span>📍</span> Transfer Station Locations</div>
+          <div class="info-grid" style="border-top:none;">
+            <div class="info-block">
+              <div class="info-block-title"><span class="bicon">🌋</span>East Hawaiʻi</div>
+              <ul>
+                <li>Hilo Transfer Station<span class="station-hours">3400 Kaumana Drive · Mon–Sat 7–4:30, Sun 8–3</span></li>
+                <li>Pahoa Transfer Station<span class="station-hours">Pahoa Village Road · Mon, Wed, Fri–Sun 7:30–4</span></li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <div class="info-block-title"><span class="bicon">🌊</span>West Hawaiʻi</div>
+              <ul>
+                <li>Kona Transfer Station<span class="station-hours">73-4800 Puuhonua Road · Mon–Sat 7–4:30</span></li>
+                <li>North Kohala Transfer Station<span class="station-hours">55-3441 Akoni Pule Hwy, Hāwī · Mon, Wed–Sun 8–3</span></li>
+                <li>Puako Transfer Station<span class="station-hours">South Kohala · Call to confirm hours</span></li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <div class="info-block-title"><span class="bicon">🌿</span>Central &amp; South</div>
+              <ul>
+                <li>Waimea Transfer Station<span class="station-hours">67-1203 Mamalahoa Hwy · Daily 7:30–4</span></li>
+                <li>Ocean View Transfer Station<span class="station-hours">Kaʻū District · Tue, Thu, Sat–Sun 8–3</span></li>
+                <li>Pahala Transfer Station<span class="station-hours">96-2596 Pikake St. · Mon, Wed, Fri–Sun 8–3</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <div class="cta-row-text">
+            <strong>Questions about metal or appliance drop-off?</strong>
+            <span>DEM staff are happy to help confirm what's accepted at your nearest station.</span>
+          </div>
+          <div class="cta-row-btns">
+            <a href="tel:8089618270" class="cta-btn primary">📞 (808) 961-8270</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         IMPACT BANNER
+    ============================================================ -->
+    <div class="impact-banner" aria-label="Environmental impact statistics">
+      <div class="impact-stat">
+        <span class="impact-stat-num">2,400+</span>
+        <span class="impact-stat-label">Tons of Metal Recycled/Year</span>
+        <span class="impact-stat-note">Across all County transfer stations combined</span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-stat-num">74%</span>
+        <span class="impact-stat-label">Energy Savings vs. Virgin Steel</span>
+        <span class="impact-stat-note">Recycled steel requires 74% less energy to produce</span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-stat-num">95%</span>
+        <span class="impact-stat-label">Energy Saved Recycling Aluminum</span>
+        <span class="impact-stat-note">Recycled aluminum uses 95% less energy than primary smelting</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="faq-block" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+          My refrigerator still has Freon — what do I do first?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a1">
+          Contact a local HVAC or appliance repair company certified under EPA Section 608 to remove the refrigerant. They will give you a signed certificate. Bring that certificate and $20 cash or check to the transfer station. Without the certificate, the transfer station cannot accept the appliance.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+          Can I drop off a broken washing machine for free?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a2">
+          Yes. Washing machines, dryers, dishwashers, stoves, ranges, and microwaves do not contain Freon and are accepted at no charge at all County transfer stations.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+          Do I need to drain my water heater before dropping it off?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a3">
+          Yes. Water heaters should be fully drained before transport. Attach a garden hose to the drain valve at the bottom of the tank and drain completely. This also makes the unit lighter and safer to move.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+          Is there a limit on how much scrap metal I can bring in one trip?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a4">
+          There is no per-trip household limit for scrap metal. Large commercial quantities from contractors or demolition projects may require coordination with transfer station management — call (808) 961-8270 in advance.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
+          Can I get paid for scrap metal at County transfer stations?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a5">
+          County transfer stations do not pay for scrap metal — they accept it free of charge as a public service. If you want payment for high-value metals like copper, aluminum, or brass, contact a private scrap metal dealer. Private dealers may pay market rate for these materials but may not accept all item types.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answerId = btn.getAttribute('aria-controls');
+        const answer = document.getElementById(answerId);
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.classList.toggle('open', !expanded);
+      });
+    });
+
+    // Section nav active link on scroll
+    const sections = document.querySelectorAll('.metals-section');
+    const navLinks = document.querySelectorAll('.snav-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const id = entry.target.id;
+          const link = document.querySelector(`.snav-link[href="#${id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

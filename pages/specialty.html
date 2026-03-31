@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialty Items | County of Hawaiʻi Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css     — tokens, reset, base body
+      2. header.css     — site header & nav
+      3. footer.css     — footer strip & nav
+      4. specialty.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/specialty.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="specialty-hero" aria-label="Page hero">
+    <div class="specialty-hero-inner">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;">
+        <a href="recycle.html" style="color:rgba(255,255,255,0.5);">Recycle &amp; Dispose</a>
+        <span style="opacity:.4;">›</span>
+        <span style="color:rgba(255,255,255,0.8);">Specialty Items</span>
+      </nav>
+      <span class="hero-eyebrow">Recycle &amp; Dispose</span>
+      <h1>Specialty Item Drop-Off</h1>
+      <p>Tires, lead-acid batteries, and used cooking oil require special handling — they cannot go in regular trash or recycling. The County of Hawaiʻi operates dedicated drop-off programs for each of these materials at transfer stations across the island.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Tires — fee per tire</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Lead-Acid Batteries — FREE</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Cooking Oil — FREE</span>
+        <span class="hero-pill"><span class="pill-dot"></span>All Transfer Stations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       STICKY SECTION NAV
+  ================================================================ -->
+  <nav class="section-nav" aria-label="Jump to section">
+    <div class="section-nav-inner">
+      <a href="#tires" class="snav-link active"><span class="snav-icon">🛞</span>Tires</a>
+      <a href="#batteries" class="snav-link"><span class="snav-icon">🔋</span>Lead-Acid Batteries</a>
+      <a href="#cooking-oil" class="snav-link"><span class="snav-icon">🫙</span>Cooking Oil</a>
+      <a href="#spec-faq" class="snav-link"><span class="snav-icon">❓</span>FAQ</a>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="specialty-body">
+
+    <!-- ============================================================
+         SECTION 1 — TIRES
+    ============================================================ -->
+    <section class="spec-section" id="tires" aria-labelledby="tires-heading">
+
+      <div class="spec-section-header">
+        <div class="spec-section-icon" aria-hidden="true">🛞</div>
+        <div>
+          <h2 id="tires-heading">Passenger &amp; Light Truck Tires</h2>
+          <p>Old tires are accepted at all County transfer stations for a small fee. Limit of 4 tires per day for residential drop-off. Tires must be off the rim.</p>
+        </div>
+      </div>
+
+      <div class="spec-panel">
+
+        <!-- Intro row -->
+        <div class="intro-row">
+          <div class="intro-text">
+            <p>Used tires cannot be legally landfilled in Hawaiʻi. The County operates a tire recycling program at all transfer stations, accepting passenger, light truck, and medium-duty tires for a modest per-tire disposal fee. Fees help offset transportation and processing costs for shipping tires off-island.</p>
+            <p>Tires that are accepted are shredded or crumbled into tire-derived aggregate and crumb rubber, which is then used in playground surfaces, athletic tracks, road construction, and other applications.</p>
+            <p><strong>Tires must be removed from rims before drop-off.</strong> If your tires are still mounted on rims, many local tire shops will dismount them for a small fee, or you may discard the tires at the transfer station and keep the rims for the scrap metal program.</p>
+          </div>
+          <div class="intro-photo">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Stack of used tires for recycling" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Fee Table -->
+        <div class="panel-section">
+          <div class="panel-section-title"><span>💵</span> Tire Disposal Fees</div>
+          <table class="fee-table" aria-label="Tire disposal fee schedule">
+            <thead>
+              <tr>
+                <th scope="col">Tire Type</th>
+                <th scope="col">Size Description</th>
+                <th scope="col">Fee per Tire</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Passenger / Motorcycle</td>
+                <td>Up to 16" rim diameter</td>
+                <td class="fee-amount">$2.00</td>
+              </tr>
+              <tr>
+                <td>Light Truck / SUV</td>
+                <td>17"–19" rim diameter</td>
+                <td class="fee-amount">$4.00</td>
+              </tr>
+              <tr>
+                <td>Medium Truck</td>
+                <td>20"–22.5" rim diameter</td>
+                <td class="fee-amount">$6.00</td>
+              </tr>
+              <tr>
+                <td>Large / Commercial Truck</td>
+                <td>Over 22.5" — contact station</td>
+                <td class="fee-amount">$10.00+</td>
+              </tr>
+              <tr>
+                <td>ATV / Lawn / Small Equipment</td>
+                <td>Under 14" rim diameter</td>
+                <td class="fee-amount">$1.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:var(--color-text-muted);margin-top:10px;">Fees paid at the transfer station gate. Cash or check accepted. Fees subject to change — call ahead to confirm current rates. Tires on rims are <strong>not accepted</strong>.</p>
+        </div>
+
+        <!-- Accepted / Not Accepted -->
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — Tires</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Passenger car tires (off rim)</li>
+              <li>Motorcycle and moped tires</li>
+              <li>Light truck and SUV tires (off rim)</li>
+              <li>Medium truck tires (off rim)</li>
+              <li>ATV and off-road tires (off rim)</li>
+              <li>Lawn mower and garden equipment tires</li>
+              <li>Trailer tires (residential quantities)</li>
+              <li>Up to 4 tires per day — residential</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted — Tires</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Tires still mounted on rims</li>
+              <li>Commercial quantities (over 4/day — contact DEM)</li>
+              <li>Tires filled with concrete or other material</li>
+              <li>Aircraft tires (contact DEM)</li>
+              <li>Solid rubber tires (forklift, industrial)</li>
+              <li>Tires as planters or decorative items with soil inside</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">📋</span>Drop-Off Rules</div>
+            <ul>
+              <li>Maximum 4 tires per household per day</li>
+              <li>Tires must be off the rim before arrival</li>
+              <li>Fee is collected at the gate — cash or check only</li>
+              <li>No appointment needed at any transfer station</li>
+              <li>Contractor or commercial quantities require prior coordination</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">♻️</span>What Happens Next</div>
+            <p>Accepted tires are consolidated and shipped off-island to licensed tire recycling facilities. They are shredded or crumbled into:</p>
+            <ul>
+              <li>Crumb rubber for athletic surfaces</li>
+              <li>Tire-derived fuel (TDF)</li>
+              <li>Road construction aggregate</li>
+              <li>Playground safety surfaces</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">📅</span>Tire Amnesty Events</div>
+            <p>Periodically, the County holds <strong>Tire Amnesty Events</strong> where residents can drop off up to 10 tires per household at no charge. These events are announced on the County website and posted here on the Events Calendar.</p>
+            <p><a href="events.html" style="color:var(--color-primary);font-weight:700;">Check the Events Calendar →</a></p>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <div class="cta-row-text">
+            <strong>Illegal tire dumping is a violation</strong>
+            <span>Dumping tires on roadsides or public land is illegal and subject to fines. If you see illegal tire dumping, please report it.</span>
+          </div>
+          <a href="illegal-dumping.html" class="cta-btn">Report Dumping</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — LEAD-ACID BATTERIES
+    ============================================================ -->
+    <section class="spec-section" id="batteries" aria-labelledby="batteries-heading">
+
+      <div class="spec-section-header">
+        <div class="spec-section-icon" aria-hidden="true">🔋</div>
+        <div>
+          <h2 id="batteries-heading">Lead-Acid Batteries</h2>
+          <p>Lead-acid batteries are accepted FREE of charge at all County transfer stations. Never put them in the trash — lead and sulfuric acid are hazardous to our groundwater and reef ecosystems.</p>
+        </div>
+      </div>
+
+      <div class="spec-panel">
+
+        <div class="intro-row">
+          <div class="intro-text">
+            <p>Lead-acid batteries — the type used in cars, trucks, motorcycles, boats, and golf carts — are among the most recycled products in the United States. Nearly 99% of the materials in a lead-acid battery can be recovered and reused. The lead is melted and recast, the plastic case is granulated and remanufactured, and the sulfuric acid is neutralized or reclaimed.</p>
+            <p>Despite their high recyclability, lead-acid batteries remain hazardous if improperly discarded. Lead is a potent neurotoxin, and the sulfuric acid electrolyte can contaminate soil and drinking water. In Hawaiʻi, disposing of lead-acid batteries in regular trash or the landfill is prohibited by State law.</p>
+            <p>Drop-off is <strong>completely free</strong> at every County transfer station. Most auto parts retailers (AutoZone, O'Reilly, NAPA) also accept used batteries for free.</p>
+          </div>
+          <div class="intro-photo">
+            <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbe4d?w=600&q=80" alt="Car battery being recycled" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Accepted / Not Accepted -->
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — Lead-Acid Batteries</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Automotive / car batteries (12V)</li>
+              <li>Truck and heavy equipment batteries</li>
+              <li>Motorcycle and moped batteries</li>
+              <li>Marine / boat batteries</li>
+              <li>Golf cart battery packs</li>
+              <li>RV / camper batteries</li>
+              <li>UPS (uninterruptible power supply) batteries</li>
+              <li>Lawn tractor and riding mower batteries</li>
+              <li>Wheelchair and mobility scooter batteries</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted Here — Other Batteries</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Lithium-ion batteries (laptop, phone, power tool) — use HHW or electronics recycler</li>
+              <li>NiMH / NiCd rechargeable batteries — use HHW program</li>
+              <li>Alkaline AA/AAA/C/D batteries — use HHW program</li>
+              <li>Button / coin cell batteries — use HHW program</li>
+              <li>Lithium primary batteries (non-rechargeable) — use HHW</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">⚠️</span>Safe Handling Tips</div>
+            <ul>
+              <li>Always transport upright — never on their side</li>
+              <li>Wear gloves — acid residue can burn skin</li>
+              <li>If cracked or leaking, place in a plastic bag or bin</li>
+              <li>Keep away from sparks or open flames</li>
+              <li>Avoid contact with eyes — wash immediately if splashed</li>
+              <li>Do not store indoors in living areas</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">🏪</span>Other Drop-Off Options</div>
+            <ul>
+              <li>AutoZone — all island locations</li>
+              <li>O'Reilly Auto Parts — Hilo &amp; Kona</li>
+              <li>NAPA Auto Parts — island-wide</li>
+              <li>Walmart Auto Center — Hilo &amp; Kona</li>
+              <li>Costco Tire Center — Kona</li>
+              <li>Most battery retailers accept returns</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">♻️</span>Why It Matters</div>
+            <p>A single car battery contains approximately <strong>18 lbs of lead</strong>. When recycled, that lead is recovered and reused in new batteries. Recycled lead-acid batteries supply over <strong>80% of the raw lead</strong> used in new battery manufacturing — making this one of the most circular material loops in the economy.</p>
+          </div>
+        </div>
+
+        <div class="island-note green">
+          <span class="island-note-icon">💡</span>
+          <div class="island-note-body">
+            <strong>Core charge refunds at retailers</strong>
+            <p>When you buy a replacement battery at most auto parts stores, a "core charge" (typically $12–$22) is added to your price. Return your old battery to the same store and the core charge is refunded in full. This is the easiest and most convenient way to recycle your old car battery.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — COOKING OIL
+    ============================================================ -->
+    <section class="spec-section" id="cooking-oil" aria-labelledby="oil-heading">
+
+      <div class="spec-section-header">
+        <div class="spec-section-icon" aria-hidden="true">🫙</div>
+        <div>
+          <h2 id="oil-heading">Used Cooking Oil &amp; Grease</h2>
+          <p>Used vegetable cooking oil is accepted free of charge at select transfer stations. Oil must be sealed in clean containers and free of water contamination. It is converted into biodiesel fuel.</p>
+        </div>
+      </div>
+
+      <div class="spec-panel">
+
+        <div class="intro-row">
+          <div class="intro-text">
+            <p>Used cooking oil — the vegetable oil leftover from frying at home or in restaurants — is a valuable resource that can be converted into biodiesel fuel. Rather than pouring it down the drain (which clogs pipes and pollutes waterways) or throwing it in the trash (where it can leach into landfill), the County accepts it at select transfer stations for recycling.</p>
+            <p>The program accepts used vegetable-based cooking oils: canola, sunflower, soybean, corn, coconut, and similar oils. Once collected, the oil is processed by a biodiesel producer and converted into a clean-burning renewable fuel used in diesel vehicles and equipment.</p>
+            <p><strong>Oil must be free of water</strong> — even a small amount of water contamination can ruin an entire batch of biodiesel feedstock and cause the entire load to be rejected. Let oil cool and settle before bottling it for drop-off.</p>
+          </div>
+          <div class="intro-photo">
+            <img src="https://images.unsplash.com/photo-1571689936114-b49b3d8ef558?w=600&q=80" alt="Used cooking oil in a container for recycling" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Accepted / Not Accepted -->
+        <div class="accept-grid">
+          <div class="accept-col yes">
+            <div class="accept-col-header yes">
+              <div class="accept-badge yes">✓</div>
+              <h3>Accepted — Cooking Oil</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Used canola oil</li>
+              <li>Used vegetable oil (soybean, corn, sunflower)</li>
+              <li>Used coconut oil (liquid, not solidified)</li>
+              <li>Used olive oil and blended cooking oils</li>
+              <li>Used peanut oil</li>
+              <li>Fryer oil from home use</li>
+              <li>Sealed in clean, non-leaking containers</li>
+              <li>Household quantities (up to 5 gallons per visit)</li>
+            </ul>
+          </div>
+          <div class="accept-col no">
+            <div class="accept-col-header no">
+              <div class="accept-badge no">✗</div>
+              <h3>Not Accepted — Cooking Oil</h3>
+            </div>
+            <ul class="accept-list">
+              <li>Oil mixed with water (any amount)</li>
+              <li>Animal-based grease — lard, bacon drippings, tallow</li>
+              <li>Motor oil or automotive lubricants</li>
+              <li>Rancid oil with strong off-odors (may still be OK — ask staff)</li>
+              <li>Oil in open, leaking, or unlabeled containers</li>
+              <li>Large commercial quantities (contact a grease hauler)</li>
+              <li>Fish oil or seafood frying oil (high water content)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">🧴</span>How to Prepare Your Oil</div>
+            <ul>
+              <li>Let used oil cool completely before handling</li>
+              <li>Pour into a clean, sealable container (original bottle, jug, or jar)</li>
+              <li>Use a fine strainer or cheesecloth to remove food particles</li>
+              <li>Wipe the rim and cap to prevent leaks in transport</li>
+              <li>Label the container "Used Cooking Oil"</li>
+              <li>Do not mix with any other liquids</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">📍</span>Accepting Locations</div>
+            <ul>
+              <li>Hilo Transfer Station<span class="station-hours" style="font-size:11px;color:var(--color-text-muted);display:block;">3400 Kaumana Drive</span></li>
+              <li>Kona Transfer Station<span class="station-hours" style="font-size:11px;color:var(--color-text-muted);display:block;">73-4800 Puuhonua Road</span></li>
+              <li>Waimea Transfer Station<span class="station-hours" style="font-size:11px;color:var(--color-text-muted);display:block;">67-1203 Mamalahoa Hwy</span></li>
+            </ul>
+            <p style="font-size:12px;color:var(--color-text-muted);margin-top:10px;">Call (808) 961-8270 to confirm availability at other stations before visiting.</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-title"><span class="bicon">🌱</span>Environmental Benefit</div>
+            <p>Pouring cooking oil down the drain contributes to fatbergs — massive blockages of congealed fat and grease that damage sewer systems and eventually reach the ocean.</p>
+            <p>Every gallon of recycled cooking oil can produce approximately <strong>1 gallon of biodiesel</strong>, replacing petroleum-based fuel with a renewable, lower-emission alternative.</p>
+          </div>
+        </div>
+
+        <div class="island-note">
+          <span class="island-note-icon">🚫</span>
+          <div class="island-note-body">
+            <strong>Never pour cooking oil down the drain</strong>
+            <p>Cooking oil solidifies in pipes and sewer lines, leading to costly blockages and overflows that can discharge raw sewage into streams and the ocean. Even "liquid" oils can solidify when they contact cooler surfaces in the plumbing system. Always collect and recycle used oil instead.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="spec-faq" id="spec-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+          Can I drop off more than 4 tires if I have a large family?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a1">
+          The standard residential limit is 4 tires per day per household. If you have more than 4 tires to dispose of, you may make separate trips on different days, or contact the Department of Environmental Management at (808) 961-8270 to discuss options. Watch for Tire Amnesty Events when the limit is raised to 10 tires per household at no charge.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+          Can I recycle a lithium battery from my laptop or power tool at the transfer station?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a2">
+          No. The lead-acid battery program at transfer stations only accepts lead-acid (wet cell) batteries. Lithium-ion, NiMH, NiCd, and alkaline batteries must be taken to a Household Hazardous Waste (HHW) collection event. Call2Recycle drop-off sites at hardware stores like Home Depot and Lowe's also accept rechargeable batteries. See the <a href="hhw.html" style="color:var(--color-primary);font-weight:700;">HHW page</a> for details.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+          My used cooking oil has some food bits in it — is it still acceptable?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a3">
+          Small amounts of food particles are generally acceptable — the biodiesel processor can filter them out. However, heavily food-contaminated or rancid oil should be strained through a cheesecloth before bottling. The key disqualifier is water contamination: even a few tablespoons of water in a gallon of oil can make the batch unusable for biodiesel production.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+          Are there fees for dropping off lead-acid batteries?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a4">
+          No — lead-acid battery drop-off is completely free at all County transfer stations. The batteries have significant recycling value (primarily the lead content), which offsets handling and processing costs. You can also receive a "core charge" refund of $12–$22 when you return your old battery to the retailer where you purchase a replacement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
+          Can restaurants drop off large quantities of cooking oil?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a5">
+          The County's cooking oil program is designed for household quantities (up to 5 gallons per visit). Restaurants and food service operations generating large quantities of waste grease should contact a licensed grease hauler / renderer, who will typically pick up bulk quantities for free or even pay for the oil, as it is a valuable biodiesel feedstock. Contact DEM at (808) 961-8270 for a referral to local grease haulers.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
+          My tires are on rims — will the transfer station take them?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a6">
+          No. Tires must be removed from rims before they can be accepted in the tire recycling program. You can have tires dismounted at most local tire shops for a small fee (typically $2–$5 per tire). Once the tires are off the rims, you can drop off the tires in the tire program and the steel/aluminum rims in the scrap metal area — often for free.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answerId = btn.getAttribute('aria-controls');
+        const answer = document.getElementById(answerId);
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.classList.toggle('open', !expanded);
+      });
+    });
+
+    // Section nav active state on scroll
+    const sections = document.querySelectorAll('.spec-section');
+    const navLinks = document.querySelectorAll('.snav-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const id = entry.target.id;
+          const link = document.querySelector(`.snav-link[href="#${id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>
