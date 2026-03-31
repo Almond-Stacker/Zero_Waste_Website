@@ -1,0 +1,74 @@
+/* =============================================
+   hi5.css
+   Page-specific styles for hi5.html
+   ============================================= */
+
+/* --- Page hero banner ---------------------------------------------- */
+.hi5-hero {
+  /*
+   * PHOTO BACKGROUND
+   * Replace the URL below with your own Hawaii photo, e.g.:
+   *   url('../assets/images/hawaii-hero.jpg')
+   * The image should be at least 1400px wide for crisp display.
+   */
+  background-image: url('https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?w=1400&q=80');
+  background-size: cover;
+  background-position: center 40%;  /* tweak % to pan up/down */
+  background-repeat: no-repeat;
+  padding: 56px 32px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark green overlay — keeps text legible over any photo */
+.hi5-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(30, 58, 15, 0.82) 0%,    /* solid dark green on the left where text is */
+    rgba(30, 58, 15, 0.55) 55%,   /* fades to semi-transparent */
+    rgba(30, 58, 15, 0.25) 100%   /* photo shows through on the right */
+  );
+  pointer-events: none;
+}
+
+.hi5-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hi5-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.hi5-hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 24px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hi5-hero {
+    padding: 40px 20px 36px;
+  }
+
+  .hi5-hero h1 {
+    font-size: 28px;
+  }
+
+  .hi5-hero p {
+    font-size: 16px;
+  }
+}
