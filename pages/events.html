@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events Calendar | County of Hawaiʻi Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css   — tokens, reset, base body
+      2. header.css   — site header & nav
+      3. footer.css   — footer strip & nav
+      4. events.css   — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/events.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="events-hero" aria-label="Page hero">
+    <div class="events-hero-inner">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;">
+        <a href="homepage.html" style="color:rgba(255,255,255,0.5);">Home</a>
+        <span style="opacity:.4;">›</span>
+        <span style="color:rgba(255,255,255,0.8);">Events Calendar</span>
+      </nav>
+      <span class="hero-eyebrow">Report &amp; Get Involved</span>
+      <h1>Events &amp; Collection Calendar</h1>
+      <p>Stay informed about upcoming Household Hazardous Waste collection days, community clean-ups, recycling drop-off events, and educational workshops across Hawaiʻi Island.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>HHW Collection Events</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Hilo &amp; Kona Locations</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Community Clean-Ups</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Free to attend</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FILTER BAR
+  ================================================================ -->
+  <div class="event-filter-bar" role="navigation" aria-label="Event filters">
+    <div class="filter-bar-inner">
+      <button class="filter-btn active" data-filter="all">All Events <span class="filter-count">12</span></button>
+      <button class="filter-btn" data-filter="hhw">HHW Collection <span class="filter-count">6</span></button>
+      <button class="filter-btn" data-filter="recycle">Recycling <span class="filter-count">3</span></button>
+      <button class="filter-btn" data-filter="cleanup">Clean-Ups <span class="filter-count">2</span></button>
+      <button class="filter-btn" data-filter="community">Community <span class="filter-count">1</span></button>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="events-body">
+
+    <!-- IMPORTANT NOTE -->
+    <div class="island-note" role="alert">
+      <span class="island-note-icon">📅</span>
+      <div class="island-note-body">
+        <strong>Dates subject to change</strong>
+        <p>Event schedules are updated regularly. Contact the Department of Environmental Management at <strong>(808) 961-8270</strong> or check back here to confirm upcoming dates, especially after holidays or emergencies. Sign up for email reminders below.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FEATURED: UPCOMING HHW EVENTS
+    ============================================================ -->
+    <section aria-labelledby="hhw-schedule-heading">
+      <span class="section-label">Next Up</span>
+      <div class="featured-section-title">
+        <h2 id="hhw-schedule-heading">Upcoming HHW Collection Events</h2>
+        <div class="section-rule-line"></div>
+      </div>
+      <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:20px;line-height:1.6;">Household Hazardous Waste (HHW) collection events are held regularly across the island — no appointment needed. Stay in your vehicle. Items must be in your trunk or truck bed. <a href="hhw.html" style="color:var(--color-primary);font-weight:700;">See full HHW guidelines →</a></p>
+
+      <div class="hhw-schedule-grid">
+
+        <!-- HILO -->
+        <div class="hhw-location-card">
+          <div class="hhw-card-header">
+            <div class="hhw-card-icon">🌋</div>
+            <div>
+              <h3>Hilo — East Hawaiʻi</h3>
+              <p>Hilo Transfer Station, 3400 Kaumana Drive</p>
+            </div>
+          </div>
+          <div class="hhw-card-body">
+            <ul class="hhw-dates-list" aria-label="Hilo upcoming HHW dates">
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="April 12">
+                  <span class="hhw-date-month">APR</span>
+                  <span class="hhw-date-day">12</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, April 12, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="May 10">
+                  <span class="hhw-date-month">MAY</span>
+                  <span class="hhw-date-day">10</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, May 10, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="June 14">
+                  <span class="hhw-date-month">JUN</span>
+                  <span class="hhw-date-day">14</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, June 14, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="hhw-card-footer">
+            <span class="hhw-location-text">📌 Hilo Transfer Station</span>
+            <a href="hhw.html" class="hhw-link">HHW Guidelines →</a>
+          </div>
+        </div>
+
+        <!-- KONA -->
+        <div class="hhw-location-card">
+          <div class="hhw-card-header">
+            <div class="hhw-card-icon">🌊</div>
+            <div>
+              <h3>Kona — West Hawaiʻi</h3>
+              <p>Old Airport Area, 75-5290 Kuakini Hwy, Kailua-Kona</p>
+            </div>
+          </div>
+          <div class="hhw-card-body">
+            <ul class="hhw-dates-list" aria-label="Kona upcoming HHW dates">
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="April 19">
+                  <span class="hhw-date-month">APR</span>
+                  <span class="hhw-date-day">19</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, April 19, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="May 17">
+                  <span class="hhw-date-month">MAY</span>
+                  <span class="hhw-date-day">17</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, May 17, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+              <li class="hhw-date-item">
+                <div class="hhw-date-badge" aria-label="June 21">
+                  <span class="hhw-date-month">JUN</span>
+                  <span class="hhw-date-day">21</span>
+                </div>
+                <div class="hhw-date-info">
+                  <strong>Saturday, June 21, 2026</strong>
+                  <span>8:00 AM – 12:00 PM · Drive-thru curbside service</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="hhw-card-footer">
+            <span class="hhw-location-text">📌 Old Airport Area, Kailua-Kona</span>
+            <a href="hhw.html" class="hhw-link">HHW Guidelines →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FULL EVENTS LIST
+    ============================================================ -->
+    <section class="events-list-section" aria-labelledby="all-events-heading">
+      <span class="section-label">All Events</span>
+      <div class="featured-section-title">
+        <h2 id="all-events-heading">2026 Event Schedule</h2>
+        <div class="section-rule-line"></div>
+      </div>
+
+      <div class="events-list" role="list">
+
+        <!-- EVENT: Hilo HHW April -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="April 12">
+            <span class="date-month">APR</span>
+            <span class="date-day">12</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Hilo</span>
+              </div>
+              <h3>HHW Collection Event — Hilo</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Hilo Transfer Station, 3400 Kaumana Drive</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Kona HHW April -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="April 19">
+            <span class="date-month">APR</span>
+            <span class="date-day">19</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Kona</span>
+              </div>
+              <h3>HHW Collection Event — Kona</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Old Airport Area, 75-5290 Kuakini Hwy, Kailua-Kona</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Earth Day Clean-Up -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="April 22">
+            <span class="date-month">APR</span>
+            <span class="date-day">22</span>
+            <span class="date-dow">WED</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag community">Community</span>
+                <span class="event-tag cleanup">Clean-Up</span>
+              </div>
+              <h3>Earth Day Community Clean-Up — Island-wide</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Multiple locations — register to find site nearest you</span>
+                <span class="event-meta-item"><span class="event-meta-icon">👥</span> Volunteers welcome</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="cleanups.html" class="event-btn">Learn More</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Hilo HHW May -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="May 10">
+            <span class="date-month">MAY</span>
+            <span class="date-day">10</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Hilo</span>
+              </div>
+              <h3>HHW Collection Event — Hilo</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Hilo Transfer Station, 3400 Kaumana Drive</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Kona HHW May -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="May 17">
+            <span class="date-month">MAY</span>
+            <span class="date-day">17</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Kona</span>
+              </div>
+              <h3>HHW Collection Event — Kona</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Old Airport Area, 75-5290 Kuakini Hwy, Kailua-Kona</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Tire Amnesty Day -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="May 31">
+            <span class="date-month">MAY</span>
+            <span class="date-day">31</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag recycle">Recycling</span>
+              </div>
+              <h3>Tire Amnesty Drop-Off Day</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 7:30 AM – 11:30 AM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> All County Transfer Stations — island-wide</span>
+                <span class="event-meta-item"><span class="event-meta-icon">ℹ️</span> Up to 10 tires per household at no charge</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="specialty.html" class="event-btn">Tire Info</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Hilo HHW June -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="June 14">
+            <span class="date-month">JUN</span>
+            <span class="date-day">14</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Hilo</span>
+              </div>
+              <h3>HHW Collection Event — Hilo</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Hilo Transfer Station, 3400 Kaumana Drive</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Kona HHW June -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="June 21">
+            <span class="date-month">JUN</span>
+            <span class="date-day">21</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag hhw">HHW Collection</span>
+                <span class="event-tag">Kona</span>
+              </div>
+              <h3>HHW Collection Event — Kona</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 8:00 AM – 12:00 PM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Old Airport Area, 75-5290 Kuakini Hwy, Kailua-Kona</span>
+                <span class="event-meta-item"><span class="event-meta-icon">🚗</span> Stay in vehicle — drive-thru curbside</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="hhw.html" class="event-btn">What to Bring</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT: Beach Clean-Up -->
+        <article class="event-card" role="listitem">
+          <div class="event-date-col" aria-label="June 28">
+            <span class="date-month">JUN</span>
+            <span class="date-day">28</span>
+            <span class="date-dow">SAT</span>
+          </div>
+          <div class="event-body">
+            <div class="event-main">
+              <div class="event-tags">
+                <span class="event-tag cleanup">Clean-Up</span>
+                <span class="event-tag community">Community</span>
+              </div>
+              <h3>Coastal Clean-Up — Hilo Bay Waterfront</h3>
+              <div class="event-meta-row">
+                <span class="event-meta-item"><span class="event-meta-icon">🕗</span> 7:00 AM – 10:00 AM</span>
+                <span class="event-meta-item"><span class="event-meta-icon">📌</span> Hilo Bay Waterfront Park, Banyan Drive</span>
+                <span class="event-meta-item"><span class="event-meta-icon">👥</span> Gloves and bags provided</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <a href="cleanups.html" class="event-btn">Sign Up</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT INFO NOTE -->
+    <div class="island-note green" style="margin-top:28px;">
+      <span class="island-note-icon">📞</span>
+      <div class="island-note-body">
+        <strong>Questions? Contact DEM</strong>
+        <p>Dept. of Environmental Management · (808) 961-8270 · 25 Aupuni St., Suite 1301, Hilo, HI 96720. Office hours: Monday–Friday, 7:45 AM – 4:30 PM.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         EMAIL SUBSCRIBE STRIP
+    ============================================================ -->
+    <div class="subscribe-strip" role="complementary" aria-label="Newsletter signup">
+      <div class="subscribe-text">
+        <strong>Never miss a collection event</strong>
+        <p>Sign up for email reminders and get notified when new HHW collection dates are posted for your area of the island.</p>
+      </div>
+      <form class="subscribe-form" action="#" method="post" aria-label="Email subscription form">
+        <label for="sub-email" class="sr-only">Your email address</label>
+        <input id="sub-email" type="email" name="email" class="subscribe-input" placeholder="Your email address" required />
+        <button type="submit" class="subscribe-btn">Notify Me</button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    // Filter button interaction
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

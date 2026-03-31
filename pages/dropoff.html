@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drop-Off Recycling | County of Hawaiʻi Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css    — tokens, reset, base body
+      2. header.css    — site header & nav
+      3. footer.css    — footer strip & nav
+      4. dropoff.css   — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/dropoff.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="dropoff-hero" aria-label="Page hero">
+    <div class="dropoff-hero-inner">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;">
+        <a href="recycle.html" style="color:rgba(255,255,255,0.5);">Recycle &amp; Dispose</a>
+        <span style="opacity:.4;">›</span>
+        <span style="color:rgba(255,255,255,0.8);">Drop-Off Recycling</span>
+      </nav>
+      <span class="hero-eyebrow">Recycle &amp; Dispose</span>
+      <h1>Drop-Off Recycling</h1>
+      <p>Hawaiʻi County's free drop-off recycling program diverts glass, paper, metals, and plastic from the landfill. Use the two-bin system at any County transfer station — it's fast, easy, and free.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Free at all transfer stations</span>
+        <span class="hero-pill"><span class="pill-dot"></span>2-bin system: Fiber &amp; Commingled</span>
+        <span class="hero-pill"><span class="pill-dot"></span>No appointment needed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="dropoff-body">
+
+    <!-- KEY RULES NOTE -->
+    <div class="island-note" role="alert">
+      <span class="island-note-icon">ℹ️</span>
+      <div class="island-note-body">
+        <strong>Clean, Dry &amp; Loose — 3 Rules to Remember</strong>
+        <p>All recyclables must be <strong>clean</strong> (rinsed free of food residue), <strong>dry</strong> (no standing liquid inside), and <strong>loose</strong> — not bagged in plastic. Plastic bags jam sorting equipment and contaminate entire loads. If in doubt, leave it out.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         3-STEP PROCESS
+    ============================================================ -->
+    <section class="three-step-section" aria-labelledby="steps-heading">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title" id="steps-heading">Three Simple Steps to Recycle</h2>
+      <p class="section-sub">Follow these three steps every time and you will keep the program running cleanly and efficiently for everyone on the island.</p>
+
+      <div class="steps-grid" role="list" aria-label="Recycling steps">
+
+        <!-- STEP 1: RINSE -->
+        <div class="step-card" role="listitem">
+          <div class="step-number" aria-label="Step 1">1</div>
+          <div class="step-icon" aria-hidden="true">🚿</div>
+          <h3>Rinse</h3>
+          <p>Give containers a quick rinse with water. Remove food scraps, oils, and liquids. Labels can stay on — they are removed during processing. Lids can remain on plastic bottles.</p>
+        </div>
+
+        <!-- STEP 2: SORT -->
+        <div class="step-card" role="listitem">
+          <div class="step-number" aria-label="Step 2">2</div>
+          <div class="step-icon" aria-hidden="true">🗂️</div>
+          <h3>Sort</h3>
+          <p>Separate into two streams: <strong>Fiber</strong> (paper and cardboard) and <strong>Commingled</strong> (glass, cans, and plastic). Flatten cardboard boxes. Keep everything loose — no plastic bags.</p>
+        </div>
+
+        <!-- STEP 3: DROP -->
+        <div class="step-card" role="listitem">
+          <div class="step-number" aria-label="Step 3">3</div>
+          <div class="step-icon" aria-hidden="true">♻️</div>
+          <h3>Drop</h3>
+          <p>Bring sorted materials to any County transfer station. Place fiber items in the blue/paper bin and commingled items in the commingled bin. Transfer stations are open six to seven days a week.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THE 2-BIN SYSTEM
+    ============================================================ -->
+    <section class="bins-section" aria-labelledby="bins-heading">
+      <span class="section-label">What Goes Where</span>
+      <h2 class="section-title" id="bins-heading">The 2-Bin System</h2>
+      <p class="section-sub">Hawaiʻi County uses a source-separated system with two distinct streams. Mixing them together causes contamination and sends recyclables to the landfill.</p>
+
+      <div class="bins-grid">
+
+        <!-- BIN 1: FIBER -->
+        <div class="bin-card fiber">
+          <div class="bin-header">
+            <div class="bin-icon-wrap" aria-hidden="true">📄</div>
+            <div class="bin-header-text">
+              <h3>Bin 1 — Fiber</h3>
+              <p>Paper &amp; Cardboard stream</p>
+            </div>
+          </div>
+          <div class="bin-body">
+            <ul class="bin-items-list" aria-label="Accepted fiber items">
+              <li><span class="check" aria-label="Accepted">✓</span>Newspaper &amp; inserts</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Magazines &amp; catalogs</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Office paper &amp; envelopes (including windows)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Junk mail &amp; flyers</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Cardboard boxes (flattened)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Paper bags &amp; paper grocery bags</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Paperboard / chipboard (cereal, shoe, cracker boxes)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Phone books &amp; directories</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Paper tubes (paper towel, toilet paper cores)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Wrapping paper (non-foil, non-glitter)</li>
+            </ul>
+            <div class="bin-note">
+              <strong>Tip:</strong> Flatten all cardboard to save space in the bin and make transport easier. Remove excessive tape or foam packing materials from boxes.
+            </div>
+          </div>
+        </div>
+
+        <!-- BIN 2: COMMINGLED -->
+        <div class="bin-card commingled">
+          <div class="bin-header">
+            <div class="bin-icon-wrap" aria-hidden="true">🫙</div>
+            <div class="bin-header-text">
+              <h3>Bin 2 — Commingled</h3>
+              <p>Glass, cans &amp; plastic stream</p>
+            </div>
+          </div>
+          <div class="bin-body">
+            <ul class="bin-items-list" aria-label="Accepted commingled items">
+              <li><span class="check" aria-label="Accepted">✓</span>Glass bottles &amp; jars (all colors, all sizes)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Aluminum beverage cans</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Steel &amp; tin cans (food cans, pet food cans)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Plastic bottles &amp; jugs (#1–#7, all types)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Plastic tubs, cups &amp; containers (yogurt, deli containers)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Aluminum foil &amp; foil trays (clean)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Empty aerosol cans (completely empty, no liquid)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Cardboard juice &amp; milk cartons (aseptic &amp; gable-top)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Tetra Pak / drink boxes (rinsed)</li>
+              <li><span class="check" aria-label="Accepted">✓</span>Metal lids &amp; bottle caps</li>
+            </ul>
+            <div class="bin-note">
+              <strong>Tip:</strong> Rinse all containers so they are free of food residue. Lids can stay on plastic bottles. Crush aluminum cans if desired — do not crush glass.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOT ACCEPTED
+    ============================================================ -->
+    <section class="not-accepted-section" aria-labelledby="not-accepted-heading">
+      <span class="section-label">Keep These Out</span>
+      <h2 class="section-title" id="not-accepted-heading">What Is NOT Accepted</h2>
+      <p class="section-sub">The following items contaminate recyclable loads and cause entire batches to be sent to the landfill. When in doubt, throw it out.</p>
+
+      <div class="reject-grid" role="list">
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Plastic bags &amp; film</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Styrofoam / EPS foam</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Food waste &amp; soiled containers</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Liquids (drain before recycling)</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Window glass &amp; mirrors</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Ceramics, Pyrex, drinking glasses</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Light bulbs (use HHW program)</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Batteries (use HHW program)</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Wax-coated cardboard</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Greasy pizza boxes</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Shredded paper (in bags)</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Medical syringes / sharps</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Electronics (see electronics page)</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Yard waste &amp; food scraps</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Clothing &amp; textiles</div>
+        <div class="reject-item" role="listitem"><span class="reject-x">✗</span>Construction materials / debris</div>
+      </div>
+
+      <div class="island-note" style="margin-top:20px;">
+        <span class="island-note-icon">♻️</span>
+        <div class="island-note-body">
+          <strong>Plastic bags are the #1 contaminant</strong>
+          <p>Never put recyclables inside a plastic bag — even a bag full of recycling. Empty materials loose into the bins. Plastic bags are accepted separately at most supermarkets (Safeway, KTA, Walmart) under the <a href="plastic-bag.html" style="color:#7a5f00;font-weight:700;">plastic bag ordinance</a> take-back program.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DROP-OFF LOCATIONS TABLE
+    ============================================================ -->
+    <section class="locations-section" aria-labelledby="locations-heading">
+      <span class="section-label">Where to Go</span>
+      <h2 class="section-title" id="locations-heading">Drop-Off Locations — Transfer Stations</h2>
+      <p class="section-sub">All County transfer stations accept recyclables at no charge. Hours are subject to change on County holidays — call ahead to confirm.</p>
+
+      <div class="locations-table-wrap">
+        <table class="stations-table" aria-label="Transfer station locations and hours">
+          <thead>
+            <tr>
+              <th scope="col">Location</th>
+              <th scope="col">Address</th>
+              <th scope="col">Hours</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="station-name">Hilo Transfer Station</span><span class="station-hours">East Hawaiʻi</span></td>
+              <td>3400 Kaumana Drive, Hilo</td>
+              <td>Mon–Sat 7:00 AM – 4:30 PM<br>Sun 8:00 AM – 3:00 PM</td>
+              <td><span class="status-badge open">Open Daily</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Kona Transfer Station</span><span class="station-hours">West Hawaiʻi</span></td>
+              <td>73-4800 Puuhonua Road, Kailua-Kona</td>
+              <td>Mon–Sat 7:00 AM – 4:30 PM<br>Sun Closed</td>
+              <td><span class="status-badge open">Open</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Waimea Transfer Station</span><span class="station-hours">North Hawaiʻi</span></td>
+              <td>67-1203 Mamalahoa Hwy, Waimea (Kamuela)</td>
+              <td>Mon–Fri 7:30 AM – 4:00 PM<br>Sat–Sun 7:30 AM – 3:30 PM</td>
+              <td><span class="status-badge open">Open Daily</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Pahoa Transfer Station</span><span class="station-hours">Lower Puna</span></td>
+              <td>Pahoa Village Road, Pahoa</td>
+              <td>Mon, Wed, Fri–Sun 7:30 AM – 4:00 PM</td>
+              <td><span class="status-badge open">Open</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Ocean View Transfer Station</span><span class="station-hours">Kaʻū District</span></td>
+              <td>92-8925 Leilani Estates Drive, Ocean View</td>
+              <td>Tue, Thu, Sat–Sun 8:00 AM – 3:00 PM</td>
+              <td><span class="status-badge open">Open</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Pahala Transfer Station</span><span class="station-hours">Kaʻū District</span></td>
+              <td>96-2596 Pikake St., Pahala</td>
+              <td>Mon, Wed, Fri–Sun 8:00 AM – 3:00 PM</td>
+              <td><span class="status-badge open">Open</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">North Kohala Transfer Station</span><span class="station-hours">Kohala</span></td>
+              <td>55-3441 Akoni Pule Hwy, Hāwī</td>
+              <td>Mon, Wed–Sun 8:00 AM – 3:00 PM</td>
+              <td><span class="status-badge open">Open</span></td>
+            </tr>
+            <tr>
+              <td><span class="station-name">Puako Transfer Station</span><span class="station-hours">South Kohala</span></td>
+              <td>69-1714 Puako Beach Dr., Puako</td>
+              <td><span class="station-note">Call to confirm schedule</span></td>
+              <td><span class="status-badge call">Call First</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="island-note green" style="margin-top:18px;">
+        <span class="island-note-icon">📞</span>
+        <div class="island-note-body">
+          <strong>Confirm hours before you go</strong>
+          <p>Hours are subject to change on holidays and during severe weather. Call the Department of Environmental Management at <strong>(808) 961-8270</strong> or check <strong>hawaiicleanenergy.org</strong> for updates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ ACCORDION
+    ============================================================ -->
+    <section class="dropoff-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
+          Can I drop off recyclables without sorting them at home?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a1" role="region">
+          You must keep fiber (paper/cardboard) separate from commingled (glass, cans, plastic). You can bring them loose in your vehicle — you do not need separate bins at home — but you must place them in the correct receptacle at the transfer station. Mixing the two streams causes contamination and results in materials being sent to the landfill rather than recycled.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
+          Do I need to remove labels from glass bottles and cans?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a2" role="region">
+          No. Labels are removed automatically during processing. You do not need to remove paper or plastic labels from bottles or cans. Focus on rinsing out any remaining food, oil, or liquid instead.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
+          Is there a limit to how much I can drop off?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a3" role="region">
+          There is no per-trip quantity limit for household recyclables. Commercial quantities from businesses may require special arrangements — contact DEM at (808) 961-8270 for guidance.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
+          What do I do with shredded paper?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a4" role="region">
+          Shredded paper cannot be placed in the fiber recycling bin loose — the pieces are too small and jam sorting equipment. Place shredded paper in a sealed paper envelope or small cardboard box before putting it in the fiber bin. Do not use plastic bags to contain shredded paper.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
+          Can I recycle pizza boxes?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a5" role="region">
+          It depends on how soiled the box is. If the bottom is heavily soaked with grease, it is not recyclable — put it in the trash. If only the top lid has minor grease staining and the bottom is relatively clean, you can tear the lid off and recycle the clean portion in the fiber bin. When in doubt, the whole box goes in the trash.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
+          What happens to my recyclables after I drop them off?
+          <span class="faq-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="faq-a" id="faq-a6" role="region">
+          Materials collected at transfer stations are consolidated and shipped to processors on the mainland. Paper and cardboard are baled and sold to paper mills. Glass is crushed and used for construction aggregate or shipped off-island. Metals are melted and remanufactured. Plastic is sorted by resin type and processed into new products. The overall program diverts thousands of tons of material from the County landfill each year.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answerId = btn.getAttribute('aria-controls');
+        const answer = document.getElementById(answerId);
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.classList.toggle('open', !expanded);
+      });
+    });
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>
