@@ -283,7 +283,7 @@
 .zh-pyramid {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 4px;
   position: relative;
 }
 
@@ -293,41 +293,55 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 22px 24px;
-  border-radius: var(--radius);
-  transition: transform var(--transition), box-shadow var(--transition);
+  padding: 22px 28px;
   cursor: default;
+  /* No clip-path on the element — content stays fully visible */
+  transition: transform var(--transition);
+  z-index: 0;
 }
-.zh-tier:hover {
-  transform: translateX(4px);
-  box-shadow: -4px 0 0 0 currentColor, 0 4px 20px var(--color-shadow);
-}
-.zh-tier + .zh-tier { margin-top: 3px; }
 
-.zh-tier--reduce {
-  background: var(--color-primary);
-  color: var(--color-white);
-  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
-  padding-left: 36px;
-  padding-right: 36px;
+/* The trapezoid shape lives on ::before so it never clips text */
+.zh-tier::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 4px;
 }
-.zh-tier--reuse {
-  background: var(--color-primary-mid);
+
+.zh-tier:hover { transform: translateX(4px); }
+
+/* Reduce — widest bar */
+.zh-tier--reduce {
   color: var(--color-white);
-  clip-path: polygon(4% 0, 96% 0, 90% 100%, 10% 100%);
-  padding-left: 28px;
-  padding-right: 28px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.zh-tier--reduce::before {
+  background: var(--color-primary);
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+}
+
+/* Reuse — mid bar */
+.zh-tier--reuse {
+  color: var(--color-white);
   margin-left: 4%;
   margin-right: 4%;
 }
+.zh-tier--reuse::before {
+  background: var(--color-primary-mid);
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+}
+
+/* Recycle — narrowest bar */
 .zh-tier--recycle {
-  background: var(--color-primary-light);
   color: var(--color-dark);
-  clip-path: polygon(8% 0, 92% 0, 86% 100%, 14% 100%);
-  padding-left: 20px;
-  padding-right: 20px;
   margin-left: 8%;
   margin-right: 8%;
+}
+.zh-tier--recycle::before {
+  background: var(--color-primary-light);
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
 }
 
 .zh-tier-content {
@@ -674,9 +688,12 @@
   .zw-hero p { font-size: 15px; }
   .zw-hero-btns { flex-direction: column; align-items: flex-start; }
   .zw-btn { width: 100%; justify-content: center; }
-  .zh-tier--reduce { clip-path: none; margin-left: 0; margin-right: 0; }
-  .zh-tier--reuse  { clip-path: none; margin-left: 0; margin-right: 0; }
-  .zh-tier--recycle { clip-path: none; margin-left: 0; margin-right: 0; }
+  .zh-tier--reduce,
+  .zh-tier--reuse,
+  .zh-tier--recycle { margin-left: 0; margin-right: 0; }
+  .zh-tier--reduce::before,
+  .zh-tier--reuse::before,
+  .zh-tier--recycle::before { clip-path: none; }
   .zh-tier:hover { transform: none; }
   .zp-content { padding: 36px 20px; }
   .za-panel { padding: 20px; }

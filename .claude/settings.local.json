@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.hawaiizerowaste.org)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(sed 's/.*<title>//;s/<\\\\/title>//')",
+      "Read(//c/Users/Arlen/Documents/Zero_Waste_Website/**)",
+      "Bash(sed 's/.*<h1>//;s/<\\\\/h1>//')",
+      "Bash(done)"
     ]
   }
 }
