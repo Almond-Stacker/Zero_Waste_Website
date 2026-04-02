@@ -14,7 +14,7 @@ const QUICK_LINKS_DATA = [
     label:    'Find Facilities',
     sublabel: 'Locate your nearest drop-off facility across Hawai\'i Island',
     // Waipio Valley, Big Island — lush Hawaiian landscape
-    image:    'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&auto=format&q=80',
+    image:    '../assets/images/transfer-station.png',
     href:     'facilities.html'
   },
   {

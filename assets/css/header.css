@@ -28,7 +28,8 @@
 /* --- Logo --- */
 .logo {
   display: flex;
-  align-items: center;
+  align-i
+  ms: center;
   flex-shrink: 0;
 }
 
