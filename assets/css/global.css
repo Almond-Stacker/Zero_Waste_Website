@@ -9,7 +9,25 @@
    ============================================= */
 
 /* --- FONT IMPORTS -------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+/* Libre Baskerville – loaded from Google Fonts (no local file available) */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+/* Open Sans – served from local assets */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans-v44-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans-v44-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* --- DESIGN TOKENS -------------------------------------------------- */
 :root {
@@ -35,7 +53,7 @@
 
   /* Typography */
   --font-serif: 'Libre Baskerville', Georgia, serif;
-  --font-sans:  'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-sans:  'Open Sans', 'Segoe UI', sans-serif;
 
   /* Spacing & shape */
   --radius:     4px;
