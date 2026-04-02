@@ -77,7 +77,7 @@
 }
 
 .page-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(30px, 4.5vw, 48px);
   font-weight: 700;
   color: var(--color-white);
@@ -150,7 +150,7 @@
   max-width: 60px;
 }
 .section-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 21px;
   font-weight: 700;
   color: var(--color-primary);
@@ -252,7 +252,7 @@
   gap: 10px;
 }
 .loc-card-header h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 14px;
   font-weight: 700;
   color: var(--color-white);
@@ -307,7 +307,7 @@
 }
 .donate-card:hover { box-shadow: 0 4px 14px var(--color-shadow); }
 .donate-card .donate-icon { font-size: 28px; }
-.donate-card h3 { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--color-primary); line-height: 1.3; }
+.donate-card h3 { font-family: var(--font-test); font-size: 15px; font-weight: 700; color: var(--color-primary); line-height: 1.3; }
 .donate-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.65; }
 .donate-card a.cta-link {
   display: inline-flex; align-items: center; gap: 5px;
@@ -345,7 +345,7 @@
   display: flex; align-items: center; gap: 9px;
 }
 .mini-section-head .ms-icon { font-size: 18px; }
-.mini-section-head h3 { font-family: var(--font-serif); font-size: 14px; font-weight: 700; color: var(--color-white); }
+.mini-section-head h3 { font-family: var(--font-test); font-size: 14px; font-weight: 700; color: var(--color-white); }
 .mini-section-body { padding: 12px 16px; }
 .mini-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
 .mini-list li {

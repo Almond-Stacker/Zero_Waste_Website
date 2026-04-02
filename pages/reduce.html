@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reduce Waste | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css  — tokens, reset, base body
+      2. header.css  — site header & nav
+      3. footer.css  — footer strip & nav
+      4. page.css    — shared inner-page hero, sections, cards
+      5. reduce.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+  <link rel="stylesheet" href="../assets/css/reduce.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="page-hero">
+    <div class="hero-photo" id="reduceHeroPhoto"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="homepage.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Reduce</span>
+      </nav>
+      <p class="hero-eyebrow">Reduce &amp; Reuse</p>
+      <h1>Reduce Your Waste</h1>
+      <p>The most powerful step in the Zero Waste hierarchy is the simplest — making less trash in the first place. Every item we decline, refuse, or replace saves energy, reduces pollution, and protects Hawai'i's natural beauty.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Zero Waste hierarchy</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Plastic Bag Ordinance</span>
+        <span class="hero-pill warm"><span class="pill-dot"></span>Polystyrene Ordinance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       STAT BAR
+  ================================================================ -->
+  <div class="stat-bar" role="region" aria-label="Waste statistics">
+    <div class="stat-bar-inner">
+      <div class="stat-item">
+        <span class="stat-num">1,800+</span>
+        <span class="stat-label">Tons of waste generated<br>daily on Hawai'i Island</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">70%</span>
+        <span class="stat-label">Of landfill waste could be<br>reduced, reused, or recycled</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2035</span>
+        <span class="stat-label">Zero Waste goal year<br>for County of Hawai'i</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="page-content">
+
+    <!-- WASTE HIERARCHY PYRAMID -->
+    <section aria-labelledby="hierarchy-heading">
+      <div class="section-head">
+        <p class="section-kicker">The foundation</p>
+        <h2 id="hierarchy-heading">The Zero Waste Hierarchy</h2>
+        <p class="sub">Not all waste management strategies are equal. The hierarchy ranks options from most preferred (top) to least preferred (bottom). <strong>Reduce</strong> is always first — the waste that never exists never has to be managed.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="waste-pyramid" role="list" aria-label="Zero Waste Hierarchy">
+        <div class="pyramid-row" role="listitem">
+          <span class="pyramid-icon">🚫</span>
+          <div>
+            <div class="pyramid-label">Reduce</div>
+            <div class="pyramid-sub">Best option — buy less, use less</div>
+          </div>
+        </div>
+        <div class="pyramid-row" role="listitem">
+          <span class="pyramid-icon">♻️</span>
+          <div>
+            <div class="pyramid-label">Reuse</div>
+            <div class="pyramid-sub">Repair, donate, find a second life</div>
+          </div>
+        </div>
+        <div class="pyramid-row" role="listitem">
+          <span class="pyramid-icon">🌱</span>
+          <div>
+            <div class="pyramid-label">Recycle</div>
+            <div class="pyramid-sub">Process material back into new products</div>
+          </div>
+        </div>
+        <div class="pyramid-row" role="listitem">
+          <span class="pyramid-icon">🍃</span>
+          <div>
+            <div class="pyramid-label">Compost</div>
+            <div class="pyramid-sub">Return organic material to the earth</div>
+          </div>
+        </div>
+        <div class="pyramid-row" role="listitem">
+          <span class="pyramid-icon">🗑️</span>
+          <div>
+            <div class="pyramid-label">Dispose</div>
+            <div class="pyramid-sub">Last resort — landfill or incineration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP 10 WAYS TO REDUCE -->
+    <section aria-labelledby="top10-heading">
+      <div class="section-head">
+        <p class="section-kicker">Practical action</p>
+        <h2 id="top10-heading">Top 10 Ways to Reduce Waste</h2>
+        <p class="sub">These habits are easy to start, powerful at scale, and save money. Pick one this week — then build from there.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="top10-grid">
+
+        <div class="top10-card">
+          <div class="top10-num">01</div>
+          <div class="top10-body">
+            <strong>Bring Your Own Bag</strong>
+            <p>Keep reusable bags in your car and by the door. One reusable bag replaces hundreds of plastic bags over its lifetime.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">02</div>
+          <div class="top10-body">
+            <strong>Carry a Reusable Water Bottle</strong>
+            <p>Americans throw away 50 billion plastic bottles per year. A stainless steel or glass bottle pays for itself in weeks.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">03</div>
+          <div class="top10-body">
+            <strong>Say No to Single-Use Utensils</strong>
+            <p>Keep a set of silverware, a cloth napkin, and a reusable straw in your bag or desk drawer for on-the-go meals.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">04</div>
+          <div class="top10-body">
+            <strong>Buy in Bulk</strong>
+            <p>Purchasing in larger quantities — or from bulk bins — dramatically reduces packaging waste per unit of product.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">05</div>
+          <div class="top10-body">
+            <strong>Choose Products with Less Packaging</strong>
+            <p>Read labels. Opt for items packaged in glass, metal, or cardboard over plastic. Avoid multi-layered or blister packaging.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">06</div>
+          <div class="top10-body">
+            <strong>Eat What You Buy</strong>
+            <p>Food waste accounts for nearly 20% of landfill material. Plan meals, store food properly, and compost what you can't use.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">07</div>
+          <div class="top10-body">
+            <strong>Go Paperless</strong>
+            <p>Switch to digital billing, receipts, and subscriptions. Unsubscribe from junk mail at DMAchoice.org to stop unwanted catalogs.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">08</div>
+          <div class="top10-body">
+            <strong>Repair Before Replacing</strong>
+            <p>A broken zipper, cracked phone screen, or worn shoe sole can often be repaired for far less than replacement — and keeps the item out of the landfill.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">09</div>
+          <div class="top10-body">
+            <strong>Borrow or Rent What You Use Rarely</strong>
+            <p>Power tools, party supplies, camping gear — if you'll use it once or twice a year, consider borrowing from a neighbor or renting locally.</p>
+          </div>
+        </div>
+
+        <div class="top10-card">
+          <div class="top10-num">10</div>
+          <div class="top10-body">
+            <strong>Opt for Quality Over Quantity</strong>
+            <p>One well-made item that lasts a decade creates less waste than ten cheap replacements. Buy once, buy well — and pass it on when you're done.</p>
+          </div>
+        </div>
+
+      </div><!-- /.top10-grid -->
+    </section>
+
+    <!-- ORDINANCES -->
+    <section aria-labelledby="ordinances-heading">
+      <div class="section-head">
+        <p class="section-kicker">County law</p>
+        <h2 id="ordinances-heading">Local Ordinances That Help</h2>
+        <p class="sub">Hawai'i County has enacted two landmark ordinances to reduce single-use plastics and polystyrene — two of the most harmful and persistent pollutants in our ocean and landscape.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="ordinance-grid">
+
+        <!-- Plastic Bag -->
+        <div class="ordinance-card">
+          <div class="ord-header">
+            <span class="ord-icon">🛍️</span>
+            <div>
+              <h3>Plastic Bag Ordinance</h3>
+              <p>Bill 113 — Effective July 1, 2012</p>
+            </div>
+          </div>
+          <div class="ord-body">
+            <p>Hawai'i County prohibits retailers from providing single-use plastic checkout bags at the point of sale. Hawai'i was the first county in the nation to ban plastic bags — a milestone in ocean conservation.</p>
+            <div class="ord-facts">
+              <div class="ord-fact">Applies to all retail establishments, restaurants, and food vendors</div>
+              <div class="ord-fact">Reusable bags and recyclable paper bags are permitted alternatives</div>
+              <div class="ord-fact">Exemptions for produce bags, dry-cleaning bags, and newspaper bags</div>
+              <div class="ord-fact">Fines range from $100 to $1,000 per violation for repeat offenders</div>
+            </div>
+            <a href="plastic-bag.html" class="btn-outline">Learn More &amp; Full Text</a>
+          </div>
+        </div>
+
+        <!-- Polystyrene -->
+        <div class="ordinance-card">
+          <div class="ord-header">
+            <span class="ord-icon">🥡</span>
+            <div>
+              <h3>Polystyrene Ordinance</h3>
+              <p>Bill 59 — Effective January 1, 2020</p>
+            </div>
+          </div>
+          <div class="ord-body">
+            <p>Polystyrene foam (Styrofoam) food service containers are banned countywide. The lightweight material breaks apart easily, persists for centuries, and is regularly found polluting our beaches and reef systems.</p>
+            <div class="ord-facts">
+              <div class="ord-fact">Bans foam plates, cups, bowls, clamshells, and takeout containers</div>
+              <div class="ord-fact">Applies to restaurants, food trucks, farmers markets, and caterers</div>
+              <div class="ord-fact">Compostable and recyclable containers are preferred alternatives</div>
+              <div class="ord-fact">Fines range from $500 to $2,000 per violation depending on frequency</div>
+            </div>
+            <a href="polystyrene.html" class="btn-outline">Learn More &amp; Full Text</a>
+          </div>
+        </div>
+
+      </div><!-- /.ordinance-grid -->
+    </section>
+
+    <!-- GET INVOLVED CTA -->
+    <div class="info-banner">
+      <div class="info-icon">🌺</div>
+      <div class="info-body">
+        <strong>Share the Aloha for Zero Waste</strong>
+        <p>Talk story with friends, post on social media, or bring zero-waste practices to your workplace or school. Community education is the most powerful tool we have. Contact DEM at <a href="tel:8089614354"><strong>(808) 961-4354</strong></a> to invite a speaker to your group or event.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const photo = document.getElementById('reduceHeroPhoto');
+      if (photo) photo.classList.add('loaded');
+    });
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

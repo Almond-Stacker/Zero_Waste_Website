@@ -75,7 +75,7 @@
   color: var(--color-text);
   line-height: 1.4;
   margin-bottom: 8px;
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
 }
 
 .news-card-body p {

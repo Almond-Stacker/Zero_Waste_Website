@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reuse Centers | County of Hawai'i Environmental Management</title>
+
+  <!--
+    CSS load order:
+      1. global.css — tokens, reset, base body
+      2. header.css — site header & nav
+      3. footer.css — footer strip & nav
+      4. page.css   — shared inner-page hero, sections, cards
+      5. reuse.css  — page-specific styles
+  -->
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+  <link rel="stylesheet" href="../assets/css/reuse.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAV  (shared component)
+  ================================================================ -->
+  <header class="site-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HERO
+  ================================================================ -->
+  <section class="page-hero">
+    <div class="hero-photo" id="reuseHeroPhoto"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="homepage.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Reuse Centers</span>
+      </nav>
+      <p class="hero-eyebrow">Reduce &amp; Reuse</p>
+      <h1>Reuse Centers &amp; Directory</h1>
+      <p>One person's unused item is another's treasure. Hawai'i Island's network of reuse centers, thrift shops, and community exchanges keep furniture, clothing, tools, and building materials out of the landfill — and in the hands of people who need them.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><span class="pill-dot"></span>Furniture &amp; appliances</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Clothing &amp; textiles</span>
+        <span class="hero-pill warm"><span class="pill-dot"></span>Building materials</span>
+        <span class="hero-pill"><span class="pill-dot"></span>Tools &amp; hardware</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main class="page-content">
+
+    <!-- WHAT TO BRING OVERVIEW -->
+    <section aria-labelledby="what-heading">
+      <div class="section-head">
+        <p class="section-kicker">Common items accepted</p>
+        <h2 id="what-heading">What Can Be Reused?</h2>
+        <p class="sub">Reuse centers typically accept items in clean, working, or easily repairable condition. Call ahead to confirm availability for large or specialty items.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="what-to-bring-grid">
+        <div class="bring-card"><div class="bring-icon">🛋️</div><div class="bring-label">Furniture</div></div>
+        <div class="bring-card"><div class="bring-icon">👕</div><div class="bring-label">Clothing &amp; Textiles</div></div>
+        <div class="bring-card"><div class="bring-icon">📚</div><div class="bring-label">Books &amp; Media</div></div>
+        <div class="bring-card"><div class="bring-icon">🧰</div><div class="bring-label">Tools &amp; Hardware</div></div>
+        <div class="bring-card"><div class="bring-icon">🪟</div><div class="bring-label">Doors &amp; Windows</div></div>
+        <div class="bring-card"><div class="bring-icon">🏗️</div><div class="bring-label">Building Materials</div></div>
+        <div class="bring-card"><div class="bring-icon">🍳</div><div class="bring-label">Kitchenware</div></div>
+        <div class="bring-card"><div class="bring-icon">🖼️</div><div class="bring-label">Artwork &amp; Décor</div></div>
+        <div class="bring-card"><div class="bring-icon">🧸</div><div class="bring-label">Toys &amp; Games</div></div>
+        <div class="bring-card"><div class="bring-icon">🪴</div><div class="bring-label">Garden &amp; Outdoor</div></div>
+        <div class="bring-card"><div class="bring-icon">🚲</div><div class="bring-label">Bicycles</div></div>
+        <div class="bring-card"><div class="bring-icon">🎨</div><div class="bring-label">Craft &amp; Art Supplies</div></div>
+      </div>
+    </section>
+
+    <!-- REUSE CENTER DIRECTORY -->
+    <section aria-labelledby="centers-heading">
+      <div class="section-head">
+        <p class="section-kicker">Island-wide directory</p>
+        <h2 id="centers-heading">Reuse Centers &amp; Thrift Stores</h2>
+        <p class="sub">The following centers accept donated goods for resale or distribution. Hours and accepted items may change — always call ahead before making a trip.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="center-grid">
+
+        <!-- Habitat ReStore Hilo -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">🏗️</div>
+            <span class="center-region-tag">Hilo</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">Habitat for Humanity ReStore — Hilo</div>
+            <div class="center-org">Habitat for Humanity Hawaii Island</div>
+            <div class="center-address"><span class="addr-icon">📌</span>333 Kino'ole St., Hilo, HI 96720</div>
+            <div class="center-hours"><span>🕐</span>Mon–Sat 9:00 a.m. – 5:00 p.m. | Closed Sun</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Furniture</span>
+              <span class="accepts-tag">Appliances</span>
+              <span class="accepts-tag">Cabinets</span>
+              <span class="accepts-tag">Doors &amp; Windows</span>
+              <span class="accepts-tag">Flooring</span>
+              <span class="accepts-tag">Hardware</span>
+              <span class="accepts-tag">Lighting</span>
+              <span class="accepts-tag">Paint (unopened)</span>
+            </div>
+            <div class="center-phone">📞 <a href="tel:8089695900">(808) 969-5900</a></div>
+          </div>
+        </div>
+
+        <!-- Salvation Army Hilo -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">👕</div>
+            <span class="center-region-tag">Hilo</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">The Salvation Army Thrift Store — Hilo</div>
+            <div class="center-org">The Salvation Army</div>
+            <div class="center-address"><span class="addr-icon">📌</span>35 Punahoa St., Hilo, HI 96720</div>
+            <div class="center-hours"><span>🕐</span>Mon–Sat 9:00 a.m. – 5:00 p.m.</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Clothing</span>
+              <span class="accepts-tag">Furniture</span>
+              <span class="accepts-tag">Kitchenware</span>
+              <span class="accepts-tag">Toys</span>
+              <span class="accepts-tag">Books</span>
+              <span class="accepts-tag">Décor</span>
+            </div>
+            <div class="center-phone">📞 <a href="tel:8089355571">(808) 935-5571</a></div>
+          </div>
+        </div>
+
+        <!-- Goodwill Hilo -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">🧸</div>
+            <span class="center-region-tag">Hilo</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">Goodwill — Hilo</div>
+            <div class="center-org">Goodwill Industries of Hawaii</div>
+            <div class="center-address"><span class="addr-icon">📌</span>340 Hualalai St., Hilo, HI 96720</div>
+            <div class="center-hours"><span>🕐</span>Mon–Sat 9:00 a.m. – 8:00 p.m. | Sun 10:00 a.m. – 6:00 p.m.</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Clothing</span>
+              <span class="accepts-tag">Shoes</span>
+              <span class="accepts-tag">Accessories</span>
+              <span class="accepts-tag">Small Appliances</span>
+              <span class="accepts-tag">Books</span>
+              <span class="accepts-tag">Media</span>
+              <span class="accepts-tag">Housewares</span>
+            </div>
+            <div class="center-phone">📞 <a href="tel:8089693000">(808) 969-3000</a></div>
+          </div>
+        </div>
+
+        <!-- Habitat ReStore Kona -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">🪵</div>
+            <span class="center-region-tag">Kona</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">Habitat for Humanity ReStore — Kona</div>
+            <div class="center-org">Habitat for Humanity Hawaii Island</div>
+            <div class="center-address"><span class="addr-icon">📌</span>74-5467 Kaiwi St., Kailua-Kona, HI 96740</div>
+            <div class="center-hours"><span>🕐</span>Mon–Sat 9:00 a.m. – 5:00 p.m. | Closed Sun</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Building Materials</span>
+              <span class="accepts-tag">Appliances</span>
+              <span class="accepts-tag">Cabinets</span>
+              <span class="accepts-tag">Furniture</span>
+              <span class="accepts-tag">Lighting</span>
+              <span class="accepts-tag">Tile &amp; Flooring</span>
+            </div>
+            <div class="center-phone">📞 <a href="tel:8083257234">(808) 325-7234</a></div>
+          </div>
+        </div>
+
+        <!-- Salvation Army Kona -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">🛋️</div>
+            <span class="center-region-tag">Kona</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">The Salvation Army — Kailua-Kona</div>
+            <div class="center-org">The Salvation Army</div>
+            <div class="center-address"><span class="addr-icon">📌</span>75-159 Lunapule Rd., Kailua-Kona, HI 96740</div>
+            <div class="center-hours"><span>🕐</span>Mon–Sat 9:00 a.m. – 5:00 p.m.</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Clothing</span>
+              <span class="accepts-tag">Furniture</span>
+              <span class="accepts-tag">Kitchenware</span>
+              <span class="accepts-tag">Books</span>
+              <span class="accepts-tag">Toys</span>
+              <span class="accepts-tag">Electronics (working)</span>
+            </div>
+            <div class="center-phone">📞 <a href="tel:8083298022">(808) 329-8022</a></div>
+          </div>
+        </div>
+
+        <!-- Big Island Used Building Materials -->
+        <div class="center-card">
+          <div class="center-photo">
+            <div class="center-photo-icon">🪟</div>
+            <span class="center-region-tag">Island-wide</span>
+          </div>
+          <div class="center-card-body">
+            <div class="center-name">Community Free Box &amp; Little Free Libraries</div>
+            <div class="center-org">Various neighborhood locations</div>
+            <div class="center-address"><span class="addr-icon">📌</span>Multiple locations — see Mālama Map</div>
+            <div class="center-hours"><span>🕐</span>Available 24/7 at most sites</div>
+            <div class="accepts-label">Accepts</div>
+            <div class="accepts-tags">
+              <span class="accepts-tag">Books</span>
+              <span class="accepts-tag">Clothing</span>
+              <span class="accepts-tag">Toys</span>
+              <span class="accepts-tag">Small Items</span>
+              <span class="accepts-tag">Non-perishable Food</span>
+            </div>
+            <div class="center-phone"><a href="malama-map.html" class="btn-outline" style="display:inline-flex; margin-top:4px;">View on Mālama Map</a></div>
+          </div>
+        </div>
+
+      </div><!-- /.center-grid -->
+    </section>
+
+    <!-- DONATION TIPS -->
+    <section aria-labelledby="tips-heading">
+      <div class="section-head">
+        <p class="section-kicker">Donating well</p>
+        <h2 id="tips-heading">Tips for Donors &amp; Shoppers</h2>
+        <p class="sub">Good donations keep reuse centers running. Here's how to make the most of giving and getting.</p>
+      </div>
+      <div class="section-rule"></div>
+
+      <div class="tips-two-col">
+        <div class="tips-col">
+          <h3>🎁 Before You Donate</h3>
+          <ul>
+            <li>Clean items before dropping them off — dirty donations are often discarded</li>
+            <li>Test electronics and small appliances to confirm they work</li>
+            <li>Call ahead for large items like furniture or appliances to confirm space</li>
+            <li>Remove personal information from electronics (do a factory reset)</li>
+            <li>Include all parts, remotes, and accessories when possible</li>
+            <li>Donate clothing in season — summer clothes donated in winter may not be used</li>
+          </ul>
+        </div>
+        <div class="tips-col">
+          <h3>🛒 Smart Reuse Shopping</h3>
+          <ul>
+            <li>Visit early — freshly donated items move fast at popular stores</li>
+            <li>Check return policies before purchasing electronics or appliances</li>
+            <li>Bring measurements when shopping for furniture or building materials</li>
+            <li>Ask about discount days — many stores offer rotating sales</li>
+            <li>Reuse stores are excellent sources for craft, art, and DIY supplies</li>
+            <li>Sign up for store newsletters to hear about large donation arrivals</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="info-banner">
+      <div class="info-icon">🗺️</div>
+      <div class="info-body">
+        <strong>Find More Locations on the Mālama Map</strong>
+        <p>Our interactive Mālama Map shows reuse centers, recycling drop-offs, HHW events, and more across all of Hawai'i Island. Filter by material or location to find exactly what you need. <a href="malama-map.html"><strong>Open the Mālama Map →</strong></a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ================================================================
+       SCRIPTS
+  ================================================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const photo = document.getElementById('reuseHeroPhoto');
+      if (photo) photo.classList.add('loaded');
+    });
+  </script>
+  <script src="../assets/js/layout-loader.js"></script>
+
+</body>
+</html>

@@ -51,7 +51,7 @@
 }
 
 .specialty-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   color: var(--color-white);
@@ -182,7 +182,7 @@
 }
 
 .spec-section-header h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   color: var(--color-white);
@@ -522,7 +522,7 @@
 }
 
 .spec-faq h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   color: var(--color-primary);
   margin-bottom: 18px;

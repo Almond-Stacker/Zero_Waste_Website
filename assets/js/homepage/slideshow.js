@@ -15,8 +15,8 @@
    const SLIDES_DATA = [
     {
       image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1400&q=80",
-      title: "Hilo Wastewater Treatment Plant Upgrades Begin",
-      text:  "The groundbreaking ceremony for the $337 million rehabilitation and replacement project took place on July 31.",
+      title: "Placeholder",
+      text:  "Placeholder text about the Hilo news. This is a longer caption to show how text wraps on multiple lines. watermelons are inferior to honeydews",
       link:  "#"
     },
     {

@@ -1,37 +1,29 @@
 /* =============================================
-   recycle.css
-   "Where to Recycle" page.
-   Layout: full-width category banner then 4-col photo grid, repeat.
+   recycle.css — "Where to Recycle" page
+   Layout: hero banner → flat photo-tile grid → Can't Recycle section
    Depends on: global.css, header.css, footer.css
    ============================================= */
 
-/* --- Page hero banner ---------------------------------------------- */
+/* ---- Hero --------------------------------------------------------- */
 .recycle-hero {
-  /*
-   * PHOTO BACKGROUND
-   * Replace the URL below with your own Hawaii photo, e.g.:
-   *   url('../assets/images/hawaii-hero.jpg')
-   * The image should be at least 1400px wide for crisp display.
-   */
   background-image: url('https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?w=1400&q=80');
   background-size: cover;
-  background-position: center 40%;  /* tweak % to pan up/down */
+  background-position: center 40%;
   background-repeat: no-repeat;
   padding: 56px 32px 52px;
   position: relative;
   overflow: hidden;
 }
 
-/* Dark green overlay — keeps text legible over any photo */
 .recycle-hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(30, 58, 15, 0.82) 0%,    /* solid dark green on the left where text is */
-    rgba(30, 58, 15, 0.55) 55%,   /* fades to semi-transparent */
-    rgba(30, 58, 15, 0.25) 100%   /* photo shows through on the right */
+    rgba(30, 58, 15, 0.84) 0%,
+    rgba(30, 58, 15, 0.55) 55%,
+    rgba(30, 58, 15, 0.25) 100%
   );
   pointer-events: none;
 }
@@ -44,8 +36,8 @@
 }
 
 .recycle-hero h1 {
-  font-family: var(--font-serif);
-  font-size: 32px;
+  font-family: var(--font-test);
+  font-size: 34px;
   font-weight: 700;
   color: var(--color-white);
   margin-bottom: 14px;
@@ -54,9 +46,9 @@
 
 .recycle-hero p {
   font-size: 15px;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.88);
   line-height: 1.65;
-  max-width: 600px;
+  max-width: 620px;
   margin-bottom: 28px;
 }
 
@@ -76,189 +68,213 @@
   letter-spacing: 0.06em;
   text-decoration: none;
   border-radius: var(--radius);
-  border: 2px solid rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.75);
   color: var(--color-white);
   background: transparent;
   transition: background var(--transition), border-color var(--transition);
 }
 
 .hero-btn:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
   border-color: var(--color-white);
 }
 
 .hero-btn-icon { font-size: 15px; }
 
-/* --- Page body ------------------------------------------------------ */
+/* ---- Page body ---------------------------------------------------- */
 .recycle-content {
-  max-width: 1060px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px 72px;
+  padding: 0 24px 80px;
 }
 
-/* =============================================
-   CATEGORY SECTION
-   Full-width banner header + card grid below
-   ============================================= */
-.recycle-category {
-  margin-top: 48px;
-  animation: fadeIn 0.4s ease both;
+/* ---- Section heading --------------------------------------------- */
+.recycle-section-head {
+  padding: 48px 0 24px;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 32px;
 }
 
-.recycle-category:nth-child(1) { animation-delay: 0.00s; }
-.recycle-category:nth-child(2) { animation-delay: 0.07s; }
-.recycle-category:nth-child(3) { animation-delay: 0.14s; }
-.recycle-category:nth-child(4) { animation-delay: 0.21s; }
-.recycle-category:nth-child(5) { animation-delay: 0.28s; }
-.recycle-category:nth-child(6) { animation-delay: 0.35s; }
-
-/* Full-width banner bar */
-.category-banner {
-  background: linear-gradient(135deg, #1a3d35 0%, #1e5040 50%, #2a5a20 100%);
-  color: var(--color-white);
-  text-align: center;
-  padding: 18px 24px 14px;
-  border-radius: var(--radius) var(--radius) 0 0;
+.recycle-section-head h2 {
+  font-family: var(--font-test);
+  font-size: 26px;
+  color: var(--color-primary);
+  margin-bottom: 6px;
 }
 
-.category-banner h2 {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+.recycle-section-head p {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.6;
+  max-width: 580px;
 }
 
-.category-banner p {
-  font-size: 12px;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.4;
-}
-
-.banner-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--color-white);
-  border: 2px solid rgba(255,255,255,0.6);
-  border-radius: var(--radius);
-  transition: background var(--transition), border-color var(--transition);
-}
-
-.banner-btn:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: var(--color-white);
-}
-
-/* =============================================
-   CARD GRID  4 columns, photo on top
-   ============================================= */
-.recycle-grid {
+/* ---- Tile grid ---------------------------------------------------- */
+.recycle-tile-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1px solid var(--color-border);
-  border-top: none;
-  border-radius: 0 0 var(--radius) var(--radius);
-  background: var(--color-white);
-  overflow: hidden;
+  gap: 12px;
+  margin-bottom: 64px;
 }
 
-/* Individual card */
-.recycle-card {
-  text-decoration: none;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  transition: background var(--transition);
-  cursor: pointer;
-}
-
-.recycle-card:nth-child(4n) { border-right: none; }
-.recycle-card.last-row      { border-bottom: none; }
-
-.recycle-card:hover { background: var(--color-primary-pale); }
-
-/* Photo area — full-bleed cover image */
-.card-icon-wrap {
+/* Individual tile */
+.recycle-tile {
   position: relative;
-  height: 150px;
+  display: block;
+  text-decoration: none;
+  border-radius: var(--radius);
   overflow: hidden;
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-primary-pale);
+  aspect-ratio: 1 / 1;
+  background: #1a2e10;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Subtle green tint overlay — reinforces brand on hover */
-.card-icon-wrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(47, 89, 26, 0);
-  transition: background 0.3s ease;
-  pointer-events: none;
+.recycle-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
-.recycle-card:hover .card-icon-wrap::after {
-  background: rgba(47, 89, 26, 0.18);
-}
-
-.card-icon-wrap img {
+.recycle-tile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  opacity: 0.88;
 }
 
-.recycle-card:hover .card-icon-wrap img {
-  transform: scale(1.07);
+.recycle-tile:hover img {
+  transform: scale(1.06);
+  opacity: 1;
 }
 
-/* Text area below image */
-.card-body {
-  padding: 12px 14px 16px;
-  flex: 1;
-}
-
-.card-title {
+/* Label overlay at bottom */
+.recycle-tile-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(20, 50, 10, 0.92) 40%);
+  color: var(--color-white);
   font-size: 13px;
   font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 5px;
-  line-height: 1.3;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: text-decoration-color var(--transition), color var(--transition);
+  letter-spacing: 0.03em;
+  padding: 28px 12px 12px;
+  line-height: 1.25;
 }
 
-.recycle-card:hover .card-title {
-  color: var(--color-primary-mid);
-  text-decoration-color: var(--color-primary-light);
+/* ---- Can't Recycle section --------------------------------------- */
+.cannot-recycle-section {
+  margin-top: 16px;
 }
 
-.card-desc {
-  font-size: 11px;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+.cannot-recycle-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 32px 28px;
+  background: #fff5f5;
+  border: 2px solid #f0c0c0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin-bottom: 0;
 }
 
-/* Responsive */
-@media (max-width: 820px) {
-  .recycle-grid { grid-template-columns: repeat(2, 1fr); }
-  .recycle-card:nth-child(4n) { border-right: 1px solid var(--color-border); }
-  .recycle-card:nth-child(2n) { border-right: none; }
+.cannot-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-@media (max-width: 480px) {
+.cannot-recycle-head h2 {
+  font-family: var(--font-test);
+  font-size: 24px;
+  color: #8b1a1a;
+  margin-bottom: 6px;
+}
+
+.cannot-recycle-head p {
+  font-size: 14px;
+  color: #5a2020;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+/* Cannot tile grid — same columns, different color scheme */
+.cannot-grid {
+  margin-bottom: 0;
+  border-radius: 0;
+  background: #fff0f0;
+  padding: 20px;
+  border: 2px solid #f0c0c0;
+  border-top: none;
+  gap: 10px;
+}
+
+.cannot-tile {
+  cursor: default;
+}
+
+.cannot-tile:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.cannot-tile img {
+  opacity: 0.75;
+  filter: grayscale(30%);
+}
+
+.cannot-tile:hover img {
+  transform: none;
+  opacity: 0.75;
+}
+
+/* Red label for can't recycle tiles */
+.cannot-tile .recycle-tile-label {
+  background: linear-gradient(transparent, rgba(100, 15, 15, 0.9) 40%);
+}
+
+/* "✕ Can't Recycle" badge — top-right corner */
+.cannot-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #c0392b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Contact note below the can't-recycle grid */
+.cannot-note {
+  background: #fff0f0;
+  border: 2px solid #f0c0c0;
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 16px 28px;
+  font-size: 13.5px;
+  color: #5a2020;
+  line-height: 1.6;
+}
+
+.cannot-note a { color: #8b1a1a; }
+
+/* ---- Responsive -------------------------------------------------- */
+@media (max-width: 900px) {
+  .recycle-tile-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
   .recycle-hero h1 { font-size: 24px; }
-  .card-icon-wrap  { height: 120px; }
+  .recycle-tile-grid { grid-template-columns: repeat(2, 1fr); }
+  .cannot-recycle-head { flex-direction: column; gap: 10px; }
 }
