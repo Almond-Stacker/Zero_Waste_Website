@@ -228,7 +228,7 @@
   border: 2px solid var(--color-accent);
   border-left: none;
   border-radius: 0 var(--radius) var(--radius) 0;
-  height: 39px;
+  align-self: stretch;
   width: 42px;
   color: var(--color-dark);
   font-size: 15px;
@@ -238,6 +238,12 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+}
+
+.search-btn .search-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .search-btn:hover {

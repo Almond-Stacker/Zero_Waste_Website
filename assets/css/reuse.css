@@ -71,7 +71,7 @@
 }
 
 .center-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-primary);

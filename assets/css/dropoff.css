@@ -51,7 +51,7 @@
 }
 
 .dropoff-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   color: var(--color-white);
@@ -142,7 +142,7 @@
 }
 
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   color: var(--color-primary);
   margin-bottom: 6px;
@@ -206,7 +206,7 @@
   border-radius: 50%;
   background: var(--color-primary);
   color: var(--color-white);
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 16px;
@@ -226,7 +226,7 @@
 }
 
 .step-card h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 18px;
   font-weight: 700;
   color: var(--color-primary);
@@ -289,7 +289,7 @@
 }
 
 .bin-header-text h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 18px;
   font-weight: 700;
   color: var(--color-white);
@@ -470,7 +470,7 @@
 }
 
 .dropoff-faq h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   color: var(--color-primary);
   margin-bottom: 18px;

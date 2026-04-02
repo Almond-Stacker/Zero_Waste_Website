@@ -87,7 +87,7 @@
 }
 
 .page-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(30px, 4.5vw, 50px);
   font-weight: 700;
   color: var(--color-white);
@@ -148,7 +148,7 @@
 }
 .stat-item:last-child { border-right: none; }
 .stat-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 28px;
   font-weight: 700;
   color: var(--color-accent);
@@ -194,7 +194,7 @@
   max-width: 60px;
 }
 .section-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   color: var(--color-primary);
@@ -288,7 +288,7 @@
 .accept-panel-head.red   { background: #c0392b; }
 .accept-panel-head .panel-icon { font-size: 20px; }
 .accept-panel-head h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 15px;
   font-weight: 700;
   color: var(--color-white);
@@ -356,7 +356,7 @@
 }
 .program-card-header .prog-icon { font-size: 22px; }
 .program-card-header h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 15px;
   font-weight: 700;
   color: var(--color-white);
@@ -397,7 +397,7 @@
 }
 .facility-feature.alt { background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%); }
 .fac-main h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 19px;
   font-weight: 700;
   color: var(--color-primary);
@@ -507,7 +507,7 @@
   align-items: center;
 }
 .station-card-head h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 14px;
   font-weight: 700;
   color: var(--color-white);
@@ -559,7 +559,7 @@
   align-items: center;
 }
 .mulch-text h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   color: var(--color-white);
@@ -628,7 +628,7 @@
 .compost-card:hover { box-shadow: 0 4px 14px var(--color-shadow); }
 .compost-card .c-icon { font-size: 30px; }
 .compost-card h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 15px;
   font-weight: 700;
   color: var(--color-primary);
@@ -654,7 +654,7 @@
   padding: 30px 32px;
 }
 .hawaii-callout h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
@@ -711,7 +711,7 @@
 }
 .tip-card .tip-icon { font-size: 24px; }
 .tip-card h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
@@ -758,7 +758,7 @@
   align-items: center;
 }
 .contact-text h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 19px;
   font-weight: 700;
   color: var(--color-white);
@@ -854,12 +854,12 @@
   border-radius: 50%;
   font-size: 14px;
   font-weight: 700;
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   flex-shrink: 0;
 }
 .hiw-step-icon { font-size: 28px; }
 .hiw-step h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
@@ -910,7 +910,7 @@
 .limit-card:hover { box-shadow: 0 4px 14px var(--color-shadow); }
 .limit-icon { font-size: 30px; }
 .limit-card h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 15px;
   font-weight: 700;
   color: var(--color-primary);
@@ -944,7 +944,7 @@
 }
 .ms-step-icon { font-size: 22px; flex-shrink: 0; }
 .ms-step-text h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 13px;
   font-weight: 700;
   color: var(--color-primary);
@@ -958,7 +958,7 @@
   padding: 18px 20px;
 }
 .ms-killed h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 15px;
   font-weight: 700;
   color: var(--color-primary);

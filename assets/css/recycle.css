@@ -36,7 +36,7 @@
 }
 
 .recycle-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 34px;
   font-weight: 700;
   color: var(--color-white);
@@ -96,7 +96,7 @@
 }
 
 .recycle-section-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 26px;
   color: var(--color-primary);
   margin-bottom: 6px;
@@ -190,7 +190,7 @@
 }
 
 .cannot-recycle-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 24px;
   color: #8b1a1a;
   margin-bottom: 6px;

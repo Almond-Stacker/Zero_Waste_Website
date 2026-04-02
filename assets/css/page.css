@@ -83,7 +83,7 @@
 }
 
 .page-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(28px, 4.5vw, 46px);
   font-weight: 700;
   color: var(--color-white);
@@ -161,7 +161,7 @@
 }
 
 .section-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   color: var(--color-primary);

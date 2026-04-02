@@ -17,12 +17,12 @@ const RECYCLE_ITEMS = [
   },
   {
     label: 'Batteries',
-    image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1642801069630-bbb4d78061be?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     href:  'hhw.html'
   },
   {
     label: 'Beverage Containers',
-    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1689555256964-aeabc20d1d3c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     href:  'hi5.html'
   },
   {
@@ -82,7 +82,7 @@ const CANNOT_RECYCLE_ITEMS = [
   },
   {
     label: 'Greasy Pizza Boxes',
-    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format&fit=crop'
+    image: 'https://plus.unsplash.com/premium_photo-1668771084581-00496b46a17e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     label: 'Plastic Bags',

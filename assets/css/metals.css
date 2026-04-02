@@ -51,7 +51,7 @@
 }
 
 .metals-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 38px;
   font-weight: 700;
   color: var(--color-white);
@@ -82,7 +82,7 @@
 }
 
 .hero-stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 28px;
   font-weight: 700;
   color: var(--color-accent);
@@ -289,7 +289,7 @@
 }
 
 .metals-section-header h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   font-weight: 700;
   color: var(--color-white);
@@ -532,7 +532,7 @@
 }
 
 .steps-strip h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 16px;
   color: var(--color-primary);
   margin-bottom: 20px;
@@ -694,7 +694,7 @@
 }
 
 .impact-stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 36px;
   font-weight: 700;
   color: var(--color-accent);
@@ -723,7 +723,7 @@
 }
 
 .faq-block h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   color: var(--color-primary);
   margin-bottom: 18px;
