@@ -12,8 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(data => {
                     placeholder.innerHTML = data;
                     // If loading the header, run the active link highlighter
+                    // then inject search-suggest scripts
                     if (elementId === 'header-placeholder') {
                         highlightActiveLink();
+                        loadSearchSuggest();
                     }
                 })
                 .catch(error => console.error(error));
@@ -37,7 +39,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 3. Execute the loads
+    // 3. Dynamically load search scripts then init suggestions
+    function loadSearchSuggest() {
+        // Resolve path relative to current page depth
+        const base = '../assets/js/';
+        function injectScript(src, onload) {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = onload || null;
+            document.head.appendChild(s);
+        }
+        // Load index first, then suggest (suggest depends on SEARCH_INDEX)
+        injectScript(base + 'search-index.js', () => {
+            injectScript(base + 'search-suggest.js', () => {
+                initSearchSuggest();
+            });
+        });
+    }
+
+    // 4. Execute the loads
     loadComponent('header-placeholder', '../assets/header.html');
     loadComponent('footer-placeholder', '../assets/footer.html');
 });

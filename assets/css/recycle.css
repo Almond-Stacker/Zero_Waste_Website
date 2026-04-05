@@ -37,17 +37,21 @@
 
 .recycle-hero h1 {
   font-family: var(--font-serif);
-  font-size: 34px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--color-white);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   letter-spacing: 0.01em;
+  line-height: 1.15;
 }
 
 .recycle-hero p {
+  font-family: var(--font-sans);
   font-size: 15px;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
   max-width: 620px;
   margin-bottom: 28px;
 }
@@ -63,9 +67,11 @@
   align-items: center;
   gap: 8px;
   padding: 11px 22px;
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
   border-radius: var(--radius);
   border: 2px solid rgba(255,255,255,0.75);
@@ -97,15 +103,21 @@
 
 .recycle-section-head h2 {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 8px;
 }
 
 .recycle-section-head p {
+  font-family: var(--font-sans);
   font-size: 14px;
-  color: var(--color-text);
-  line-height: 1.6;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
   max-width: 580px;
 }
 
@@ -159,11 +171,13 @@
   right: 0;
   background: linear-gradient(transparent, rgba(20, 50, 10, 0.92) 40%);
   color: var(--color-white);
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: 28px 12px 12px;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 /* ---- Can't Recycle section --------------------------------------- */
@@ -191,15 +205,21 @@
 
 .cannot-recycle-head h2 {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 700;
   color: #8b1a1a;
-  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 8px;
 }
 
 .cannot-recycle-head p {
+  font-family: var(--font-sans);
   font-size: 14px;
+  font-weight: 300;
   color: #5a2020;
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
   max-width: 620px;
 }
 
@@ -245,9 +265,10 @@
   right: 8px;
   background: #c0392b;
   color: #fff;
-  font-size: 10px;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   padding: 3px 8px;
   border-radius: 3px;
   text-transform: uppercase;
@@ -261,9 +282,12 @@
   border-top: none;
   border-radius: 0 0 var(--radius) var(--radius);
   padding: 16px 28px;
+  font-family: var(--font-sans);
   font-size: 13.5px;
+  font-weight: 300;
   color: #5a2020;
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 .cannot-note a { color: #8b1a1a; }
