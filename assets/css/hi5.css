@@ -42,7 +42,7 @@
 }
 
 .hi5-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 32px;
   font-weight: 700;
   color: var(--color-white);
@@ -70,7 +70,7 @@
 }
 
 .hi5-instructions h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 26px;
   font-weight: 700;
   color: var(--color-primary);
@@ -169,7 +169,7 @@
 }
 
 .hi5-locations h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 26px;
   font-weight: 700;
   color: var(--color-primary);

@@ -29,7 +29,7 @@
 }
 .stat-item:last-child { border-right: none; }
 .stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 36px;
   font-weight: 700;
   color: var(--color-accent);
@@ -67,7 +67,7 @@
   box-shadow: 0 3px 12px var(--color-shadow);
 }
 .top10-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 28px;
   font-weight: 700;
   color: var(--color-primary-pale);
@@ -116,7 +116,7 @@
 }
 .ord-icon { font-size: 28px; flex-shrink: 0; }
 .ord-header h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 17px;
   font-weight: 700;
   color: var(--color-white);

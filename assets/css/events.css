@@ -51,7 +51,7 @@
 }
 
 .events-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   color: var(--color-white);
@@ -191,7 +191,7 @@
 }
 
 .featured-section-title h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 20px;
   color: var(--color-primary);
 }
@@ -254,7 +254,7 @@
 }
 
 .hhw-card-header h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 17px;
   font-weight: 700;
   color: var(--color-white);
@@ -315,7 +315,7 @@
 
 .hhw-date-day {
   color: var(--color-white);
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
@@ -420,7 +420,7 @@
 }
 
 .event-date-col .date-day {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 28px;
   font-weight: 700;
   color: var(--color-white);
@@ -474,7 +474,7 @@
 .event-tag.community { background: #eff6ff; color: #1a4a8a; border-color: #bcd5f0; }
 
 .event-main h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-text);
@@ -584,7 +584,7 @@
 
 .subscribe-text strong {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 18px;
   color: var(--color-white);
   margin-bottom: 6px;

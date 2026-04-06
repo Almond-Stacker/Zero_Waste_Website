@@ -15,7 +15,7 @@
 }
 
 .search-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 28px;
   font-weight: 700;
   color: var(--color-white);
@@ -66,6 +66,12 @@
   display: flex;
   align-items: center;
   gap: 7px;
+}
+
+.search-hero-form button .search-icon-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 .search-hero-form button:hover {
@@ -145,7 +151,7 @@
 }
 
 .sr-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 18px;
   font-weight: 700;
   color: var(--color-primary);
@@ -189,8 +195,15 @@
   margin-bottom: 16px;
 }
 
+.sr-empty-icon .search-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .sr-empty h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-test);
   font-size: 22px;
   color: var(--color-primary);
   margin-bottom: 10px;

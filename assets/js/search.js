@@ -51,7 +51,7 @@ function renderResults(query, results) {
     countEl.textContent = '0 results';
     container.innerHTML = `
       <div class="sr-empty">
-        <div class="sr-empty-icon">🔍</div>
+        <div class="sr-empty-icon"><img src="../assets/images/search-icon.png" alt="Search" class="search-icon-img"></div>
         <h3>No results found for <em>"${query}"</em></h3>
         <p>Try different keywords, or browse a section from the navigation menu above.</p>
         <div class="sr-suggestions">
