@@ -12,57 +12,57 @@
 const RECYCLE_ITEMS = [
   {
     label: 'Recycling Center Map',
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/map.png',
     href:  'malama-map.html'
   },
   {
     label: 'Batteries',
-    image: 'https://images.unsplash.com/photo-1642801069630-bbb4d78061be?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '../assets/images/recycle-batteries.jpg',
     href:  'hhw.html'
   },
   {
     label: 'Beverage Containers',
-    image: 'https://images.unsplash.com/photo-1689555256964-aeabc20d1d3c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '../assets/images/recycle-beverage.jpg',
     href:  'hi5.html'
   },
   {
     label: 'Organic Materials',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-organic.jpg',
     href:  'greenwaste.html'
   },
   {
     label: 'Used Oil &amp; Filters',
-    image: 'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-automotive.jpg',
     href:  'automotive-chemicals.html'
   },
   {
     label: 'Waste Tires',
-    image: 'https://images.unsplash.com/photo-1548445929-4f60a497c9cf?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-tires.jpg',
     href:  'automotive-chemicals.html'
   },
   {
     label: 'E-Waste',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-electronic.jpg',
     href:  'electronics.html'
   },
   {
     label: 'Paint',
-    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-paint.jpg',
     href:  'hhw.html'
   },
   {
     label: 'Greenwaste',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-organic.jpg',
     href:  'greenwaste.html'
   },
   {
     label: 'Metal &amp; Appliances',
-    image: 'https://images.unsplash.com/photo-1565621335513-5b8a5d7eb8a9?w=600&q=80&auto=format&fit=crop',
+    image: '../assets/images/recycle-appliance.jpg',
     href:  'metal-appliances.html'
   },
   {
-    label: 'Hazardous Waste',
-    image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80&auto=format&fit=crop',
+    label: 'Household Hazardous Waste',
+    image: '../assets/images/recycle-household.jpg',
     href:  'hhw.html'
   },
   {
@@ -78,11 +78,11 @@ const RECYCLE_ITEMS = [
 const CANNOT_RECYCLE_ITEMS = [
   {
     label: 'Styrofoam / EPS Foam',
-    image: 'https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80&auto=format&fit=crop'
+    image: '../assets/images/no-recycle-styrofoam.jpg'
   },
   {
-    label: 'Greasy Pizza Boxes',
-    image: 'https://plus.unsplash.com/premium_photo-1668771084581-00496b46a17e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    label: 'Contaminated/Oily Materials',
+    image: '../assets/images/no-recycle-pizza.jpg'
   },
   {
     label: 'Plastic Bags',
